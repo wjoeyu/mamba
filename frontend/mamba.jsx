@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
+  const store = configureStore();
 
   const root = document.getElementById('root');
-  ReactDOM.render(<h1>M a m b a</h1>, root);
+  ReactDOM.render(<Root store={store}/>, root);
 
-  // const store = configureStore();
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
 });
+
+window.getState = store.getState;
+window.dispatch = store.dispatch;
