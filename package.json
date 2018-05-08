@@ -2,8 +2,8 @@
   "name": "mamba",
   "private": true,
   "engines": {
-   "node": "6.10.1",
-   "npm": "3.10.10"
+    "node": "6.10.1",
+    "npm": "3.10.10"
   },
   "scripts": {
     "webpack": "webpack --watch"
