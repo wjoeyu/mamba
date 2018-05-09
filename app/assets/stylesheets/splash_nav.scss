@@ -45,9 +45,17 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid red;
-  width: 902px;
-  height: 7
+  transform: translate(-57%, -50%);
+  width: 50%;
+  max-width: 900px;
+  padding-left: 112px;
+  padding-right: 112px;
+  height: 750px;
   background: white;
+  border-radius: 3px;
+  margin: 32px;
+}
+
+.modal-content {
+
 }

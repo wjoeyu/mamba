@@ -38,34 +38,29 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
+        <div onClick={this.props.closeModal} className="close-x">X</div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Mamba.
-          <br/>
-          {this.props.formType}
-          <div onClick={this.props.closeModal} className="close-x">X</div>
+          <div className="form-type-title">{this.props.formType}</div>
           {this.renderErrors()}
           <div className="login-form">
-            <br/>
-            <label>Email Address:
+            <label>Email Address</label>
               <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="login-input"
-                placeholder="email"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  className="login-input"
+                  placeholder="name@company.com"
               />
-            </label>
-
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-                placeholder="password"
+            <label>Password</label>
+            <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input"
+                  placeholder="password"
               />
-          </label>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <input id="session-submit" type="submit" value={this.props.formType}/>
           </div>
         </form>
+        Don't have an account? 
         <button onClick={() => this.props.openModal('signup')}>Signup</button>
       </div>
     );
