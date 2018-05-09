@@ -1,15 +1,12 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
-
-
-const Greeting = ({ currentUser, logout, openModal }) => {
+const SplashNav = ({ currentUser, logout, openModal }) => {
   const sessionLinks = () => (
-    <nav className="login-signup">
-      <button onClick={() => openModal('login')}>Login</button>
-      &nbsp;or&nbsp;
-      <button onClick={() => openModal('signup')}>Signup</button>
+    <nav className="splash-nav">
+      <a>m a m b a</a>
+      <button onClick={() => openModal('login')}>Log In</button>
     </nav>
   );
   const personalGreeting = () => (
@@ -23,4 +20,4 @@ const Greeting = ({ currentUser, logout, openModal }) => {
 };
 
 
-export default Greeting;
+export default SplashNav;

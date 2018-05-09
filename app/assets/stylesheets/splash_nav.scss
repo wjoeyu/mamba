@@ -1,0 +1,53 @@
+.splash-nav {
+  display: flex;
+  position: relative;
+  border: 1px solid red;
+  top: 0;
+  width: 100%;
+  left: 0;
+  justify-content: space-between;
+  padding: 12px 0px;
+}
+
+.splash-nav button {
+  color: #646e78;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0px;
+  right: 175px;
+  border: none;
+  margin-right: 24px;
+}
+
+.splash-nav button:hover {
+  color: #796eff;
+}
+
+.splash-nav a{
+  font-size: 24px;
+  left: 18px;
+  margin-left: 20px;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid red;
+  width: 902px;
+  height: 7
+  background: white;
+}

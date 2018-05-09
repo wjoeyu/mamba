@@ -1,5 +1,5 @@
 import React from 'react';
-import GreetingContainer from './greeting/greeting_container';
+import SplashNavContainer from './splash_nav/splash_nav_container';
 import {
   Route,
   HashRouter
@@ -11,9 +11,7 @@ import Modal from './modal/modal';
 const App = () => (
   <div>
     <Modal />
-    <h1>M a m b a</h1>
-    <GreetingContainer />
-
+    <SplashNavContainer />
   </div>
 );
 
