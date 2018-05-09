@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
                 className="login-input"
               />
             </label>
-            <br/>
+
             <label>Password:
               <input type="password"
                 value={this.state.password}
