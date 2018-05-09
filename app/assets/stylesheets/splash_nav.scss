@@ -42,10 +42,10 @@
 }
 
 .modal-child {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-57%, -50%);
+  transform: translate(-56%, -50%);
   width: 50%;
   max-width: 900px;
   padding-left: 112px;
@@ -54,8 +54,4 @@
   background: white;
   border-radius: 3px;
   margin: 32px;
-}
-
-.modal-content {
-
 }
