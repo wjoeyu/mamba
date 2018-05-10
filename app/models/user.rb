@@ -7,6 +7,16 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   after_initialize :ensure_session_token
+  after_create :create_and_join_team
+
+  has_many :memberships,
+    class_name: "Membership",
+    foreign_key: :team_member_id,
+    primary_key: :id
+
+  has_many :teams,
+    through: :memberships,
+    source: :teams
 
 
   def self.find_by_credentials(email, password)
@@ -27,6 +37,13 @@ class User < ApplicationRecord
     self.session_token = User.generate_session_token
     self.save!
     self.session_token
+  end
+
+  def create_and_join_team
+    team = Team.new({team_name: "#{self.name}'s team"});
+    team.save!
+    membership = Membership.new({team_member_id: self.id, team_id: team.id})
+    membership.save!
   end
 
   private
