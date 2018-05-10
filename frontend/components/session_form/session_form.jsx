@@ -25,17 +25,18 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <div className="session-errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
         ))}
-      </ul>
+      </div>
     );
   }
 
   render() {
+
     return (
       <div className="login-form-container">
         <div onClick={this.props.closeModal} className="close-x">X</div>
@@ -60,8 +61,9 @@ class SessionForm extends React.Component {
             <input id="session-submit" type="submit" value={this.props.formType}/>
           </div>
         </form>
-        Don't have an account? 
-        <button onClick={() => this.props.openModal('signup')}>Signup</button>
+        Don't have an account?
+        {this.props.form === "Sign up" ? "" :
+        (<button onClick={() => this.props.openModal('signup')}>Sign Up</button>)}
       </div>
     );
   }
