@@ -7,6 +7,7 @@ class Api::TeamsController < ApplicationController
       render "api/teams/show"
     else
       render json: @team.errors.full_messages
+    end
   end
 
   def index
