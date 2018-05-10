@@ -6,8 +6,10 @@ const SplashNav = ({ currentUser, logout, openModal, signInDemo }) => {
   const sessionLinks = () => (
     <nav className="splash-nav">
       <a>m a m b a</a>
-      <button onClick={() => openModal('login')}>Log In</button>
-      <button onClick={() => signInDemo()}>Demo</button>
+      <a>
+        <button onClick={() => openModal('login')}>Log In</button>
+        <button onClick={() => signInDemo()}>Demo</button>
+      </a>
     </nav>
   );
   const personalGreeting = () => (
