@@ -5,5 +5,6 @@ class CreateTeams < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index :teams, :team_name
   end
 end
