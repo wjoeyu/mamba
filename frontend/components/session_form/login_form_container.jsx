@@ -14,6 +14,7 @@ const mapStateToProps = ({ errors }) => {
 };
 
 const mapDispatchToProps = dispatch => {
+  const demo = {email:"demo@mamba.com", password: "demodemo"};
   return {
     processForm: (user) => dispatch(login(user)),
     otherForm: (
@@ -27,3 +28,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+
+// <button onClick={() => this.props.signInDemo()}>Demo</button>

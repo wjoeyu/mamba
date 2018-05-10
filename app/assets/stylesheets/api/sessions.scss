@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .close-x {
-  font-family: Raleway;
+  font-family: Muli;
   color: #cfd5da;
     transition: color .25s ease-in-out;
     -moz-transition: color .25s ease-in-out;
@@ -19,11 +19,10 @@
 }
 
 .form-type-title {
-  font-size: 40px;
+  font-size: 46px;
   font-family: Raleway;
-  margin-top: 42px;
+  margin-top: 35px;
   margin-bottom: 48px;
-  top: 70px;
   color: black;
   font-weight: normal;
 }
@@ -54,6 +53,7 @@
    transition: opacity .25s ease-in-out;
    -moz-transition: opacity .25s ease-in-out;
    -webkit-transition: opacity .25s ease-in-out;
+  animation-delay: 2s;
 }
 
 .login-input:focus {

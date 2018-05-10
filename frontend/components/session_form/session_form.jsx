@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-
+    const demo = {email:"demo@mamba.com", password: "demodemo"};
     return (
       <div className="login-form-container">
         <div onClick={this.props.closeModal} className="close-x">X</div>
@@ -73,11 +73,10 @@ class SessionForm extends React.Component {
             <input id="session-submit" type="submit" value={this.props.formType}/>
           </div>
         </form>
-        {(this.props.formType === "Sign up")
-          ? "" : "Don't have an account?" }
-        {(this.props.formType === "Sign up")
-          ? ""
-          : (<button onClick={() => this.props.openModal('signup')}>Sign Up</button>)}
+        {(this.props.formType === "Sign up")?
+          "" : "Don't have an account?" }
+        {(this.props.formType === "Sign up")?
+          "" : (<button onClick={() => this.props.openModal('signup')}>Sign Up</button>)}
       </div>
     );
   }
