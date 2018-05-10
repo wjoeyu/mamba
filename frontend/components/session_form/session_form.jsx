@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
     const demo = {email:"demo@mamba.com", password: "demodemo"};
     return (
       <div className="login-form-container">
-        <div onClick={this.props.closeModal} className="close-x">X</div>
+        <div onClick={this.props.closeModal} className="close-x">&times;</div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="form-type-title">{this.props.formType}</div>
           {this.renderErrors()}

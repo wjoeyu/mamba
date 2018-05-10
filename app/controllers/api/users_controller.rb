@@ -9,6 +9,10 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def get_teams
+    render json: {work: true}
+  end
+
   private
 
   def user_params
