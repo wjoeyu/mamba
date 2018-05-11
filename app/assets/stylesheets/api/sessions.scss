@@ -130,16 +130,12 @@
 }
 
 .session-errors {
-  border: 2px solid orange;
-  display: inline-block;
+  border: 2px solid var(--gold);
+  display: flex;
   position: relative;
   list-style-type: none;
-  // display: flex;
-  overflow: scroll;
   border-radius: 5px;
   text-align: center;
-  padding-top: 12px;
-  padding-left: 8px;
   margin-bottom: 20px;
   justify-content: space-between;
 }
@@ -152,8 +148,9 @@
   // border: 1px solid #796eff;
   padding: 6px;
   border-radius: 5px;
-  margin: 2px;
-  margin-left: 4px;
+  margin: 6px 2px;
+  text-align: center;
+  display: block;
   // color: white;
   // background: orange;
 }
