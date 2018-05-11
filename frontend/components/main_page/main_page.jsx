@@ -5,11 +5,11 @@ import {
 } from 'react-router-dom';
 import Modal from '../modal/modal';
 
-import DropdownContainer from './main_nav/dropdown_container';
+import MainNavContainer from './main_nav/main_nav';
 
 const MainPage = () => (
   <div>
-    <DropdownContainer />
+    <MainNavContainer />
   </div>
 );
 

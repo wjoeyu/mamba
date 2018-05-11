@@ -18,9 +18,12 @@ export class Dropdown extends React.Component {
     });
 
     return (
-      <div className="team-list">
-        {currentTeams}
-        <button onClick={() => this.props.logout().then(() => this.props.history.push('/'))}>Log Out</button>
+      <div className="dropdown">
+        <div className="dropdown-button">Click Me!</div>
+        <ul className="dropdown-list">
+          {currentTeams}
+          <li><button onClick={() => this.props.logout().then(() => this.props.history.push('/'))}>Log Out</button></li>
+        </ul>
       </div>
     );
   }

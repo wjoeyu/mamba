@@ -1,9 +1,12 @@
-// import React from 'react';
-//
-// const MainNav = () => {
-//   <div>
-//     <Dropdown />
-//   </div>
-// }
-//
-// export default MainNav;
+import React from 'react';
+import DropdownContainer from './dropdown_container';
+
+const MainNav = () => {
+  return (
+    <div className="main-nav">
+      <DropdownContainer/>
+    </div>
+  )
+};
+
+export default MainNav;

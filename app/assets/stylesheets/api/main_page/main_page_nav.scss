@@ -1,0 +1,23 @@
+.main-nav {
+  height: 40px;
+  background: #ffffff;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.dropdown {
+
+
+}
+
+.dropdown-button {
+  cursor: pointer;
+}
+
+.dropdown-button:hover .dropdown-list {
+  display: block;
+}
+
+// .dropdown-list {
+//   display: none;
+// }
