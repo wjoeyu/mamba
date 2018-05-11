@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const demo = {email:"demo@mamba.com", password: "demodemo"};
+    // const demo = {email:"demo@mamba.com", password: "demodemo"};
     return (
       <div className="login-form-container">
         <div onClick={this.props.closeModal} className="close-x">&times;</div>

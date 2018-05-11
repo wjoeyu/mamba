@@ -5,24 +5,15 @@ import {
   HashRouter, Switch
 } from 'react-router-dom';
 import Frontpage from './frontpage';
-// import LoginFormContainer from './session_form/login_form_container.jsx';
-// import SignupFormContainer from './session_form/signup_form_container.jsx';
-// import Modal from './modal/modal';
+import MainPage from './main_page/main_page';
 
 const App = () => (
   <div>
     <Switch>
-      <Route path="/" component={Frontpage} />
+      <Route exact path="/" component={Frontpage} />
+      <Route path="/test" component={MainPage} />
     </Switch>
   </div>
 );
 
 export default App;
-
-// <Route path="/login" component={LoginFormContainer} />
-// <Route path="/signup" component={SignupFormContainer} />
-
-// <Modal />
-// <Splash />
-
-// <Route path="/teams/" component={MainPage} />

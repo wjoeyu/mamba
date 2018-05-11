@@ -6,7 +6,7 @@ const teamsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CURRENT_TEAMS:
-      return action.currentTeams;
+      return merge({}, state, action.currentTeams);
     default:
       return state;
   }

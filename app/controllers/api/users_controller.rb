@@ -12,8 +12,8 @@ class Api::UsersController < ApplicationController
   def get_teams
     # debugger
     @teams = current_user.teams
-    render "api/teams/index"
-    # render json: {work: false}
+    render "api/users/current_user_teams"
+    # render "api/teams/index"
   end
 
   private

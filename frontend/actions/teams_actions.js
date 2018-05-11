@@ -10,7 +10,7 @@ export const receiveCurrentTeams = currentTeams => {
 };
 
 export const fetchCurrentTeams = () => dispatch => (
-  APIUtil.getUserTeams.then(currentTeams => (
-    dispatch(receiveCurrentTeams(currentTeams))
+  APIUtil.getUserTeams().then(payload => (
+    dispatch(receiveCurrentTeams(payload))
   ))
 );

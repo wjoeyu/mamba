@@ -5,7 +5,7 @@ import teamsReducer from './teams_reducer';
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
-  teams: teamsReducer
+  currentTeams: teamsReducer
 });
 
 export default entitiesReducer;

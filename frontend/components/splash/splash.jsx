@@ -1,11 +1,16 @@
 import React from 'react';
+import { withRouter, HashRouter } from 'react-router-dom';
+
+// const handleSignIn = () => (
+//   signInDemo().then(() => this.history.push('/test'))
+// )
 
 const Splash = ({ currentUser, logout, openModal, signInDemo }) => {
   const sessionLinks = () => (
     <div className="splash">
       <div className="splash-nav">
         <a>m a m b a</a>
-        <a>
+        <a className="nav-right">
           <button className="nav-login" onClick={() => openModal('login')}>Log In</button>
           <button className="demo" onClick={() => signInDemo()}>Demo</button>
         </a>
@@ -17,6 +22,7 @@ const Splash = ({ currentUser, logout, openModal, signInDemo }) => {
       </div>
     </div>
   );
+
   const personalGreeting = () => (
 
     <hgroup className="header-group">
@@ -29,4 +35,6 @@ const Splash = ({ currentUser, logout, openModal, signInDemo }) => {
 };
 
 
-export default Splash;
+export default withRouter(Splash);
+
+// .then(() => this.history.push('/test'))

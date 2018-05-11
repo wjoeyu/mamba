@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { login, logout } from '../../actions/session_actions';
-import Splash from './splash';
+import Splash from './refactored_splash';
 import { openModal } from '../../actions/modal_actions';
 
 const mSp = ({ session, entities: { users } }) => {
