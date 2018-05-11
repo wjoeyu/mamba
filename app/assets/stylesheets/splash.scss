@@ -89,8 +89,8 @@
   left: 0;
   background: rgba(21,27,38,.85);
   z-index: 10;
-  -webkit-animation: fadein 2s;
-   -moz-animation: fadein 2s;
+  -webkit-animation: fadein 1s;
+   -moz-animation: fadein 1s;
 }
 
 .modal-child {
@@ -111,8 +111,8 @@
   border-radius: 3px;
   margin: 50px;
   box-sizing: border-box;
-  -webkit-animation: dropdown .75s;
-   -moz-animation: dropdown .75s;
+  -webkit-animation: dropdown .5s;
+   -moz-animation: dropdown .5s;
 }
 
 @-webkit-keyframes dropdown {
@@ -121,6 +121,6 @@
 }
 
 @-webkit-keyframes fadein {
-    from { opacity: 0; }
+    from { opacity: .5; }
     to   { opacity: 1;}
 }
