@@ -11,8 +11,8 @@ class Api::UsersController < ApplicationController
 
   def get_teams
     @teams = current_user.teams
-    # render "api/users/current_user_teams"
-    {work: false}
+    render "api/users/current_teams"
+    # {work: false}
   end
 
   private

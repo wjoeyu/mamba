@@ -1,1 +1,1 @@
-json.extract! @user, :teams
+json.extract! @teams, :team_name
