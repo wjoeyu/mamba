@@ -9,9 +9,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def get_current_user_teams
-    @user = current_user
-    render "api/users/get_current_teams"
+  def get_teams
+    # @user = current_user
+    # render "api/users/current_user_teams"
+    {work: true}
+  end
 
   private
 
