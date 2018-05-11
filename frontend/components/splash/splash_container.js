@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { login, logout } from '../../actions/session_actions';
-import SplashNav from './splash_nav';
+import Splash from './splash';
 import { openModal } from '../../actions/modal_actions';
 
 const mSp = ({ session, entities: { users } }) => {
@@ -21,4 +21,4 @@ const mDp = dispatch => {
 export default connect(
   mSp,
   mDp
-)(SplashNav);
+)(Splash);

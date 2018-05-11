@@ -1,5 +1,5 @@
 import React from 'react';
-import SplashNavContainer from './splash_nav/splash_nav_container';
+import Splash from './splash/splash_container';
 import {
   Route,
   HashRouter
@@ -11,7 +11,7 @@ import Modal from './modal/modal';
 const App = () => (
   <div>
     <Modal />
-    <SplashNavContainer />
+    <Splash />
   </div>
 );
 
