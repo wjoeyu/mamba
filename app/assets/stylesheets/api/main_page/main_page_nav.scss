@@ -1,23 +1,45 @@
 .main-nav {
   height: 40px;
   background: #ffffff;
-  width: 100%;
+  width: auto;
   border: 1px solid red;
+  font-family: Roboto;
 }
 
 .dropdown {
-
-
-}
-
-.dropdown-button {
+  float: right;
+  border: 1px solid var(--light-grey);
+  max-width: 300px;
+  min-width: 250px;
+  width: 250px;
   cursor: pointer;
 }
 
-.dropdown-button:hover .dropdown-list {
+.dropdown-button {
   display: block;
+  cursor: pointer;
+  background: yellow;
 }
 
-// .dropdown-list {
-//   display: none;
-// }
+.dropdown-button:hover + .dropdown-list div{
+  // display: block;
+}
+
+.dropdown-list {
+  display: block;
+  list-style: none;
+}
+
+.dropdown-list div {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  // padding-left: 30px;
+  // display: none;
+}
+
+.dropdown-list div:hover {
+  background: var(--bright-blue);
+  color: white;
+}

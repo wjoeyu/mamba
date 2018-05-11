@@ -13,17 +13,21 @@ export class Dropdown extends React.Component {
   render() {
     const currentTeams = this.props.currentTeams.map((team) => {
       return (
-        <li key={team.id}>{team.team_name}</li>
+        <div key={team.id}>{team.team_name}</div>
       );
     });
 
     return (
       <div className="dropdown">
-        <div className="dropdown-button">Click Me!</div>
-        <ul className="dropdown-list">
+        <div className="dropdown-button">
+          Click Me!
+        </div>
+        <div className="dropdown-list">
           {currentTeams}
-          <li><button onClick={() => this.props.logout().then(() => this.props.history.push('/'))}>Log Out</button></li>
-        </ul>
+        <div>
+          <button onClick={() => this.props.logout().then(() => this.props.history.push('/'))}>Log Out</button>
+        </div>
+        </div>
       </div>
     );
   }
