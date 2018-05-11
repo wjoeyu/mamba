@@ -10,7 +10,7 @@ const MainPage = () => (
   </div>
 );
 
-export default App;
+export default MainPage;
 
 // <MainNavContainer />
 // <SideBarContainer />

@@ -1,7 +1,7 @@
-// import { connect } from 'react-redux';
-// import { logout } from '../../actions/session_actions';
-// import Dropdown from './dropdown';
-// import { openModal, closeModal } from '../../../actions/modal_actions';
+import { connect } from 'react-redux';
+import { logout } from '../../actions/session_actions';
+import Dropdown from './dropdown';
+import { openModal, closeModal } from '../../../actions/modal_actions';
 //
 // const mSp = ({ session, entities: { users } }) => {
 //   return {

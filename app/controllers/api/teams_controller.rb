@@ -11,11 +11,12 @@ class Api::TeamsController < ApplicationController
   end
 
   def index
-    @teams = current_user.teams.all
+    @teams = Team.all
+     render "api/teams/index"
   end
 
   def update
-    @team = current_user.teams.find(params[:id])
+    @team = Team.find(params[:id])
 
     if @team.update(team_params)
       render "api/teams/show"

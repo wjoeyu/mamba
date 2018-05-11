@@ -10,9 +10,10 @@ class Api::UsersController < ApplicationController
   end
 
   def get_teams
+    # debugger
     @teams = current_user.teams
-    render "api/users/current_teams"
-    # {work: false}
+    render "api/teams/index"
+    # render json: {work: false}
   end
 
   private
