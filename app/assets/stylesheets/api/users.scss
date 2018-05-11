@@ -1,3 +1,14 @@
 // Place all the styles related to the api::users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+ --purple: #796eff;
+ --gold: #f2a100;
+ --blue: #008ce3;
+ --dark-slate: #151b26;
+ --dark-grey: #636e79;
+ --light-grey: #e0e6e8;
+ --off-white: #f6f8f9;
+ padding: 0;
+ margin: 0;
+}

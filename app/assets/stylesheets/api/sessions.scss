@@ -7,10 +7,11 @@
     transition: color .25s ease-in-out;
     -moz-transition: color .25s ease-in-out;
     -webkit-transition: color .25s ease-in-out;
-  font-size: 36px;
+  font-size: 54px;
+  font-weight: lighter;
   position: absolute;
-  top: 42px;
-  right: 42px;
+  top: 20px;
+  right: 37px;
   cursor: pointer;
 }
 
@@ -32,7 +33,7 @@
   text-align: left;
   font-family: Raleway;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   color: #646e78;
   margin-bottom: 10px;
 }
@@ -42,7 +43,7 @@
   box-sizing: border-box;
   font-family: 16px;
   font-size: 16px;
-  border: 2px solid #b3d4fc;
+  border: 2px solid #e0e6e8;
   border-radius: 3px;
   padding-top: 14px;
   padding-bottom: 14px;
@@ -111,8 +112,8 @@
     -moz-transition: background .25s ease-in-out;
     -webkit-transition: background .25s ease-in-out;
   border: none;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 17px;
   text-transform: capitalize;
   color: white;
   padding: 15px 24px;

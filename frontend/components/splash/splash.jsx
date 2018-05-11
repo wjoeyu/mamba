@@ -10,9 +10,11 @@ const Splash = ({ currentUser, logout, openModal, signInDemo }) => {
           <button className="demo" onClick={() => signInDemo()}>Demo</button>
         </a>
       </div>
-
-      <h1>Move work forward</h1>
-      <section>Mamba is the easiest way for teams to track their work--and see how behind they are. Progress Tracker is better.</section>
+      <div className="masthead">
+        <a>Move work forward</a>
+        <section>Mamba is the easiest way for teams to track their work—and see how behind they are. <br/>
+        Progress Tracker is better.</section>
+      </div>
     </div>
   );
   const personalGreeting = () => (
