@@ -2,10 +2,12 @@
   display: inline-block;
   height: 40px;
   background: #ffffff;
-  width: auto;
+  width: 100%;
   border-bottom: 1px solid var(--light-grey);
   font-family: Roboto;
   float: right;
+  position: absolute;
+  vertical-align: top;
 }
 
 .dropdown {
