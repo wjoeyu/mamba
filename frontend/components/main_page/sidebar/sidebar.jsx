@@ -28,14 +28,17 @@ export class Sidebar extends React.Component {
     });
 
     return (
-      <div className={this.state.visible ?
-          "sidebar" : "sidebar-hidden"}>
-        <a>m a m b a</a>
-        <div className="sidebar-close-x" onClick={this.toggleVisibility}>&times;</div>
-        <div className="hamburger">&#9776;</div>
-        <div className="sidebar-members">
-          {teamMembers}
+      <div className="sidebar-wrapper">
+        <div className={this.state.visible ?
+            "sidebar" : "sidebar-hidden"}>
+          <a>m a m b a</a>
+          <div className="sidebar-close-x" onClick={this.toggleVisibility}>&times;</div>
+          <div className="sidebar-members">
+            {teamMembers}
+          </div>
         </div>
+        <div className={this.state.visible ?
+            "hamburger-hidden" : "hamburger"} onClick={this.toggleVisibility}>&#9776;</div>
       </div>
     )
   }

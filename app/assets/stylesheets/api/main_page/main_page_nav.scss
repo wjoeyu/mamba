@@ -1,10 +1,10 @@
 .main-nav {
+  display: inline-block;
   height: 40px;
   background: #ffffff;
-  width: 100%;
+  width: auto;
   border-bottom: 1px solid var(--light-grey);
   font-family: Roboto;
-  position: block;
   float: right;
 }
 
@@ -30,6 +30,10 @@
   padding-top: 14px;
   box-sizing: border-box;
   font-weight: 500;
+}
+
+.dropdown-button:hover {
+  color: var(--bright-blue);
 }
 
 .dropdown-hidden {

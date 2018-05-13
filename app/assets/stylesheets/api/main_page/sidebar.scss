@@ -1,13 +1,18 @@
+.sidebar-wrapper {
+  float: left;
+  width: auto;
+}
+
 .sidebar {
-  font-family: Roboto;
-  color: white;
-  background-color: var(--slate);
+  position: fixed;
   height: 100vh;
   width: 240px;
-  position: fixed;
-  top: 0;
+  float: left;
+  font-family: Roboto;
   font-size: 13px;
-  display: flex;
+  color: white;
+  background-color: var(--slate);
+  top: 0;
 }
 
 .sidebar-hidden {
@@ -15,12 +20,12 @@
 }
 
 .sidebar-close-x {
-  font-size: 24px;
   position: absolute;
+  font-size: 24px;
+  color: #9ca6af;
   cursor: pointer;
   top: 8px;
   right: 15px;
-  color: #9ca6af;
 }
 
 .sidebar a {
@@ -44,19 +49,23 @@
 }
 
 .hamburger {
+  display: inline-grid;
   height: 41px;
   width: 40px;
   font-size: 18px;
   border: 1px solid var(--light-grey);
   border-top: none;
   color: #838f98;
-  position: absolute;
   left: 240px;
   text-align: center;
   padding-top: 6px;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
+.hamburger:hover {
+  background: #edf1f2;
+}
 .hamburger-hidden {
   display: none;
 }

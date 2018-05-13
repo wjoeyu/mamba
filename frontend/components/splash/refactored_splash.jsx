@@ -12,7 +12,7 @@ class Splash extends React.Component {
       <div className="splash">
         <div className="splash-nav">
           <a>m a m b a</a>
-          <a className="nav-left">
+          <a className="nav-right">
             <button className="nav-login" onClick={() => this.props.openModal('login')}>Log In</button>
             <button className="demo" onClick={() => this.props.signInDemo().then(() => this.props.history.push('/main'))}>Demo</button>
           </a>
