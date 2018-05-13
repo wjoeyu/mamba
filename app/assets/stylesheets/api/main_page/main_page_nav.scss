@@ -2,32 +2,42 @@
   height: 40px;
   background: #ffffff;
   width: auto;
-  border: 1px solid red;
+  border-bottom: 1px solid var(--light-grey);
   font-family: Roboto;
 }
 
 .dropdown {
+  position: relative;
   float: right;
-  border: 1px solid var(--light-grey);
+  font-size: 13px;
   max-width: 300px;
   min-width: 250px;
   width: 250px;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .dropdown-button {
+  float: right;
+  width: 150px;
   display: block;
   cursor: pointer;
   background: yellow;
+  height: 40px;
+  text-align: right;
+  padding-top: 14px;
+  box-sizing: border-box;
+  font-weight: 500;
 }
 
-.dropdown-button:hover + .dropdown-list div{
-  // display: block;
+.dropdown-hidden {
+  display: none;
 }
 
 .dropdown-list {
   display: block;
-  list-style: none;
+  box-shadow: 0px 2px 6px var(--light-grey);
+  border: 1px solid var(--light-grey);
 }
 
 .dropdown-list div {
@@ -35,11 +45,36 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  // padding-left: 30px;
+  height: 40px;
+  padding-left: 30px;
+  padding-right: 20px;
+  padding-top: 14px;
+  box-sizing: border-box;
   // display: none;
 }
 
+.dropdown-list button {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 40px;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 30px;
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background: none;
+  background-color: white;
+  border: none;
+}
+
 .dropdown-list div:hover {
+  background: var(--bright-blue);
+  color: white;
+}
+
+.dropdown-list button:hover {
   background: var(--bright-blue);
   color: white;
 }
