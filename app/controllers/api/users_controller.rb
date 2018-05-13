@@ -1,4 +1,7 @@
 class Api::UsersController < ApplicationController
+
+  before_action :require_logged_in, except [:create]
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -7,13 +10,6 @@ class Api::UsersController < ApplicationController
     else
       render json: @user.errors.full_messages, status: 422
     end
-  end
-
-  def get_teams
-    # debugger
-    @teams = current_user.teams
-    render "api/users/current_user_teams"
-    # render "api/teams/index"
   end
 
   private

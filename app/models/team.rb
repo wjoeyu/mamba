@@ -7,8 +7,8 @@ class Team < ApplicationRecord
     foreign_key: :team_id,
     primary_key: :id
 
-  has_many :team_members,
+  has_many :members,
     through: :memberships,
-    source: :team_member
+    source: :team_members
 
 end

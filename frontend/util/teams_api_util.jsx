@@ -1,6 +1,13 @@
 export const getUserTeams = () => {
   return $.ajax({
     method: 'GET',
-    url: '/api/users/current_user_teams'
+    url: '/api/teams'
+  });
+};
+
+export const getTeamMembers = (teamId) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/teams/${teamId}/`
   });
 };

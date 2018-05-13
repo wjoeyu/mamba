@@ -7,7 +7,7 @@ export class Dropdown extends React.Component {
     this.state = {
       visible: false,
     };
-    this.toggleVisibility = this.toggleVisibility.bind(this)
+    this.toggleVisibility = this.toggleVisibility.bind(this);
   }
 
   componentDidMount() {

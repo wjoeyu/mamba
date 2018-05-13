@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import Frontpage from './frontpage';
 import MainPage from './main_page/main_page';
+// import { AuthRoute } from '../util/route_util.jsx';
 
 const App = () => (
   <div>
