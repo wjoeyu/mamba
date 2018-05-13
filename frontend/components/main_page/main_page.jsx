@@ -8,15 +8,16 @@ import Modal from '../modal/modal';
 
 import SidebarContainer from './sidebar/sidebar_container';
 import MainNavContainer from './main_nav/main_nav';
+// import MemberIndexContainer from '../team/member_index_container';
 
 const MainPage = () => (
   <div>
-    <MainNavContainer />
+
     <SidebarContainer />
+    <MainNavContainer />
   </div>
 );
 
 export default MainPage;
 
-// <MainNavContainer />
-// <SideBarContainer />
+// <MemberIndexContainer />

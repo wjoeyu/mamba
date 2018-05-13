@@ -10,7 +10,7 @@ export const receiveCurrentTeams = currentTeams => {
   };
 };
 
-export const receieveTeamMembers = teamMembers => {
+export const receiveTeamMembers = teamMembers => {
   return {
     type: RECEIVE_TEAM_MEMBERS,
     teamMembers

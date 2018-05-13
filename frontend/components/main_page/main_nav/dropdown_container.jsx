@@ -3,7 +3,7 @@ import { logout } from '../../../actions/session_actions';
 import Dropdown from './dropdown';
 import { openModal, closeModal } from '../../../actions/modal_actions';
 import { selectCurrentTeams } from '../../../reducers/selectors';
-import { fetchCurrentTeams } from '../../../actions/teams_actions';
+import { fetchCurrentTeams } from '../../../actions/team_actions';
 
 const mSp = (state) => {
   return {
