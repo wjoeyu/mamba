@@ -22,7 +22,7 @@ export class Dropdown extends React.Component {
   render() {
     const currentTeams = this.props.currentTeams.map((team) => {
       return (
-        <div key={team.id}>{team.team_name}</div>
+        <div onClick={() => this.props.history.push(`/team/${team.id}`)} key={team.id}>{team.team_name} </div>
       );
     });
 

@@ -14,7 +14,7 @@ class Splash extends React.Component {
           <a>m a m b a</a>
           <a className="nav-left">
             <button className="nav-login" onClick={() => this.props.openModal('login')}>Log In</button>
-            <button className="demo" onClick={() => this.props.signInDemo().then(() => this.props.history.push('/test'))}>Demo</button>
+            <button className="demo" onClick={() => this.props.signInDemo().then(() => this.props.history.push('/main'))}>Demo</button>
           </a>
         </div>
         <div className="masthead">
