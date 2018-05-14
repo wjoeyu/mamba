@@ -5,7 +5,7 @@ import { createTeam } from '../../actions/team_actions';
 import NewTeamForm from './new_team_form';
 import { closeModal } from '../../actions/modal_actions';
 
-const mSp = ({errors}) => {
+const mSp = ({ errors }) => {
   return {
     errors: errors.team
   };

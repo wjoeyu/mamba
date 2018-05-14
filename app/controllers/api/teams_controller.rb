@@ -2,13 +2,14 @@ class Api::TeamsController < ApplicationController
 
   def create
     @team = Team.new(team_params)
-    debugger
+    # debugger
     if @team.save
       membership = Membership.new({team_member_id: current_user.id, team_id: @team.id})
-      membership.save!
-      render "api/teams/show"
+      if membership.save
+        render "api/teams/show"
+      end
     else
-      render json: @team.errors.full_messages
+      render json: @team.errors.full_messages, status: 422
     end
   end
 

@@ -1,6 +1,8 @@
 class Team < ApplicationRecord
 
-  validates :team_name, presence: true
+  validates_presence_of :team_name, message: " is required."
+
+  # validates :team_name, presence: true
 
   has_many :memberships,
     class_name: "Membership",

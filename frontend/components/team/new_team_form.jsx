@@ -19,12 +19,15 @@ class NewTeamForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const team = Object.assign({}, this.state);
-    this.props.createTeam(team).then(this.props.closeModal).then(() => this.props.history.push("/main"));
+    this.props.createTeam(team).then(
+      () => this.props.closeModal).then(
+        () => this.props.history.push("/main")
+    );
   }
 
   renderErrors() {
     return(
-      <div className="session-errors">
+      <div className="team-errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -40,7 +43,6 @@ class NewTeamForm extends React.Component {
         <div onClick={this.props.closeModal} className="new-team-close-x">&times;</div>
         <form onSubmit={this.handleSubmit} className="new-team-form-box">
           <div className="new-team-form-title">Create Your Workspace</div>
-          {this.renderErrors()}
           <div className="new-team-form">
               <input type="text"
                 value={this.state.team_name}
@@ -48,6 +50,7 @@ class NewTeamForm extends React.Component {
                 className="new-team-input"
                 placeholder="Company or Team Name"
               />
+            {this.renderErrors()}
             <label>WORKSPACE
               <br/>
               NAME</label>
