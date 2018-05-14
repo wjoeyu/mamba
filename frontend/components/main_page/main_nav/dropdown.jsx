@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import AvatarContainer from '../../avatar/avatar_container'
 
 export class Dropdown extends React.Component {
@@ -23,7 +23,9 @@ export class Dropdown extends React.Component {
   render() {
     const currentTeams = this.props.currentTeams.map((team) => {
       return (
-        <div onClick={() => this.props.history.push(`/team/${team.id}`)} key={team.id}>{team.team_name} </div>
+        <div key={team.id}>
+          <Link to={`/team/${team.id}`} className="dropdown-links">{team.team_name}</Link>
+        </div>
       );
     });
     return (
@@ -46,6 +48,3 @@ export class Dropdown extends React.Component {
 }
 
 export default withRouter(Dropdown);
-
-// then(() =>
-//     this.props.history.push('/'))

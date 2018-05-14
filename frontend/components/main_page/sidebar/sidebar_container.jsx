@@ -6,7 +6,6 @@ import { fetchTeamMembers } from '../../../actions/team_actions';
 import { withRouter } from 'react-router-dom';
 
 const mSp = (state, ownProps) => {
-  // debugger
   return {
     teamMembers: selectTeamMembers(state)
   };

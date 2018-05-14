@@ -32,5 +32,3 @@ const Splash = ({ currentUser, logout, openModal, signInDemo }) => {
 
 
 export default withRouter(Splash);
-
-// .then(() => this.history.push('/test'))

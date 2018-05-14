@@ -83,5 +83,3 @@ class SessionForm extends React.Component {
 }
 
 export default withRouter(SessionForm);
-
-// .then(() => history.push(`/teams/${this.props.currentTeams.first.id}`))

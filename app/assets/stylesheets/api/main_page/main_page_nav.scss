@@ -12,16 +12,6 @@
 
 .dropdown {
   font-size: 13px;
-  // position: relative;
-  // float: right;
-  // font-size: 13px;
-  // max-width: 300px;
-  // min-width: 250px;
-  // width: 250px;
-  // cursor: pointer;
-  // margin-right: 20px;
-  // z-index: 2;
-  // border: 1px solid red;
 }
 
 .dropdown-button {
@@ -79,6 +69,11 @@
   // display: none;
 }
 
+.dropdown-links{
+  text-decoration: none;
+  color: black;
+}
+
 .team-index {
   width: 100%;
   white-space: nowrap;
@@ -109,6 +104,11 @@
 }
 
 .dropdown-list div:hover {
+  background: var(--bright-blue);
+  color: white;
+}
+
+.dropdown-list div:hover .dropdown-links{
   background: var(--bright-blue);
   color: white;
 }

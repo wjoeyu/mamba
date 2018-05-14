@@ -15,6 +15,12 @@ export class Sidebar extends React.Component {
     this.props.fetchTeamMembers(this.props.match.params.teamId);
   }
 
+  componentWillReceiveProps(nextProps) {
+   if (this.props.match.params.teamId !== nextProps.match.params.teamId) {
+     this.props.fetchTeamMembers(nextProps.match.params.teamId);
+    }
+  }
+
   toggleVisibility() {
     const currentState = this.state.visible;
     this.setState( {visible: !currentState} );
