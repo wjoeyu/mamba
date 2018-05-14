@@ -19,10 +19,7 @@ class NewTeamForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const team = Object.assign({}, this.state);
-    this.props.createTeam(team).then(
-      () => this.props.closeModal).then(
-        () => this.props.history.push("/main")
-    );
+    this.props.createTeam(team).then(() => this.props.closeModal());
   }
 
   renderErrors() {

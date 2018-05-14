@@ -7,15 +7,14 @@ import {
 import Frontpage from './frontpage';
 import MainPage from './main_page/main_page';
 import Modal from './modal/modal';
-
-// import { AuthRoute } from '../util/route_util.jsx';
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
   <div>
     <Modal />
     <Switch>
-      <Route exact path="/" component={Frontpage} />
-      <Route path="/main" component={MainPage} />
+      <AuthRoute exact path="/" component={Frontpage} />
+      <ProtectedRoute path="/main" component={MainPage} />
       <Route path="/team/:teamId" component={MainPage} />
     </Switch>
   </div>
