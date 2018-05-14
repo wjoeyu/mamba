@@ -24,10 +24,10 @@ class Api::TeamsController < ApplicationController
 
   end
 
-  def get_team_members
-    @members = Team.find(params[:teamId]).members
-    render "api/teams/team_members"
-  end
+  # def get_team_members
+  #   @members = Team.find(params[:teamId]).members
+  #   render "api/teams/team_members"
+  # end
 
   def update
     @team = Team.find(params[:id])

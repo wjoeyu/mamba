@@ -1,4 +1,5 @@
-json.extract! team, :id, :team_name
-json.memberIds do
-  json.array! team.members.map(&:id)
+@team.members.each do |member|
+  json.set! member.id do
+    json.partial! "api/users/user", user: member
+  end
 end

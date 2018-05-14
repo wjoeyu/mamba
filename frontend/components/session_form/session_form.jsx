@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(this.props.closeModal);
+    this.props.processForm(user).then(this.props.fetchCurrentTeams()).then(this.props.closeModal);
   }
 
   renderErrors() {
@@ -83,3 +83,5 @@ class SessionForm extends React.Component {
 }
 
 export default withRouter(SessionForm);
+
+// .then(() => history.push(`/teams/${this.props.currentTeams.first.id}`))

@@ -4,16 +4,18 @@ import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { fetchCurrentTeams } from "../../actions/team_actions";
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = ({ errors, entities }) => {
   return {
     errors: errors.session,
     formType: 'Log in',
+    currentTeams: entities.currentTeams
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  const demo = {email:"demo@mamba.com", password: "demodemo"};
+  // const demo = {email:"demo@mamba.com", password: "demodemo"};
   return {
     processForm: (user) => dispatch(login(user)),
     otherForm: (
@@ -22,7 +24,8 @@ const mapDispatchToProps = dispatch => {
       </button>
     ),
     closeModal: () => dispatch(closeModal()),
-    openModal: modal => dispatch(openModal(modal))
+    openModal: modal => dispatch(openModal(modal)),
+    fetchCurrentTeams: () => dispatch(fetchCurrentTeams())
   };
 };
 

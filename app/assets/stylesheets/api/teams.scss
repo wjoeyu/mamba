@@ -43,7 +43,7 @@
   position: relative;
 }
 
-.new-team-input:active {
+.new-team-input:focus {
 
   border: 1px solid var(--dark-grey);
 
@@ -74,6 +74,14 @@
   width: 144px;
   margin-right: 30px;
   cursor: pointer;
+}
+
+#new-team-submit:hover {
+  background: var(--hover-blue);
+}
+
+#new-team-submit:active {
+  background: #066eaf;
 }
 
 .team-errors {

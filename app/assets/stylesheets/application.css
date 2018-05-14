@@ -15,5 +15,6 @@
  */
 
 
-/* use var(--color_name) to use the colors set as variables below */
- 
+input {
+  outline: none;
+}

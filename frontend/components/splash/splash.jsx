@@ -1,10 +1,6 @@
 import React from 'react';
 import { withRouter, HashRouter } from 'react-router-dom';
 
-// const handleSignIn = () => (
-//   signInDemo().then(() => this.history.push('/test'))
-// )
-
 const Splash = ({ currentUser, logout, openModal, signInDemo }) => {
   const sessionLinks = () => (
     <div className="splash">
