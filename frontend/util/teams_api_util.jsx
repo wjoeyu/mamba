@@ -13,7 +13,7 @@ export const getTeamMembers = (teamId) => {
   });
 };
 
-export const addTeamMembers = (team) => {
+export const addTeamMember = (team) => {
   return $.ajax({
     method: 'PATCH',
     url: `api/teams/${team.id}`,
