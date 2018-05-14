@@ -4,6 +4,8 @@ class Api::TeamsController < ApplicationController
     @team = Team.new(team_params)
 
     if @team.save
+      membership = Membership.new({team_member_id: current_user.id, team_id: @team.id})
+      membership.save!
       render "api/teams/show"
     else
       render json: @team.errors.full_messages

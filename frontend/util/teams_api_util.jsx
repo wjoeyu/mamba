@@ -21,6 +21,13 @@ export const addTeamMember = (team) => {
   });
 };
 
+export const removeTeamMember = (team) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/teams/${team.id}`
+  });
+};
+
 export const getTeam = (teamId) => {
   return $.ajax({
     method: 'GET',
@@ -41,12 +48,5 @@ export const updateTeam = (team) => {
     method: 'PATCH',
     url: `api/teams/${team.id}`,
     data: { team }
-  });
-};
-
-export const removeMember = (teamId) => {
-  return $.ajax({
-    method: 'DELETE',
-    url: `api/teams/${teamId}`
   });
 };

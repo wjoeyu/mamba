@@ -40,7 +40,7 @@ class User < ApplicationRecord
   end
 
   def create_and_join_team
-    team = Team.new({team_name: "#{self.name}'s team"});
+    team = Team.new({team_name: "#{self.name}'s team"})
     team.save!
     membership = Membership.new({team_member_id: self.id, team_id: team.id})
     membership.save!

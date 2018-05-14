@@ -35,6 +35,7 @@ export class Dropdown extends React.Component {
               "dropdown-list" : "dropdown-hidden"}>
             {currentTeams}
             <div>Workplace settings...</div>
+            <div onClick={() => this.props.openModal('new_team_form')}>Create New Workspace</div>
 
             <button onClick={() => this.props.logout().then(() =>
                 this.props.history.push('/'))}>Log Out</button>
