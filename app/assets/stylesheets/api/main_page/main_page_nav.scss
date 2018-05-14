@@ -5,9 +5,9 @@
   width: 100%;
   border-bottom: 1px solid var(--light-grey);
   font-family: Roboto;
-  float: right;
   position: absolute;
   vertical-align: top;
+  right: 0px;
 }
 
 .dropdown {
@@ -32,6 +32,9 @@
   padding-top: 14px;
   box-sizing: border-box;
   font-weight: 500;
+  transition: color .24s ease-in-out;
+  -moz-transition: color .24s ease-in-out;
+  -webkit-transition: color .24s ease-in-out;
 }
 
 .dropdown-button:hover {

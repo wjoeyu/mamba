@@ -1,6 +1,5 @@
 .sidebar-wrapper {
   float: left;
-  width: auto;
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -12,7 +11,6 @@
   display: block;
   height: 100vh;
   width: 240px;
-  float: left;
   font-family: Roboto;
   font-size: 13px;
   color: white;
@@ -21,7 +19,16 @@
 }
 
 .sidebar-hidden {
-  display: none;
+  left: -240px;
+  position: fixed;
+  display: block;
+  height: 100vh;
+  width: 240px;
+  font-family: Roboto;
+  font-size: 13px;
+  color: white;
+  background-color: var(--slate);
+  top: 0;;
 }
 
 .sidebar-close-x {
@@ -54,7 +61,6 @@
 }
 
 .hamburger {
-  display: inline-grid;
   height: 41px;
   width: 40px;
   font-size: 18px;

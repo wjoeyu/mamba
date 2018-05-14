@@ -123,13 +123,13 @@
   border-radius: 3px;
   margin: 50px;
   box-sizing: border-box;
-  -webkit-animation: dropdown .5s;
-   -moz-animation: dropdown .5s;
+  -webkit-animation: dropdown .3s;
+   -moz-animation: dropdown .3s;
 }
 
 @-webkit-keyframes dropdown {
-    from { transform: translate(-58%, -100%);}
-    to   { transform: translate(-58%, 0%);}
+    from { transform: translate(-58%, -100%) scale(2);}
+    to   { transform: translate(-58%, 0%) scale(1);}
 }
 
 @-webkit-keyframes fadein {
