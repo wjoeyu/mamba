@@ -6,10 +6,10 @@
   left: 0;
   background: rgba(21,27,38,.85);
   z-index: 10;
-  -webkit-animation: fadein 1s;
-   -moz-animation: fadein 1s;
+  // -webkit-animation: fadein 1s;
+  //  -moz-animation: fadein 1s;
 }
-
+//sign/login modal
 .modal-child {
   display: block;
   box-shadow: 1px 2px 3px rgba(0,0,0,.24);
@@ -28,8 +28,8 @@
   border-radius: 3px;
   margin: 50px;
   box-sizing: border-box;
-  -webkit-animation: dropdown .4s;
-   -moz-animation: dropdown .4s;
+  -webkit-animation: dropdown .6s;
+   -moz-animation: dropdown .6s;
 }
 
 @-webkit-keyframes dropdown {
@@ -40,4 +40,20 @@
 @-webkit-keyframes fadein {
     from { opacity: .5; }
     to   { opacity: 1;}
+}
+
+//new-team
+.new-team-modal{
+  display: block;
+  box-shadow: 1px 2px 3px rgba(0,0,0,.24);
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translate(-58%, 0%);
+  width: 580px;
+  height: auto;
+  background: #f6f8f9;
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding-bottom: 16px;
 }

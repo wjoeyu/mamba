@@ -45,6 +45,17 @@ class SessionForm extends React.Component {
           <div className="form-type-title">{this.props.formType}</div>
           {this.renderErrors()}
           <div className="login-form">
+            {(this.props.formType === "Sign up") ?
+              (<div>
+                <label>Name</label>
+                <input type="text"
+                  value={this.state.name}
+                  onChange={this.update('name')}
+                  className="login-input"
+                  placeholder="Your Name"
+                  />
+              </div>
+            ) : ""}
             <label>Email Address</label>
               <input type="text"
                   value={this.state.email}
@@ -52,17 +63,6 @@ class SessionForm extends React.Component {
                   className="login-input"
                   placeholder="name@company.com"
               />
-            {(this.props.formType === "Sign up") ?
-              (<div>
-                <label>Name</label>
-                  <input type="text"
-                    value={this.state.name}
-                    onChange={this.update('name')}
-                    className="login-input"
-                    placeholder="Your Name"
-                  />
-              </div>
-              ) : ""}
             <label>Password</label>
             <input type="password"
                   value={this.state.password}

@@ -5,6 +5,7 @@ export const RECEIVE_TEAM_MEMBERS = 'RECEIVE_TEAM_MEMBERS';
 export const RECEIVE_TEAM_MEMBER = 'RECEIVE_TEAM_MEMBER';
 export const RECEIVE_TEAM = 'RECEIVE_TEAM';
 export const RECEIVE_NEW_TEAM = 'RECEIVE_NEW_TEAM';
+export const RECEIVE_TEAM_ERRORS = 'RECEIVE_TEAM_ERRORS';
 
 export const receiveCurrentTeams = currentTeams => {
   return {
@@ -42,7 +43,10 @@ export const receiveNewTeam = newTeam => {
   };
 };
 
-
+export const receiveErrors = errors => ({
+  type: RECEIVE_TEAM_ERRORS,
+  errors
+});
 
 export const fetchCurrentTeams = () => dispatch => (
   APIUtil.getUserTeams().then(payload => (

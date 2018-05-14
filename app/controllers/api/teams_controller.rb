@@ -2,7 +2,7 @@ class Api::TeamsController < ApplicationController
 
   def create
     @team = Team.new(team_params)
-
+    debugger
     if @team.save
       membership = Membership.new({team_member_id: current_user.id, team_id: @team.id})
       membership.save!

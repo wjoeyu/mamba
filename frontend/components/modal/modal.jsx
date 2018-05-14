@@ -10,14 +10,18 @@ function Modal({modal, closeModal}) {
     return null;
   }
   let component;
+  let modalType;
   switch (modal) {
     case 'login':
+      modalType = 'modal-child';
       component = <LoginFormContainer />;
       break;
     case 'signup':
+      modalType = 'modal-child';
       component = <SignupFormContainer />;
       break;
     case 'new_team_form':
+      modalType = 'new-team-modal';
       component = <NewTeamFormContainer />;
       break;
     default:
@@ -25,7 +29,7 @@ function Modal({modal, closeModal}) {
   }
   return (
     <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
+      <div className={modalType} onClick={e => e.stopPropagation()}>
         <div className="modal-content">
           { component }
         </div>

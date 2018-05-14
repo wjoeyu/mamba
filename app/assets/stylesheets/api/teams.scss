@@ -1,14 +1,10 @@
 // Place all the styles related to the Api::teams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.new_team_form {
-  postition: relative;
-  flex-wrap: wrap;
-}
 
 .new-team-form-container {
   font-family: Roboto;
-  width: 540px;
+  width: 580px;
   min-width: 540px;
   flex-shrink: 0;
 }
