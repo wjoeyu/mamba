@@ -26,9 +26,8 @@ class Api::TeamsController < ApplicationController
 
   def destroy
     @team = current_user.teams.find(params[:id])
-    @user = current_user
     membership = Membership.find_by(
-      {team_id: @team.id, team_member_id: @user.id }
+      {team_id: @team.id, team_member_id: current_user.id }
     )
     membership.destroy!
     render "api/teams/destroy"

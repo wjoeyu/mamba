@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { createTeam, fetchCurrentTeams } from '../../actions/team_actions';
 import NewTeamForm from './new_team_form';
 import { closeModal } from '../../actions/modal_actions';

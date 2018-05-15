@@ -51,7 +51,7 @@ export class Dropdown extends React.Component {
             {currentTeams}
             <div>Workplace settings...</div>
             <div onClick={() => this.props.openModal('new_team_form')}>Create New Workspace</div>
-
+            <div onClick={() => this.props.openModal('leave_team_form')}>Remove me from this Workspace</div>
             <button onClick={() => this.props.logout()}>Log Out</button>
           </div>
       </div>

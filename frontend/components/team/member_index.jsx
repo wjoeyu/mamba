@@ -7,7 +7,6 @@ export class MemberIndex extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchTeamMembers(this.props.match.params.teamId);
   }
 

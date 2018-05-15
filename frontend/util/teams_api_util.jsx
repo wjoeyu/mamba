@@ -21,10 +21,10 @@ export const addTeamMember = (team) => {
   });
 };
 
-export const removeTeamMember = (team) => {
+export const removeSelf = (teamId) => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/teams/${team.id}`
+    url: `api/teams/${teamId}`
   });
 };
 

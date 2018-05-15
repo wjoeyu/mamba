@@ -2,7 +2,8 @@ import merge from 'lodash/merge';
 
 import {
   RECEIVE_CURRENT_TEAMS,
-  RECEIVE_NEW_TEAM } from "../actions/team_actions";
+  RECEIVE_NEW_TEAM,
+  REMOVE_TEAM_MEMBER} from "../actions/team_actions";
 
 const teamsReducer = (state = {}, action) => {
   Object.freeze(state);

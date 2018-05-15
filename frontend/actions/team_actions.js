@@ -7,6 +7,7 @@ export const RECEIVE_TEAM = 'RECEIVE_TEAM';
 export const RECEIVE_NEW_TEAM = 'RECEIVE_NEW_TEAM';
 export const RECEIVE_TEAM_ERRORS = 'RECEIVE_TEAM_ERRORS';
 
+
 export const receiveCurrentTeams = currentTeams => {
   return {
     type: RECEIVE_CURRENT_TEAMS,
@@ -66,8 +67,8 @@ export const addTeamMember = (team) => dispatch => (
   ))
 );
 
-export const removeTeamMember = (team) => dispatch => (
-  APIUtil.removeTeamMember(team).then(payload => (
+export const removeSelf = (teamId) => dispatch => (
+  APIUtil.removeSelf(teamId).then(payload => (
     dispatch(receiveNewTeam(payload))
   ))
 );
