@@ -7,13 +7,15 @@ class LeaveTeamForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  //figure out how to route properly first with history.push
+  //redirect is not working properly, it re-directs, but nothing renders because
+  // there are no currentTeams for some reason
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
-    this.props.removeSelf(this.props.match.params.teamId).then((payload) => {
-      // this.props.history.push(`/teams/${payload.newTeam.id}`);
+    this.props.removeSelf(this.props.match.params.teamId).then(({newTeam}) => {
+      // debugger
+      const teamId = newTeam.redirect_team.id;
+      this.props.history.push(`/teams/${teamId}`);
       this.props.closeModal();
     });
   }

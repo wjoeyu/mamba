@@ -24,7 +24,7 @@ function Modal({modal, closeModal}) {
       break;
     case 'new_team_form':
       modalType = 'new-team-modal';
-      component = <Route path="team/:teamId" component = {NewTeamFormContainer} />;
+      component = <Route path="/team/:teamId" component = {NewTeamFormContainer} />;
       break;
     case 'leave_team_form':
       modalType = 'new-team-modal';

@@ -30,6 +30,7 @@ class Api::TeamsController < ApplicationController
       {team_id: @team.id, team_member_id: current_user.id }
     )
     membership.destroy!
+    @redirect_team = current_user.teams[0]
     render "api/teams/destroy"
   end
 

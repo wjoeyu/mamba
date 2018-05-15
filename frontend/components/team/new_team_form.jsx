@@ -21,8 +21,9 @@ class NewTeamForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const team = Object.assign({}, this.state);
-    this.props.createTeam(team).then((payload) => {
-      // this.props.history.push(`/teams/${payload.newTeam.id}`);
+    this.props.createTeam(team).then(({newTeam}) => {
+      const teamId = Object.values(newTeam)[0];
+      this.props.history.push(`/team/${teamId}`);
       this.props.closeModal();
     });
   }
