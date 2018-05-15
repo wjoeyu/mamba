@@ -6,7 +6,7 @@ class Api::TeamsController < ApplicationController
     if @team.save
       membership = Membership.new({team_member_id: current_user.id, team_id: @team.id})
       if membership.save
-        render "api/teams/show"
+        render "api/teams/newnew"
       end
     else
       render json: @team.errors.full_messages, status: 422
@@ -24,10 +24,15 @@ class Api::TeamsController < ApplicationController
 
   end
 
-  # def get_team_members
-  #   @members = Team.find(params[:teamId]).members
-  #   render "api/teams/team_members"
-  # end
+  def destroy
+    @team = current_user.teams.find(params[:id])
+    @user = current_user
+    membership = Membership.find_by(
+      {team_id: @team.id, team_member_id: @user.id }
+    )
+    membership.destroy!
+    render "api/teams/destroy"
+  end
 
   def update
     @team = Team.find(params[:id])

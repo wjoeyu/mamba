@@ -10,6 +10,21 @@
   right: 0px;
 }
 
+.my-tasks-button {
+  display: inline-block;
+  position: relative;
+  float: left;
+  color: black;
+  font-size: 13px;
+  cursor: pointer;
+  margin-left: 70px;
+  margin-top: 13px;
+}
+
+.my-tasks-button:hover {
+  color: var(--light-blue);
+}
+
 .dropdown {
   font-size: 13px;
 }

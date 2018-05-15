@@ -62,7 +62,7 @@
 
 .hamburger {
   height: 41px;
-  width: 40px;
+  width: 41px;
   font-size: 18px;
   border: 1px solid var(--light-grey);
   border-top: none;
@@ -72,6 +72,10 @@
   padding-top: 6px;
   box-sizing: border-box;
   cursor: pointer;
+  display: block;
+  transition: background .24s ease-in-out;
+  -moz-transition: background .24s ease-in-out;
+  -webkit-transition: background .24s ease-in-out;
 }
 
 .hamburger:hover {
