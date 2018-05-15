@@ -9,6 +9,7 @@ export class Dropdown extends React.Component {
       visible: false,
     };
     this.toggleVisibility = this.toggleVisibility.bind(this);
+    this.currentTeamName = this.currentTeamName.bind(this);
   }
 
   componentDidMount() {
@@ -20,18 +21,31 @@ export class Dropdown extends React.Component {
     this.setState( {visible: !currentState} );
   }
 
+  currentTeamName() {
+    const currentTeamArray = Object.values(this.props.currentTeams);
+    for (let i = 0; i< currentTeamArray.length; i++) {
+      if (currentTeamArray[i].id === this.props.match.params.teamId) {
+        return currentTeamArray[i].team_name;
+      } else {
+        return "wat wat";
+      }
+    }
+  }
+
   render() {
-    const currentTeams = this.props.currentTeams.map((team) => {
+    const currentTeams = Object.values(this.props.currentTeams).map((team) => {
       return (
         <div key={team.id}>
           <Link to={`/team/${team.id}`} className="dropdown-links">{team.team_name}</Link>
         </div>
       );
     });
+
+    //need to get currentTeamName to show up
     return (
       <div className="dropdown">
         <div className="dropdown-button" onClick={this.toggleVisibility}>
-          Click Me!
+          <div>{this.currentTeamName()}</div>
           <AvatarContainer />
         </div>
           <div className={this.state.visible ?

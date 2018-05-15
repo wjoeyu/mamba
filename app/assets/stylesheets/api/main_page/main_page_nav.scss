@@ -31,6 +31,10 @@
   -webkit-transition: color .24s ease-in-out;
 }
 
+.dropdown-button div {
+  display: inline-block;
+}
+
 .dropdown-button:hover {
   color: var(--light-blue);
 }

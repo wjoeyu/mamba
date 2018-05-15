@@ -8,7 +8,7 @@ import { fetchCurrentTeams } from '../../../actions/team_actions';
 const mSp = (state) => {
   return {
     currentUser: state.entities.users[state.session.id],
-    currentTeams: selectCurrentTeams(state)
+    currentTeams: state.entities.currentTeams
   };
 };
 
