@@ -5,6 +5,7 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import NewTeamFormContainer from '../team/new_team_form_container';
 import LeaveTeamFormContainer from '../team/leave_team_container';
+import { Route } from 'react-router-dom';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -23,11 +24,11 @@ function Modal({modal, closeModal}) {
       break;
     case 'new_team_form':
       modalType = 'new-team-modal';
-      component = <NewTeamFormContainer />;
+      component = <Route path="team/:teamId" component = {NewTeamFormContainer} />;
       break;
     case 'leave_team_form':
       modalType = 'new-team-modal';
-      component = <LeaveTeamFormContainer />;
+      component = <Route path="/team/:teamId" component = {LeaveTeamFormContainer} />;
       break;
     default:
       return null;
