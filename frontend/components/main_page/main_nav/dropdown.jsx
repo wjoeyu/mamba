@@ -35,9 +35,7 @@ export class Dropdown extends React.Component {
   render() {
     const currentTeams = Object.values(this.props.currentTeams).map((team) => {
       return (
-        <div key={team.id}>
-          <Link to={`/team/${team.id}`} className="dropdown-links">{team.team_name}</Link>
-        </div>
+        <Link to={`/team/${team.id}`} className="dropdown-links">{team.team_name}</Link>
       );
     });
 

@@ -6,7 +6,7 @@ class Api::TeamsController < ApplicationController
     if @team.save
       membership = Membership.new({team_member_id: current_user.id, team_id: @team.id})
       if membership.save
-        render "api/teams/newnew"
+        render "api/teams/show"
       end
     else
       render json: @team.errors.full_messages, status: 422
@@ -20,7 +20,7 @@ class Api::TeamsController < ApplicationController
 
   def show
     @team = current_user.teams.find(params[:id])
-    render "api/teams/show"
+    render "api/teams/members"
 
   end
 

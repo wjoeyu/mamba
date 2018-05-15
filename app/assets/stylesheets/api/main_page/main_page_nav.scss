@@ -90,7 +90,23 @@
 
 .dropdown-links{
   text-decoration: none;
+  display: block;
   color: black;
+  margin-left: 0px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 40px;
+  padding-left: 30px;
+  padding-right: 20px;
+  padding-top: 14px;
+  box-sizing: border-box;
+}
+
+.dropdown-links:hover {
+  color: white;
+  background: var(--bright-blue);
 }
 
 .team-index {

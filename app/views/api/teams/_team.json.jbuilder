@@ -1,5 +1,1 @@
-@team.members.each do |member|
-  json.set! member.id do
-    json.partial! "api/users/user", user: member
-  end
-end
+json.extract! @team, :id, :team_name
