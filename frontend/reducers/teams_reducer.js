@@ -12,6 +12,10 @@ const teamsReducer = (state = {}, action) => {
       return action.currentTeams;
     case RECEIVE_NEW_TEAM:
       return merge({}, state, {[action.newTeam.id]: action.newTeam});
+    case REMOVE_TEAM_MEMBER:
+      let newState = merge({}, state);
+      delete newState[action.teams.left_team.id];
+      return newState;
     default:
       return state;
   }

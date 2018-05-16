@@ -1,4 +1,4 @@
-json.team do
+json.left_team do
   json.extract! @team, :id, :team_name
 end
 

@@ -37,6 +37,18 @@ export const fetchTask = (taskId) => dispatch => (
   ))
 );
 
+export const createTask = (task) => dispatch => (
+  APIUtil.createTask(task).then(payload => (
+    dispatch(receiveTask(payload))
+  ))
+);
+
+export const updateTask = (task) => dispatch => (
+  APIUtil.updateTask(task).then(payload => (
+    dispatch(receiveTask(payload))
+  ))
+);
+
 //double-check this
 export const deleteTask = (taskId) => dispatch => (
   APIUtil.deleteTask(taskId).then(payload => (

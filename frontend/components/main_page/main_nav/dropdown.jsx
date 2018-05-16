@@ -25,12 +25,9 @@ export class Dropdown extends React.Component {
   }
 
   currentTeamName() {
-    const currentTeamArray = Object.values(this.props.currentTeams);
-    for (let i = 0; i< currentTeamArray.length; i++) {
-      if (currentTeamArray[i].id === this.props.match.params.teamId) {
-        return currentTeamArray[i].team_name;
-      } else {
-        return "wat wat";
+    if (Object.values(this.props.currentTeams).length && this.props.match.params.teamId) {
+      if (this.props.currentTeams[this.props.match.params.teamId]) {
+        return this.props.currentTeams[this.props.match.params.teamId].team_name;
       }
     }
   }

@@ -12,10 +12,9 @@ class LeaveTeamForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.removeSelf(this.props.match.params.teamId).then(({newTeam}) => {
-      // debugger
-      const teamId = newTeam.redirect_team.id;
-      this.props.history.push(`/teams/${teamId}`);
+    this.props.removeSelf(this.props.match.params.teamId).then(({teams}) => {
+      const teamId = teams.redirect_team.id;
+      this.props.history.push(`/team/${teamId}`);
       this.props.closeModal();
     });
   }
