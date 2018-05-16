@@ -1,8 +1,8 @@
 .main-nav {
-  // display: inline-block;
   height: 40px;
   background: #ffffff;
   width: 100%;
+  min-width: 255px;
   border-bottom: 1px solid var(--light-grey);
   font-family: Roboto;
   right: 0px;
@@ -10,7 +10,7 @@
 }
 
 .my-tasks-button {
-  display: inline-block;
+  // display: inline-block;
   position: relative;
   float: left;
   color: black;
@@ -29,7 +29,6 @@
 }
 
 .dropdown-button {
-  position: relative;
   float: right;
   width: 150px;
   display: block;
