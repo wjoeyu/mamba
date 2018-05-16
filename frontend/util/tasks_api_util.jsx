@@ -20,9 +20,9 @@ export const createTask = (task) => {
   });
 };
 
-// export const updateTask = (task) => {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: `api/teams/`
-//   })
-// }
+export const updateTask = (task) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `api/teams/${task.id}`
+  });
+};

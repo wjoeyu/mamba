@@ -1,5 +1,8 @@
 class Api::TeamsController < ApplicationController
 
+  before_action :require_logged_in
+
+
   def create
     @team = Team.new(team_params)
     # debugger
