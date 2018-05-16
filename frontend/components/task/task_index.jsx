@@ -52,6 +52,10 @@ export class TaskIndex extends React.Component {
             <div className="add-task-button">Add Task</div>
           </div>
           {taskIndexLinks}
+          task 1 placeholder
+          <br/>
+          task 2 placeholder
+          <br/>
         </div>
       </div>
     );
