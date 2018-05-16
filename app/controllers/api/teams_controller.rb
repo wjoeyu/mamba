@@ -26,12 +26,15 @@ class Api::TeamsController < ApplicationController
 
   def destroy
     @team = current_user.teams.find(params[:id])
-    membership = Membership.find_by(
-      {team_id: @team.id, team_member_id: current_user.id }
-    )
-    membership.destroy!
-    @redirect_team = current_user.teams[0]
-    render "api/teams/destroy"
+    # if current_user.teams.length > 1
+      membership = Membership.find_by(
+        {team_id: @team.id, team_member_id: current_user.id }
+      )
+      membership.destroy!
+      @redirect_team = current_user.teams[0]
+      render "api/teams/destroy"
+    # else
+    #   render json: @team
   end
 
   def update
