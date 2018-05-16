@@ -25,6 +25,10 @@ export const removeTask = taskId => {
   };
 };
 
+export const updateReduxTask = (task) => dispatch => {
+  return dispatch(receiveTask(task));
+};
+
 export const fetchTasks = () => dispatch => (
   APIUtil.getTasks().then(payload => (
     dispatch(receiveTasks(payload))

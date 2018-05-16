@@ -4,7 +4,7 @@ import { fetchTasks, createTask, updateTask } from '../../actions/task_actions';
 
 const mSp = (state) => {
   return {
-    
+    tasks: selectTasks(state);
   };
 };
 
@@ -12,6 +12,7 @@ const mDp = dispatch => {
   return {
     fetchTasks: () => dispatch(fetchTasks()),
     createTask: (task) => dispatch(createTask(task)),
+    updateReduxTask: (task) => dispatch(updateReduxTask(task)),
     updateTask: (task) => dispatch(updateTask(task))
   };
 };

@@ -13,4 +13,10 @@ class Team < ApplicationRecord
     through: :memberships,
     source: :team_members
 
+  has_many :tasks,
+    class_name: "Task",
+    foreign_key: :team_id,
+    primary_key: :id
+
+
 end
