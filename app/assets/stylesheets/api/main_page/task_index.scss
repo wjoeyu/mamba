@@ -1,0 +1,19 @@
+.main-content {
+  display: flex;
+  border: 1px solid red;
+  position: absolute;
+  top: 41px;
+}
+
+.task-index {
+  display: block;
+}
+.main-content-header {
+  display: block;
+}
+.task-index-header {
+  display: block;
+}
+.add-task-button {
+  display: block;
+}

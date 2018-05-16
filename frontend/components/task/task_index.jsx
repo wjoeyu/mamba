@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, withRouter } from 'react-router-dom';
+import TaskFormContainer from './task_form_container';
 
 export class TaskIndex extends React.Component {
   constructor(props) {
@@ -7,21 +8,22 @@ export class TaskIndex extends React.Component {
     this.state = {
       task_name: ''
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount () {
     this.props.fetchTasks();
   }
 
-  update(field) {
+  update() {
     return e => this.setState({
-      [field]: e.currentTarget.value
+      task_name: e.currentTarget.value
     });
   }
 
-  handleSubmit(e) {
+  handleChange() {
     e.preventDefault();
+    this.update();
     const task = Object.assign({}, this.state);
     this.props.updateReduxTask(task);
     // this.props.updateTask(task);
@@ -29,20 +31,28 @@ export class TaskIndex extends React.Component {
 
   render() {
     const { tasks } = this.props;
-      const taskIndexItem tasks.map(task =>
+      const taskIndexLinks = tasks.map(task =>
         // debugger
         // `/team/:teamId/users/:userId/tasks/${task.id}``
-        <Link to=>
+        <Link to={`/team/:teamId/users/:userId/tasks/${task.id}`}
+          component = {TaskFormContainer}>
           <input type="text"
-            value={this.state.task_name}
-            onChange= "this.update('task_name'); this.handleSubmit"
+            value={task.task_name}
+            onChange= {this.handleChange}
             className="task-index-row"
             placeholder="Add a task name"
             />
         </Link>
+      )
     return (
-      <div className="task-index">
-
+      <div className="main-content">
+        <div className="main-content-header">My tasks in current team.</div>
+        <div className="task-index">
+          <div className="task-index-header">
+            <div className="add-task-button">Add Task</div>
+          </div>
+          {taskIndexLinks}
+        </div>
       </div>
     );
   }

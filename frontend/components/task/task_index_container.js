@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import TaskIndex from './task_index';
 import { fetchTasks, createTask, updateTask } from '../../actions/task_actions';
+import { selectTasks } from '../../reducers/selectors.js';
 
 const mSp = (state) => {
   return {
-    tasks: selectTasks(state);
+    tasks: selectTasks(state)
   };
 };
 
