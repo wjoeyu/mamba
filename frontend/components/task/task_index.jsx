@@ -47,15 +47,17 @@ export class TaskIndex extends React.Component {
     return (
       <div className="main-content">
         <div className="main-content-header">My tasks in current team.</div>
-        <div className="task-index">
-          <div className="task-index-header">
-            <div className="add-task-button">Add Task</div>
+        <div className="task-wrapper">
+          <div className="task-index">
+            <div className="task-index-header">
+              <div className="add-task-button">Add Task</div>
+            </div>
+            {taskIndexLinks}
+            task 1 placeholder
+            <br/>
+            task 2 placeholder
+            <br/>
           </div>
-          {taskIndexLinks}
-          task 1 placeholder
-          <br/>
-          task 2 placeholder
-          <br/>
         </div>
       </div>
     );
