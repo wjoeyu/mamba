@@ -15,11 +15,11 @@
   color: white;
   background-color: var(--slate);
   top: 0;
-  -webkit-animation: slide-in-left .24s;
-   -moz-animation: slide-in-left .24s;
+  -webkit-animation: slide-in-right .32s;
+   -moz-animation: slide-in-right .32s;
 }
 
-@-webkit-keyframes slide-in-left {
+@-webkit-keyframes slide-in-right {
     from { transform: translate(-100%, 0%);}
     to   { transform: translate(0%, 0%);}
 }

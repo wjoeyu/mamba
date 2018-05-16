@@ -23,6 +23,14 @@ export const createTask = (task) => {
 export const updateTask = (task) => {
   return $.ajax({
     method: 'PATCH',
-    url: `api/teams/${task.id}`
+    url: `api/teams/${task.id}`,
+    data: { task }
+  });
+};
+
+export const deleteTask = (taskId) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/tasks/${taskId}`
   });
 };
