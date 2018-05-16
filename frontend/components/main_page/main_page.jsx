@@ -10,7 +10,7 @@ import MainNav from './main_nav/main_nav';
 // import MemberIndexContainer from '../team/member_index_container';
 
 const MainPage = () => (
-  <div>
+  <div className="main-page">
     <SidebarContainer />
     <MainNav />
   </div>

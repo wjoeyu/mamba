@@ -1,13 +1,12 @@
 .main-nav {
-  display: inline-block;
+  // display: inline-block;
   height: 40px;
   background: #ffffff;
   width: 100%;
   border-bottom: 1px solid var(--light-grey);
   font-family: Roboto;
-  position: absolute;
-  vertical-align: top;
   right: 0px;
+  float: right;
 }
 
 .my-tasks-button {
@@ -17,7 +16,7 @@
   color: black;
   font-size: 13px;
   cursor: pointer;
-  margin-left: 70px;
+  margin-left: 26px;
   margin-top: 13px;
 }
 

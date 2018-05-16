@@ -18,6 +18,10 @@ class User < ApplicationRecord
     through: :memberships,
     source: :teams
 
+  has_many :tasks,
+    class_name: "Task",
+    foreign_key: :assignee_id,
+    primary_key: :id  
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
