@@ -128,6 +128,25 @@
   padding: 0px 15px;
   padding-top: 11px;
   box-sizing: border-box;
+  transition: color .24s ease-in-out;
+    -moz-transition: color .24s ease-in-out;
+    -webkit-transition: color .24s ease-in-out;
+  transition: border-color .24s ease-in-out;
+    -moz-transition: border-color .24s ease-in-out;
+    -webkit-transition: border-color .24s ease-in-out;
+  transition: background-color .24s ease-in-out;
+    -moz-transition: background-color .24s ease-in-out;
+    -webkit-transition: background-color .24s ease-in-out;
+}
+
+.leave-team-cancel:hover {
+  border-color: #646f79;
+  background-color: #f6f8f9;
+  color: #222b37;
+}
+
+.leave-team-cancel:active {
+  background-color: #e4edf5;
 }
 
 .team-errors {
