@@ -12,19 +12,19 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import TaskIndexContainer from './task/task_index_container';
 import TaskFormContainer from './task/task_form_container';
 
-const App = () => (
-  <div>
-    <Modal />
-    <Switch>
-      <AuthRoute exact path="/" component={Frontpage} />
-      <ProtectedRoute path="/main" component={MainPage} />
+const App = () => {
+  console.log('asdfasdadsf');
+  return (
+    <div>
+      <Modal />
+      <Switch>
+        <AuthRoute exact path="/" component={Frontpage} />
+        <ProtectedRoute path="/main" component={MainPage} />
+      </Switch>
       <ProtectedRoute path="/team/:teamId" component={MainPage} />
-      <ProtectedRoute path="/team/:teamId" component={TaskIndexContainer} />
-      <ProtectedRoute path="/team/:teamId/users/:userId" component={TaskIndexContainer} />
-      <ProtectedRoute path="/team/:teamId/users/:userId/tasks/:taskId" component={TaskFormContainer} />
-    </Switch>
-  </div>
-);
+    </div>
+  );
+};
 
 export default App;
 

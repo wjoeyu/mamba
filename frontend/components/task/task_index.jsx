@@ -7,11 +7,13 @@ export class TaskIndex extends React.Component {
     super(props);
     this.timeout = null;
     this.currentTeamName = this.currentTeamName.bind(this);
+    this.currentTeamMember = this.currentTeamMember.bind(this);
   }
 
   componentDidMount () {
     this.props.fetchTeamTasks(this.props.match.params.teamId);
     this.props.fetchTeam(this.props.match.params.teamId);
+    this.props.fetchTeamMembers(this.props.match.params.teamId);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -23,13 +25,13 @@ export class TaskIndex extends React.Component {
   update(taskId,field) {
     return (e) => {
       this.props.updateReduxTask({id: [taskId], [field]: e.currentTarget.value});
-      const toBePersisted = e.currentTarget.value
+      const toBePersisted = e.currentTarget.value;
       if (this.timeout) {
         clearTimeout(this.timeout);
       }
         this.timeout = setTimeout(()=> {
           this.props.updateTask({id: [taskId], [field]: toBePersisted});
-        }, 1500);
+        }, 200);
       };
   }
 
@@ -43,12 +45,20 @@ export class TaskIndex extends React.Component {
     }
   }
 
+  currentTeamMember() {
+    if (this.props.users && this.props.match.params.userId) {
+      if (this.props.users[this.props.match.params.userId]) {
+        return (`${this.props.users[this.props.match.params.userId].name}'s`);
+      }
+    } else {
+      return ("My");
+    }
+
+  }
+
   render() {
-    // debugger
     const { tasks } = this.props;
     const taskIndexLinks = tasks.map(task =>
-        // debugger
-        // `/team/:teamId/users/:userId/tasks/${task.id}``
       <div className="task-index-item-wrapper">
         <Link className="index-link"to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
         component = {TaskFormContainer}>
@@ -71,7 +81,7 @@ export class TaskIndex extends React.Component {
 
     return (
       <div className="main-content">
-        <div className="main-content-header">My tasks in {this.currentTeamName()}</div>
+        <div className="main-content-header">{this.currentTeamMember()} tasks in {this.currentTeamName()}</div>
         <div className="task-wrapper">
           <div className="task-index">
             <div className="task-index-header">

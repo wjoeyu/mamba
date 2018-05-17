@@ -40,7 +40,7 @@ export class Sidebar extends React.Component {
       <div className="sidebar-wrapper">
         <div className={this.state.visible ?
             "sidebar" : "sidebar-hidden"}>
-          <a>m a m b a</a>
+          <span>m a m b a</span>
           <div className="sidebar-close-x" onClick={this.toggleVisibility}>&times;</div>
           <div className="sidebar-members">
             {teamMembers}
