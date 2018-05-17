@@ -9,7 +9,8 @@ const mSp = (state) => {
   return {
     tasks: selectTasks(state),
     currentTeams: state.entities.currentTeams,
-    users: state.entities.users
+    users: state.entities.users,
+    currentUser: state.entities.users[state.session.id]
   };
 };
 

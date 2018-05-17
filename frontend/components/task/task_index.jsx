@@ -46,12 +46,14 @@ export class TaskIndex extends React.Component {
   }
 
   currentTeamMember() {
-    if (this.props.users && this.props.match.params.userId) {
-      if (this.props.users[this.props.match.params.userId]) {
+    if (this.props.match.params.userId) {
+      if (this.props.users[this.props.match.params.userId] === this.props.currentUser) {
+        return ("My");
+      } else {
         return (`${this.props.users[this.props.match.params.userId].name}'s`);
       }
     } else {
-      return ("My");
+      return ("Team");
     }
 
   }
