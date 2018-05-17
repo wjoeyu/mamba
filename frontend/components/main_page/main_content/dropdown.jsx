@@ -16,7 +16,9 @@ export class Dropdown extends React.Component {
   componentDidMount() {
     this.props.fetchCurrentTeams().then(({currentTeams}) =>  {
       const teamId = Object.keys(currentTeams)[0];
-      this.props.history.push(`/team/${teamId}`);
+      if (this.props.location.pathname === '/main') {
+        this.props.history.push(`/team/${teamId}`);
+      }
   });
   }
 

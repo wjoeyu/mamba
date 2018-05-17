@@ -32,7 +32,7 @@ export const createTask = (task) => {
 export const updateTask = (task) => {
   return $.ajax({
     method: 'PATCH',
-    url: `api/teams/${task.id}`,
+    url: `api/tasks/${task.id}`,
     data: { task }
   });
 };

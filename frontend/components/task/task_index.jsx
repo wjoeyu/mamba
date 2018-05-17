@@ -5,10 +5,7 @@ import TaskFormContainer from './task_form_container';
 export class TaskIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      task_name: ''
-    };
-    this.handleChange = this.handleChange.bind(this);
+    this.timeout = null;
     this.currentTeamName = this.currentTeamName.bind(this);
   }
 
@@ -23,19 +20,20 @@ export class TaskIndex extends React.Component {
    }
  }
 
-  update() {
-    return e => this.setState({
-      task_name: e.currentTarget.value
-    });
+  update(taskId,field) {
+    return (e) => {
+      this.props.updateReduxTask({id: [taskId], [field]: e.currentTarget.value});
+      const toBePersisted = e.currentTarget.value
+      if (this.timeout) {
+        clearTimeout(this.timeout);
+      }
+        this.timeout = setTimeout(()=> {
+          this.props.updateTask({id: [taskId], [field]: toBePersisted});
+        }, 1500);
+      };
   }
 
-  handleChange() {
-    e.preventDefault();
-    this.update();
-    const task = Object.assign({}, this.state);
-    this.props.updateReduxTask(task);
-    // this.props.updateTask(task);
-  }
+
 
   currentTeamName() {
     if (Object.values(this.props.currentTeams).length && this.props.match.params.teamId) {
@@ -63,7 +61,7 @@ export class TaskIndex extends React.Component {
         </div>
         <input type="text"
           value={task.task_name}
-          onChange= {this.handleChange}
+          onChange= {this.update(task.id,'task_name')}
           className="task-index-row-name-inputs"
           placeholder="Add a task name"
           />
