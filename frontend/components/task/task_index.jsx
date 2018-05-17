@@ -12,8 +12,15 @@ export class TaskIndex extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchTasks();
+    debugger
+    this.props.fetchTeamTasks(this.props.match.params.teamId);
   }
+
+  componentWillReceiveProps(nextProps) {
+   if (this.props.match.params.teamId !== nextProps.match.params.teamId) {
+     this.props.fetchTeamTasks(nextProps.match.params.teamId);
+   }
+ }
 
   update() {
     return e => this.setState({
@@ -30,11 +37,12 @@ export class TaskIndex extends React.Component {
   }
 
   render() {
+    // debugger
     const { tasks } = this.props;
       const taskIndexLinks = tasks.map(task =>
         // debugger
         // `/team/:teamId/users/:userId/tasks/${task.id}``
-        <Link to={`/team/:teamId/users/:userId/tasks/${task.id}`}
+        <Link to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
           component = {TaskFormContainer}>
           <input type="text"
             value={task.task_name}
@@ -53,10 +61,6 @@ export class TaskIndex extends React.Component {
               <div className="add-task-button">Add Task</div>
             </div>
             {taskIndexLinks}
-            task 1 placeholder
-            <br/>
-            task 2 placeholder
-            <br/>
           </div>
         </div>
       </div>

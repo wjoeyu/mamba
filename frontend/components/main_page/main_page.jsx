@@ -6,13 +6,13 @@ import {
 import Modal from '../modal/modal';
 
 import SidebarContainer from './sidebar/sidebar_container';
-import MainNav from './main_nav/main_nav';
+import MainContent from './main_content/main_content';
 // import MemberIndexContainer from '../team/member_index_container';
 
 const MainPage = () => (
   <div className="main-page">
     <SidebarContainer />
-    <MainNav />
+    <MainContent />
   </div>
 );
 

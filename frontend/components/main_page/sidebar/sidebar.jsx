@@ -46,7 +46,7 @@ export class Sidebar extends React.Component {
         <div className={this.state.visible ?
             "hamburger-hidden" : "hamburger"} onClick={this.toggleVisibility}>&#9776;</div>
       </div>
-    )
+    );
   }
 }
 

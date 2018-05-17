@@ -3,8 +3,11 @@ class Api::TasksController < ApplicationController
   before_action :require_logged_in
 
   def index
-    # @tasks = Team.find(task_params[:team_id]).tasks
-    @tasks = Task.find_by({team_id: task_params[:team_id], assignee_id: params[:id]})
+    if task_params[:team_id]
+      @tasks = Team.find(task_params[:team_id]).tasks
+    elsif task_params[:assignee_id]
+      @tasks = User.find(task_params[:assignee_id]).tasks
+    end
     render 'api/tasks/index'
   end
 

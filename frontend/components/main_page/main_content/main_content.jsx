@@ -2,7 +2,7 @@ import React from 'react';
 import DropdownContainer from './dropdown_container';
 import TaskIndexContainer from '../../task/task_index_container';
 
-const MainNav = () => {
+const MainContent = () => {
   return (
     <div className="main-nav">
       <div className="my-tasks-button">My Tasks</div>
@@ -12,4 +12,4 @@ const MainNav = () => {
   )
 };
 
-export default MainNav;
+export default MainContent;

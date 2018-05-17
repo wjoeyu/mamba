@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import { getUserTeams } from "./util/teams_api_util";
+import { fetchTasks } from "./util/tasks_api_util";
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -25,5 +26,3 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store}/>, root);
 
 });
-
-window.getUserTeams = getUserTeams;

@@ -29,8 +29,14 @@ export const updateReduxTask = (task) => dispatch => {
   return dispatch(receiveTask(task));
 };
 
-export const fetchTasks = () => dispatch => (
-  APIUtil.getTasks().then(payload => (
+export const fetchTeamTasks = (teamId) => dispatch => (
+  APIUtil.getTeamTasks(teamId).then(payload => (
+    dispatch(receiveTasks(payload))
+  ))
+);
+
+export const fetchUserTasks = (assigneeId) => dispatch => (
+  APIUtil.getUserTasks(assigneeId).then(payload => (
     dispatch(receiveTasks(payload))
   ))
 );

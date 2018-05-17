@@ -35,7 +35,7 @@ export class Dropdown extends React.Component {
   render() {
     const currentTeams = Object.values(this.props.currentTeams).map((team) => {
       return (
-        <Link to={`/team/${team.id}`} className="dropdown-links">{team.team_name}</Link>
+        <Link to={`/team/${team.id}`} key={team.id} className="dropdown-links">{team.team_name}</Link>
       );
     });
 
@@ -43,7 +43,7 @@ export class Dropdown extends React.Component {
     return (
       <div className="dropdown">
         <div className="dropdown-button" onClick={this.toggleVisibility}>
-          <span className="current-team">{this.currentTeamName()}</span>
+          <div className="current-team">{this.currentTeamName()}</div>
           <AvatarContainer />
         </div>
           <div className={this.state.visible ?
