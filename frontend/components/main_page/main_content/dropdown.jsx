@@ -10,6 +10,7 @@ export class Dropdown extends React.Component {
     };
     this.toggleVisibility = this.toggleVisibility.bind(this);
     this.currentTeamName = this.currentTeamName.bind(this);
+    this.myTaskButton = this.myTaskButton.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +33,14 @@ export class Dropdown extends React.Component {
     }
   }
 
+  myTaskButton () {
+    return(
+      <div>
+        <Link className="my-tasks-button" to={`/team/${this.props.match.params.teamId}/users/${this.props.currentUser.id}`}>My Tasks</Link>
+      </div>
+    );
+  }
+
   render() {
     const currentTeams = Object.values(this.props.currentTeams).map((team) => {
       return (
@@ -42,6 +51,7 @@ export class Dropdown extends React.Component {
     //need to get currentTeamName to show up
     return (
       <div className="dropdown">
+        {this.myTaskButton()}
         <div className="dropdown-button" onClick={this.toggleVisibility}>
           <div className="current-team">{this.currentTeamName()}</div>
           <AvatarContainer />

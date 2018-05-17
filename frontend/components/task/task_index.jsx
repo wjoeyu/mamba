@@ -9,11 +9,12 @@ export class TaskIndex extends React.Component {
       task_name: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.currentTeamName = this.currentTeamName.bind(this);
   }
 
   componentDidMount () {
-    debugger
     this.props.fetchTeamTasks(this.props.match.params.teamId);
+    this.props.fetchTeam(this.props.match.params.teamId);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -36,34 +37,43 @@ export class TaskIndex extends React.Component {
     // this.props.updateTask(task);
   }
 
+  currentTeamName() {
+    if (Object.values(this.props.currentTeams).length && this.props.match.params.teamId) {
+      if (this.props.currentTeams[this.props.match.params.teamId]) {
+        return this.props.currentTeams[this.props.match.params.teamId].team_name;
+      }
+    }
+  }
+
   render() {
     // debugger
     const { tasks } = this.props;
-      const taskIndexLinks = tasks.map(task =>
+    const taskIndexLinks = tasks.map(task =>
         // debugger
         // `/team/:teamId/users/:userId/tasks/${task.id}``
-        <div className="task-index-item-wrapper">
-          <Link className="index-link"to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
-          component = {TaskFormContainer}>
-          <div className ="for-line-under-circle">
-            <div className="check-circle">
-              <svg className="task-index-check" viewBox="0 0 32 32">
-                <polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615 "/>
-              </svg>
-            </div>
+      <div className="task-index-item-wrapper">
+        <Link className="index-link"to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
+        component = {TaskFormContainer}>
+        <div className ="for-line-under-circle">
+          <div className="check-circle">
+            <svg className="task-index-check" viewBox="0 0 32 32">
+              <polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615 "/>
+            </svg>
           </div>
-          <input type="text"
-            value={task.task_name}
-            onChange= {this.handleChange}
-            className="task-index-row-name-inputs"
-            placeholder="Add a task name"
-            />
-          </Link>
         </div>
-      )
+        <input type="text"
+          value={task.task_name}
+          onChange= {this.handleChange}
+          className="task-index-row-name-inputs"
+          placeholder="Add a task name"
+          />
+        </Link>
+      </div>
+    );
+
     return (
       <div className="main-content">
-        <div className="main-content-header">My tasks in current team.</div>
+        <div className="main-content-header">My tasks in {this.currentTeamName()}</div>
         <div className="task-wrapper">
           <div className="task-index">
             <div className="task-index-header">

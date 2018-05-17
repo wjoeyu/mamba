@@ -57,6 +57,11 @@ export const receiveErrors = errors => ({
   errors
 });
 
+export const fetchTeam = (teamId) => dispatch => (
+  APIUtil.getTeam(teamId).then(payload => (
+    dispatch(receiveTeam(payload))
+  ))
+);
 
 export const fetchCurrentTeams = () => dispatch => (
   APIUtil.getUserTeams().then(payload => (

@@ -23,8 +23,13 @@ class Api::TeamsController < ApplicationController
 
   def show
     @team = current_user.teams.find(params[:id])
-    render "api/teams/members"
+    render "api/teams/show"
 
+  end
+
+  def get_members
+    @team = current_user.teams.find(params[:id])
+    render "api/teams/members"
   end
 
   def destroy

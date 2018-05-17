@@ -5,11 +5,10 @@ import TaskIndexContainer from '../../task/task_index_container';
 const MainContent = () => {
   return (
     <div className="main-nav">
-      <div className="my-tasks-button">My Tasks</div>
       <DropdownContainer/>
       <TaskIndexContainer />
     </div>
-  )
+  );
 };
 
 export default MainContent;

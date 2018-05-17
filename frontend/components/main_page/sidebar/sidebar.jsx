@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 export class Sidebar extends React.Component {
   constructor(props) {
@@ -29,7 +29,10 @@ export class Sidebar extends React.Component {
   render() {
     const teamMembers = this.props.teamMembers.map((member) => {
       return (
-        <div key={member.id}>{member.name}</div>
+        <div className="ind-links">
+          <Link  to={`/team/${this.props.match.params.teamId}/users/${member.id}`} key={member.id}>{member.name}
+          </Link>
+        </div>
       );
     });
 

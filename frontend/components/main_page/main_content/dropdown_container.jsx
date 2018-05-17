@@ -24,5 +24,3 @@ export default connect(
   mSp,
   mDp
 )(Dropdown);
-
-// session, entities: { users, currentTeams }

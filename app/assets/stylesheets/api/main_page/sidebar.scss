@@ -91,6 +91,11 @@
   display: none;
 }
 
-.sidebar-members div {
+.ind-links {
+  display: block;
   cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-family: Roboto;
+  font-size: 13px;
 }

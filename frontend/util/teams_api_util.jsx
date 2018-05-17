@@ -9,7 +9,7 @@ export const getUserTeams = () => {
 export const getTeamMembers = (teamId) => {
   return $.ajax({
     method: 'GET',
-    url: `api/teams/${teamId}/`
+    url: `api/teams/${teamId}/get_members`
   });
 };
 
