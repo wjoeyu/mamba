@@ -42,15 +42,24 @@ export class TaskIndex extends React.Component {
       const taskIndexLinks = tasks.map(task =>
         // debugger
         // `/team/:teamId/users/:userId/tasks/${task.id}``
-        <Link to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
+        <div className="task-index-item-wrapper">
+          <Link className="index-link"to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
           component = {TaskFormContainer}>
+          <div className ="for-line-under-circle">
+            <div className="check-circle">
+              <svg className="task-index-check" viewBox="0 0 32 32">
+                <polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615 "/>
+              </svg>
+            </div>
+          </div>
           <input type="text"
             value={task.task_name}
             onChange= {this.handleChange}
-            className="task-index-row"
+            className="task-index-row-name-inputs"
             placeholder="Add a task name"
             />
-        </Link>
+          </Link>
+        </div>
       )
     return (
       <div className="main-content">
