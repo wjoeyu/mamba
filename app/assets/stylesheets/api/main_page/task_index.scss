@@ -53,14 +53,13 @@
 
 .task-index {
   position: relative;
-  display: block;
+  display: flex;
   flex-direction: column;
   border: 1px solid blue;
-  width: 950%;
+  width: 100%;
   max-width: 1000px;
   margin-top: 14px;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: space-between;
   box-shadow: 0px 2px 2px rgba(100, 111, 121, .25);
   border-radius: 3px;
 }
@@ -98,9 +97,10 @@
   padding-bottom: 9px;
 }
 
-.check-circle:hover {
-  color: #25e8c8;
-}
+// .check-circle:hover {
+//   color: #25e8c8;
+//   fill:
+// }
 
 .task-index-check {
   height: 12px;
