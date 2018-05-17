@@ -43,7 +43,7 @@ export class Dropdown extends React.Component {
     return (
       <div className="dropdown">
         <div className="dropdown-button" onClick={this.toggleVisibility}>
-          <div className="team-name">{this.currentTeamName()}</div>
+          <span className="current-team">{this.currentTeamName()}</span>
           <AvatarContainer />
         </div>
           <div className={this.state.visible ?

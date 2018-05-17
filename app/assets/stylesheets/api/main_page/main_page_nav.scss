@@ -2,7 +2,7 @@
   height: 40px;
   background: #ffffff;
   width: 100%;
-  min-width: 255px;
+  min-width: 350px;
   border-bottom: 1px solid var(--light-grey);
   font-family: Roboto;
   right: 0px;
@@ -10,6 +10,9 @@
   z-index: 3;
   display: block;
   height: 100%;
+  white-space: nowrap;
+  overflow: ellipsis;
+  // flex-shrink: 0;
   -webkit-animation: slide-down .5s;
    -moz-animation: slide-down .5s;
 }
@@ -40,8 +43,8 @@
 
 .dropdown-button {
   float: right;
-  width: 150px;
-  display: block;
+  width: 200px;
+  display: inline-block;
   cursor: pointer;
   height: 40px;
   text-align: right;
@@ -52,6 +55,13 @@
   transition: color .24s ease-in-out;
   -moz-transition: color .24s ease-in-out;
   -webkit-transition: color .24s ease-in-out;
+}
+
+.current-team {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 150px;
 }
 
 .dropdown-button div {
@@ -157,8 +167,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 110px;
-  top: 3px;
+  max-width: 130px;
 }
 
 .dropdown-list div:hover {
