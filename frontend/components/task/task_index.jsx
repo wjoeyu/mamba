@@ -104,7 +104,8 @@ export class TaskIndex extends React.Component {
     const taskIndexLinks = tasks.map(task =>
       <div className="task-index-item-wrapper">
         <Link className="index-link"
-          to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}>
+          to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
+          component = {TaskFormContainer}>
           <div className ="for-line-under-circle">
             <div className={task.completed ? "checked-circle" : "check-circle"} onClick={()=>this.completeTask(task.id, task.completed)}>
               <svg className={task.completed ? "checked-task-index-check" : "task-index-check"} viewBox="0 0 32 32">
@@ -133,7 +134,6 @@ export class TaskIndex extends React.Component {
             {taskIndexLinks}
           </div>
         </div>
-        <TaskFormContainer />
       </div>
     );
   }
@@ -141,3 +141,5 @@ export class TaskIndex extends React.Component {
 }
 
 export default withRouter(TaskIndex);
+
+// <Route path="/team/:teamId/users/:userId/tasks/:taskId" component={TaskFormContainer} />

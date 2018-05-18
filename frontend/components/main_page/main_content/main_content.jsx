@@ -8,6 +8,7 @@ const MainContent = () => {
   return (
     <div className="main-nav">
       <DropdownContainer/>
+      <Route path="/team/:teamId/users/:userId/tasks/:taskId" component={TaskFormContainer} />
       <Route path="/team/:teamId/users/:userId" component={TaskIndexContainer} />
       <Route exact path="/team/:teamId" component={TaskIndexContainer} />
     </div>
@@ -15,8 +16,3 @@ const MainContent = () => {
 };
 
 export default MainContent;
-
-// <Route path="/team/:teamId/users/:userId/tasks/:taskId" component={TaskFormContainer} />
-
-
-// <Route path="/team/:teamId/users/:userId/tasks/:taskId" component={TaskFormContainer} />
