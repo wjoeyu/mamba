@@ -61,9 +61,10 @@ export class Dropdown extends React.Component {
           <div className={this.state.visible ?
               "dropdown-list" : "dropdown-hidden"}>
             {currentTeams}
-            <div>Workplace settings...</div>
-            <div onClick={() => this.props.openModal('new_team_form')}>Create New Workspace</div>
-            <div onClick={() => this.props.openModal('leave_team_form')}>Remove me from this Workspace</div>
+            <div id="dropdown-line"></div>
+            <div className="workspace-links" onClick={() => this.props.openModal('new_team_form')}>Create New Workspace</div>
+            <div className="workspace-links" onClick={() => this.props.openModal('leave_team_form')}>Remove me from this Workspace</div>
+            <div id="dropdown-line"></div>
             <button onClick={() => this.props.logout()}>Log Out</button>
           </div>
       </div>

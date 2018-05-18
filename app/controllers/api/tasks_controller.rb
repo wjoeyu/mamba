@@ -5,10 +5,14 @@ class Api::TasksController < ApplicationController
   def index
     if task_params[:team_id]
       @tasks = Team.find(task_params[:team_id]).tasks
-    elsif task_params[:assignee_id]
-      @tasks = User.find(task_params[:assignee_id]).tasks
     end
     render 'api/tasks/index'
+  end
+
+  def get_user_tasks
+    # debugger
+    @tasks = Team.find(params[:team_id]).members.find(params[:user_id]).tasks
+    render 'api/tasks/user_tasks'
   end
 
   def create

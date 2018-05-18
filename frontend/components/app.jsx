@@ -13,7 +13,6 @@ import TaskIndexContainer from './task/task_index_container';
 import TaskFormContainer from './task/task_form_container';
 
 const App = () => {
-  console.log('asdfasdadsf');
   return (
     <div>
       <Modal />

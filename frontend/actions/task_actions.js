@@ -35,8 +35,8 @@ export const fetchTeamTasks = (teamId) => dispatch => (
   ))
 );
 
-export const fetchUserTasks = (assigneeId) => dispatch => (
-  APIUtil.getUserTasks(assigneeId).then(payload => (
+export const fetchUserTasks = (assigneeId, teamId) => dispatch => (
+  APIUtil.getUserTasks(assigneeId, teamId).then(payload => (
     dispatch(receiveTasks(payload))
   ))
 );

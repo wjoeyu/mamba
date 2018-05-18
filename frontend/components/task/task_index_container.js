@@ -1,6 +1,12 @@
 import { connect } from 'react-redux';
 import TaskIndex from './task_index';
-import { fetchTeamTasks, createTask, updateTask, updateReduxTask } from '../../actions/task_actions';
+import {
+  fetchUserTasks,
+  fetchTeamTasks,
+  createTask,
+  updateTask,
+  updateReduxTask
+} from '../../actions/task_actions';
 import { fetchTeam, fetchTeamMembers } from '../../actions/team_actions';
 import { selectTasks } from '../../reducers/selectors.js';
 // import { withRouter } from 'react-router-dom';
@@ -16,6 +22,7 @@ const mSp = (state) => {
 
 const mDp = dispatch => {
   return {
+    fetchUserTasks: (assigneeId, teamId) => dispatch(fetchUserTasks(assigneeId, teamId)),
     fetchTeamTasks: (teamId) => dispatch(fetchTeamTasks(teamId)),
     createTask: (task) => dispatch(createTask(task)),
     updateReduxTask: (task) => dispatch(updateReduxTask(task)),

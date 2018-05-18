@@ -11,16 +11,27 @@ export class TaskIndex extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchTeamTasks(this.props.match.params.teamId);
+    if (this.props.match.params.userId) {
+      this.props.fetchUserTasks(this.props.match.params.userId, this.props.match.params.teamId);
+    } else {
+      this.props.fetchTeamTasks(this.props.match.params.teamId);
+    }
+
     this.props.fetchTeam(this.props.match.params.teamId);
     this.props.fetchTeamMembers(this.props.match.params.teamId);
   }
 
   componentWillReceiveProps(nextProps) {
-   if (this.props.match.params.teamId !== nextProps.match.params.teamId) {
-     this.props.fetchTeamTasks(nextProps.match.params.teamId);
-   }
- }
+    if (this.props.match.params.userId &&
+        this.props.match.params.userId !==
+        nextProps.match.params.userId) {
+        this.props.fetchUserTasks(nextProps.match.params.userId, this.props.match.params.teamId);
+      } else {
+        if (this.props.match.params.teamId !== nextProps.match.params.teamId) {
+          this.props.fetchTeamTasks(nextProps.match.params.teamId);
+        }
+      }
+  }
 
   update(taskId,field) {
     return (e) => {
@@ -62,21 +73,22 @@ export class TaskIndex extends React.Component {
     const { tasks } = this.props;
     const taskIndexLinks = tasks.map(task =>
       <div className="task-index-item-wrapper">
-        <Link className="index-link"to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
-        component = {TaskFormContainer}>
-        <div className ="for-line-under-circle">
-          <div className="check-circle">
-            <svg className="task-index-check" viewBox="0 0 32 32">
-              <polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615 "/>
-            </svg>
+        <Link className="index-link"
+          to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
+          component = {TaskFormContainer}>
+          <div className ="for-line-under-circle">
+            <div className="check-circle">
+              <svg className="task-index-check" viewBox="0 0 32 32">
+                <polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615 "/>
+              </svg>
+            </div>
           </div>
-        </div>
-        <input type="text"
-          value={task.task_name}
-          onChange= {this.update(task.id,'task_name')}
-          className="task-index-row-name-inputs"
-          placeholder="Add a task name"
-          />
+          <input type="text"
+            value={task.task_name}
+            onChange= {this.update(task.id,'task_name')}
+            className="task-index-row-name-inputs"
+            placeholder="Add a task name"
+            />
         </Link>
       </div>
     );
