@@ -4,13 +4,21 @@
   border: 1px solid var(--light-grey);
   height: 100%;
   position: absolute;
-  top: 70px;
+  top: 88px;
   right: 0px;
   z-index: 20;
   width: 600px;
   margin: 20px 30px;
   background: white;
+  -webkit-animation: slideup .824s;
+   -moz-animation: slideup .824s;
 }
+
+@-webkit-keyframes slideup {
+    from { transform: translate(0%, 100%);}
+    to   { transform: translate(0%, 0%);}
+}
+
 
 .task-form-header {
   padding: 10px;
