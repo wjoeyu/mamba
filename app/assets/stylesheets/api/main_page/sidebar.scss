@@ -6,8 +6,6 @@
 }
 
 .sidebar {
-  // position: fixed;
-  // display: block;
   height: 100vh;
   width: 240px;
   font-family: Roboto;
@@ -47,11 +45,41 @@
 }
 
 .sidebar a {
-  top: 5px;
-  left: 15px;
-  font-family: times;
+  width: 200px;
+  border-radius: 24px;
+  padding: 8px 24px;
+  float: right;
+  font-size: 200px;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-family: Questrial;
+  font-size: 13px;
+  margin-bottom: 8px;
   font-size: 24px;
+  // width: 100px;
+  text-align: right;
+  -webkit-animation: slide-in-right .5s;
+   -moz-animation: slide-in-right .5s;
+ transition: color .1s ease-in-out;
+ -moz-transition: color .1s ease-in-out;
+ -webkit-transition: color .1s ease-in-out;
+ transition: box-shadow .24s ease-in-out;
+ -moz-transition: box-shadow .24s ease-in-out;
+ -webkit-transition: box-shadow .24s ease-in-out;
 }
+
+@-webkit-keyframes slide-in-right {
+    from { transform: translate(-100%, 0%);}
+    to   { transform: translate(0%, 0%);}
+}
+
+.sidebar a:hover {
+  color: #e6d90a;
+  box-shadow: 0px 0px 32px #fcbd01;
+}
+
 
 .sidebar span {
   position: absolute;
@@ -69,8 +97,8 @@
 .sidebar-members {
   position: absolute;
   display: block;
-  top: 48px;
-  left: 15px;
+  top: 85px;
+  left: -20px;
 }
 
 .hamburger {
@@ -96,13 +124,4 @@
 }
 .hamburger-hidden {
   display: none;
-}
-
-.ind-links {
-  display: block;
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
-  font-family: Roboto;
-  font-size: 13px;
 }
