@@ -13,8 +13,8 @@
   border-radius: 3px;
   -webkit-animation: slideup .248s;
    -moz-animation: slideup .248s;
-  -webkit-animation: shadow 4s infinite;
-    -moz-animation: shadow 4s infinite;
+  -webkit-animation: shadow 2.4s infinite;
+    -moz-animation: shadow 2.4s infinite;
 }
 
 @-webkit-keyframes slideup {
@@ -23,7 +23,7 @@
 }
 
 @-webkit-keyframes shadow {
-    from { box-shadow: 0px 0px 24px #25e8c8;}
+    from { box-shadow: 0px 0px 3px #25e8c8;}
     to   { box-shadow: 0px 0px 24px #e2fffa;}
 }
 
@@ -139,7 +139,7 @@
   width: 548px;
   display: block;
   border-radius: 3px;
-  border: none;
+  border: 1px solid transparent;
   font-weight: 500;
   font-size: 24px;
   color: black;
@@ -181,6 +181,7 @@
   margin-left: 10px;
   color: black;
   font-size: 13px;
+  border: 1px solid transparent;
 }
 
 .task-form-description:hover {
