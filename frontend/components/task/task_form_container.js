@@ -8,12 +8,13 @@ import {
 } from '../../actions/task_actions';
 import { selectTasks, selectTeamMembers } from '../../reducers/selectors';
 import { fetchTeamMembers } from '../../actions/team_actions';
+import { withRouter } from 'react-router-dom';
 
 
-const mSp = (state) => {
+const mSp = (state, ownProps) => {
   return {
-    tasks: selectTasks(state),
-    users: state.entities.users,
+    task: state.entities.tasks[ownProps.match.params.taskId],
+    user: state.entities.users[ownProps.match.params.userId],
     currentUser: state.entities.users[state.session.id],
     teamMembers: selectTeamMembers(state)
   };
@@ -28,4 +29,4 @@ const mDp = dispatch => {
   };
 };
 
-export default connect(mSp, mDp)(TaskForm);
+export default withRouter(connect(mSp, mDp)(TaskForm));
