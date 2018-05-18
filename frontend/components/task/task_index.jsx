@@ -142,4 +142,5 @@ export class TaskIndex extends React.Component {
 
 export default withRouter(TaskIndex);
 
+// <div className="task-index-row-name-inputs" onClick={this.createNewTask}></div>
 // <Route path="/team/:teamId/users/:userId/tasks/:taskId" component={TaskFormContainer} />
