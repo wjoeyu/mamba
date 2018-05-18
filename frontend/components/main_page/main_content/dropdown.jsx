@@ -38,7 +38,9 @@ export class Dropdown extends React.Component {
   myTaskButton () {
     return(
       <div>
-        <Link className="my-tasks-button" to={`/team/${this.props.match.params.teamId}/users/${this.props.currentUser.id}`}>My Tasks</Link>
+        <Link
+          className="my-tasks-button"
+          to={`/team/${this.props.match.params.teamId}/users/${this.props.currentUser.id}`}>My Tasks</Link>
       </div>
     );
   }

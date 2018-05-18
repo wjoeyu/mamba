@@ -8,6 +8,7 @@ export class TaskIndex extends React.Component {
     this.timeout = null;
     this.currentTeamName = this.currentTeamName.bind(this);
     this.currentTeamMember = this.currentTeamMember.bind(this);
+    this.createNewTask = this.createNewTask.bind(this);
   }
 
   componentDidMount () {
@@ -69,6 +70,26 @@ export class TaskIndex extends React.Component {
 
   }
 
+  createNewTask() {
+    this.props.createTask(
+      {
+        task_name: "",
+        description: "",
+        due_date: '2018-05-18',
+        completed: false,
+        assignee_id: this.props.currentUser.id,
+        team_id: this.props.match.params.teamId
+      }
+    ).then(
+      payload => {
+        if (this.props.match.params.userId) {
+          this.props.history.push(`/team/${this.props.match.params.teamId}/users/${this.match.params.userId}/tasks/${payload.task.id}`);
+        } else {
+          this.props.history.push(`/team/${this.props.match.params.teamId}/users/${this.props.currentUser.id}/tasks/${payload.task.id}`);
+        }
+    });
+  }
+
   render() {
     const { tasks } = this.props;
     const taskIndexLinks = tasks.map(task =>
@@ -95,11 +116,11 @@ export class TaskIndex extends React.Component {
 
     return (
       <div className="main-content">
-        <div className="main-content-header">{this.currentTeamMember()} tasks in {this.currentTeamName()}</div>
+        <div className="main-content-header">{this.currentTeamMember()} Tasks in {this.currentTeamName()}</div>
         <div className="task-wrapper">
           <div className="task-index">
             <div className="task-index-header">
-              <div className="add-task-button">Add Task</div>
+              <div onClick={this.createNewTask} className="add-task-button">Add Task</div>
             </div>
             {taskIndexLinks}
           </div>

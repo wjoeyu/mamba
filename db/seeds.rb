@@ -10,7 +10,7 @@ Team.destroy_all
 Membership.destroy_all
 Task.destroy_all
 
-User.create({email: "demo@mamba.com", name: "Demo Johnson", password: "demodemo"})
+demo = User.create({email: "demo@mamba.com", name: "Demo Johnson", password: "demodemo"})
 Team.create({team_name: "March 2018 cohort"})
 Membership.create(team_member_id: User.last.id, team_id: Team.last.id)
 fullstack = Team.create({team_name: "Fullstack Team"})
@@ -28,6 +28,39 @@ Membership.create(team_member_id: User.find_by(email: "jack@mamba.com").id, team
 Membership.create(team_member_id: User.find_by(email: "demo2@mamba.com").id, team_id: Team.find_by(team_name: "Fullstack Team").id)
 Membership.create(team_member_id: User.find_by(email: "wjoeyu@gmail.com").id, team_id: Team.find_by(team_name: "Liam and Joey's Secret Fullstack Pair-Programming").id)
 Membership.create(team_member_id: User.find_by(email: "liam@mamba.com").id, team_id: Team.find_by(team_name: "Liam and Joey's Secret Fullstack Pair-Programming").id)
+
+Task.create(
+  {
+    task_name: "Demo Task Number 1",
+    description: "Show what a task looks like. This is what a task looks like.",
+    due_date: '2018-05-18',
+    completed: false,
+    assignee_id: demo.id,
+    team_id: Team.find_by(team_name: "Demo Johnson's Team").id
+  }
+)
+
+Task.create(
+  {
+    task_name: "Thank Joey for giving me life.",
+    description: "First there was nothing, and then a white light, and I was born. I need to thank my creator.",
+    due_date: '2018-05-18',
+    completed: false,
+    assignee_id: demo.id,
+    team_id: Team.find_by(team_name: "Demo Johnson's Team").id
+  }
+)
+
+Task.create(
+  {
+    task_name: "Demo Task Number 2",
+    description: "Show what a task looks like again. This is what a task looks like.",
+    due_date: '2018-05-18',
+    completed: false,
+    assignee_id: demo.id,
+    team_id: Team.find_by(team_name: "Demo Johnson's Team").id
+  }
+)
 
 Task.create(
   {

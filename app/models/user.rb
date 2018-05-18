@@ -21,7 +21,7 @@ class User < ApplicationRecord
   has_many :tasks,
     class_name: "Task",
     foreign_key: :assignee_id,
-    primary_key: :id  
+    primary_key: :id
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
@@ -44,7 +44,7 @@ class User < ApplicationRecord
   end
 
   def create_and_join_team
-    team = Team.new({team_name: "#{self.name}'s team"})
+    team = Team.new({team_name: "#{self.name}'s Team"})
     team.save!
     membership = Membership.new({team_member_id: self.id, team_id: team.id})
     membership.save!

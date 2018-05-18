@@ -37,6 +37,9 @@
   padding-top: 8px;
   box-sizing: border-box;
   cursor: pointer;
+  transition: background .24s ease-in-out;
+    -moz-transition: background .24s ease-in-out;
+    -webkit-transition: background .24s ease-in-out;
 }
 
 .add-task-button:hover {
@@ -86,11 +89,15 @@
   padding-bottom: 4px;
   padding-left: 3px;
   box-sizing: border-box;
+  transition: background .24s ease-in-out;
+    -moz-transition: background .24s ease-in-out;
+    -webkit-transition: background .24s ease-in-out;
   // margin-bottom: 9px;
 }
 
 .check-circle:hover {
-  border-color: #25e8c8
+  border-color: #25e8c8;
+  background: #e2fffa;
 }
 .check-circle:hover .task-index-check{
   fill: #25e8c8
@@ -111,6 +118,9 @@
 
 .task-index-check {
   height: 12px;
+  transition: fill .24s ease-in-out;
+    -moz-transition: fill .24s ease-in-out;
+    -webkit-transition: fill .24s ease-in-out;
 }
 
 .task-index-check:hover {
