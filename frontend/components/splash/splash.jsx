@@ -5,7 +5,7 @@ const Splash = ({ currentUser, logout, openModal, signInDemo }) => {
   const sessionLinks = () => (
     <div className="splash">
       <div className="splash-nav">
-        <a>m a m b a</a>
+        <a className="splash-name">mamba</a>
         <a className="nav-right">
           <button className="nav-login" onClick={() => openModal('login')}>Log In</button>
           <button className="demo" onClick={() => signInDemo()}>Demo</button>

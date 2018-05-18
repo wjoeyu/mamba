@@ -84,6 +84,10 @@
   box-sizing: border-box;
 }
 
+.workspace-links:hover {
+  background: #fcbd01;
+}
+
 .current-team {
   white-space: nowrap;
   overflow: hidden;
@@ -193,8 +197,8 @@
 }
 
 .dropdown-list div:hover {
-  background: var(--bright-blue);
   color: white;
+  font-weight: 500;
 }
 
 .dropdown-list div:hover .dropdown-links{
