@@ -25,9 +25,10 @@ joey = User.create({email: "wjoeyu@gmail.com", name: "Joey", password: "starwars
 User.create({email: "liam@mamba.com", name: "Liam Zhang", password: "123456"})
 User.create({email: "jack@mamba.com", name: "Jack Ipsum", password: "123456"})
 User.create({email: "demo2@mamba.com", name: "Darius Lorem", password: "123456"})
+mo = User.create({email: "moemoneynoproblems@moemoe.com", name: "Maurice Roach", password: "123456"})
 Membership.create(team_member_id: User.find_by(email: "demo@mamba.com").id, team_id: leave.id)
 Membership.create(team_member_id: User.find_by(email: "demo@mamba.com").id, team_id: leave_as_well.id)
-
+Membership.create(team_member_id: mo.id, team_id: fullstack.id)
 
 Membership.create(team_member_id: User.find_by(email: "wjoeyu@gmail.com").id, team_id: Team.find_by(team_name: "Fullstack Team").id)
 Membership.create(team_member_id: User.find_by(email: "jack@mamba.com").id, team_id: Team.find_by(team_name: "Fullstack Team").id)
