@@ -89,18 +89,54 @@
   padding-bottom: 4px;
   padding-left: 3px;
   box-sizing: border-box;
+  border: 1px solid #b7bfc6;
   transition: background .24s ease-in-out;
     -moz-transition: background .24s ease-in-out;
     -webkit-transition: background .24s ease-in-out;
   // margin-bottom: 9px;
 }
 
+.checked-circle {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  border-radius: 24px;
+  border: 1px solid black;
+  padding-bottom: 4px;
+  padding-left: 3px;
+  box-sizing: border-box;
+  border: 1px solid #25e8c8;
+  background: #e2fffa;
+}
+
 .check-circle:hover {
   border-color: #25e8c8;
   background: #e2fffa;
 }
+
+.check-circle:active {
+  background: #e2fffa;
+}
+
 .check-circle:hover .task-index-check{
   fill: #25e8c8
+}
+
+.task-index-check {
+  height: 12px;
+  fill: #848f99;
+  transition: fill .24s ease-in-out;
+  -moz-transition: fill .24s ease-in-out;
+  -webkit-transition: fill .24s ease-in-out;
+}
+
+.checked-task-index-check {
+  height: 12px;
+  fill: #25e8c8;
+}
+
+.task-index-check:hover {
+  fill: #25e8c8;
 }
 
 .for-line-under-circle {
@@ -111,25 +147,6 @@
   padding-bottom: 9px;
 }
 
-// .check-circle:hover {
-//   color: #25e8c8;
-//   fill:
-// }
-
-.task-index-check {
-  height: 12px;
-  transition: fill .24s ease-in-out;
-    -moz-transition: fill .24s ease-in-out;
-    -webkit-transition: fill .24s ease-in-out;
-}
-
-.task-index-check:hover {
-  fill: #25e8c8;
-}
-
-.check-circle:active {
-  background: #e2fffa;
-}
 
 .task-index-row-name-inputs {
   display: inline-block;
