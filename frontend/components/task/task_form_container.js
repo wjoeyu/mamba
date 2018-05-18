@@ -4,7 +4,8 @@ import {
   fetchTask,
   createTask,
   updateTask,
-  updateReduxTask
+  updateReduxTask,
+  deleteTask
 } from '../../actions/task_actions';
 import { selectTasks, selectTeamMembers } from '../../reducers/selectors';
 import { fetchTeamMembers } from '../../actions/team_actions';
@@ -25,7 +26,8 @@ const mDp = dispatch => {
     updateReduxTask: (task) => dispatch(updateReduxTask(task)),
     updateTask: (task) => dispatch(updateTask(task)),
     fetchTask:  (taskId) => dispatch(fetchTask(taskId)),
-    fetchTeamMembers: (id) => dispatch(fetchTeamMembers(id))
+    fetchTeamMembers: (id) => dispatch(fetchTeamMembers(id)),
+    delTask: (taskId) => dispatch(deleteTask(taskId))
   };
 };
 

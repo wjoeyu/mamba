@@ -6,11 +6,17 @@ class TaskForm extends React.Component {
   constructor(props) {
     super(props);
     this.completeTask = this.completeTask.bind(this);
+    this.removeTask = this.removeTask.bind(this);
     this.timeout = null;
   }
 
   completeTask(completedStatus) {
     this.props.updateTask({id: [this.props.match.params.taskId], completed: !(completedStatus)});
+  }
+
+  removeTask() {
+    this.props.delTask(this.props.match.params.taskId).then(this.props.history.push(
+      `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}`));
   }
 
   update(field) {
@@ -37,7 +43,7 @@ class TaskForm extends React.Component {
               <polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615 "/>
             </svg>
             {(task && task.completed)? "Completed" : "Mark Complete"}</div>
-          <div className="delete-button"></div>
+          <div className="completion-button" onClick={()=>this.removeTask()}>Delete</div>
           <div className="task-form-close"
             onClick={()=> this.props.history.push(
               `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}`
