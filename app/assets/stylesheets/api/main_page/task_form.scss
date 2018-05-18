@@ -11,10 +11,10 @@
   margin: 20px 68px;
   background: white;
   border-radius: 3px;
-  -webkit-animation: slideup .248s;
-   -moz-animation: slideup .248s;
-  -webkit-animation: shadow 2.4s infinite;
-    -moz-animation: shadow 2.4s infinite;
+  -webkit-animation: slideup .4s;
+   -moz-animation: slideup .48s;
+  // -webkit-animation: shadow 2.4s infinite;
+  //   -moz-animation: shadow 2.4s infinite;
 }
 
 @-webkit-keyframes slideup {
