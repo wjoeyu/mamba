@@ -145,3 +145,14 @@ Task.create(
     team_id: Team.find_by(team_name: "Liam and Joey's Secret Fullstack Pair-Programming").id
   }
 )
+
+Task.create(
+  {
+    task_name: "Help Joey",
+    description: "Put this homie on my back.",
+    due_date: '2018-05-18',
+    completed: false,
+    assignee_id: User.find_by(name: "Maurice Roach").id,
+    team_id: fullstack.id
+  }
+)
