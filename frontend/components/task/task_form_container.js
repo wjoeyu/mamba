@@ -6,21 +6,26 @@ import {
   updateTask,
   updateReduxTask
 } from '../../actions/task_actions';
+import { selectTasks, selectTeamMembers } from '../../reducers/selectors';
+import { fetchTeamMembers } from '../../actions/team_actions';
 
 
 const mSp = (state) => {
   return {
     tasks: selectTasks(state),
+    users: state.entities.users,
+    currentUser: state.entities.users[state.session.id],
+    teamMembers: selectTeamMembers(state)
   };
 };
 
 const mDp = dispatch => {
   return {
-    createTask: (task) => dispatch(createTask(task)),
     updateReduxTask: (task) => dispatch(updateReduxTask(task)),
     updateTask: (task) => dispatch(updateTask(task)),
-    fetchTask:  (taskId) => dispatch(fetchTask(taskId))
+    fetchTask:  (taskId) => dispatch(fetchTask(taskId)),
+    fetchTeamMembers: (id) => dispatch(fetchTeamMembers(id))
   };
 };
 
-// export default connect(mSp, mDp)(TaskForm);
+export default connect(mSp, mDp)(TaskForm);

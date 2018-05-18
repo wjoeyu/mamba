@@ -5,11 +5,11 @@ const Splash = ({ currentUser, logout, openModal, signInDemo }) => {
   const sessionLinks = () => (
     <div className="splash">
       <div className="splash-nav">
-        <a className="splash-name">mamba</a>
-        <a className="nav-right">
+        <a className="splash-mamba">mamba</a>
+        <div className="nav-right">
           <button className="nav-login" onClick={() => openModal('login')}>Log In</button>
           <button className="demo" onClick={() => signInDemo()}>Demo</button>
-        </a>
+        </div>
       </div>
       <div className="masthead">
         <a>Move work forward</a>
@@ -19,15 +19,15 @@ const Splash = ({ currentUser, logout, openModal, signInDemo }) => {
     </div>
   );
 
-  const personalGreeting = () => (
-
-    <hgroup className="header-group">
-      <h2 className="header-name">Hi, {currentUser.name}!</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
-    </hgroup>
-  );
-
-  return currentUser ? personalGreeting() : sessionLinks();
+  // const personalGreeting = () => (
+  //
+  //   <hgroup className="header-group">
+  //     <h2 className="header-name">Hi, {currentUser.name}!</h2>
+  //     <button className="header-button" onClick={logout}>Log Out</button>
+  //   </hgroup>
+  // );
+  //
+  // return currentUser ? personalGreeting() : sessionLinks();
 };
 
 

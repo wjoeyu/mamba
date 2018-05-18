@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from 'react-router-dom';
+import { Route, Link, withRouter } from 'react-router-dom';
 import TaskFormContainer from './task_form_container';
 
 export class TaskIndex extends React.Component {
@@ -104,8 +104,7 @@ export class TaskIndex extends React.Component {
     const taskIndexLinks = tasks.map(task =>
       <div className="task-index-item-wrapper">
         <Link className="index-link"
-          to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
-          component = {TaskFormContainer}>
+          to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}>
           <div className ="for-line-under-circle">
             <div className={task.completed ? "checked-circle" : "check-circle"} onClick={()=>this.completeTask(task.id, task.completed)}>
               <svg className={task.completed ? "checked-task-index-check" : "task-index-check"} viewBox="0 0 32 32">
@@ -134,6 +133,7 @@ export class TaskIndex extends React.Component {
             {taskIndexLinks}
           </div>
         </div>
+        <TaskFormContainer />
       </div>
     );
   }
@@ -141,5 +141,3 @@ export class TaskIndex extends React.Component {
 }
 
 export default withRouter(TaskIndex);
-
-// onClick={this.completeTask(task.id)

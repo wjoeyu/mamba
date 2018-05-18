@@ -7,10 +7,11 @@ import {
 import Frontpage from './frontpage';
 import MainPage from './main_page/main_page';
 import Modal from './modal/modal';
-import TaskForm from './task/task_form_container';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import TaskIndexContainer from './task/task_index_container';
-import TaskFormContainer from './task/task_form_container';
+
+// import TaskForm from './task/task_form_container';
+// import TaskIndexContainer from './task/task_index_container';
+// import TaskFormContainer from './task/task_form_container';
 
 const App = () => {
   return (
