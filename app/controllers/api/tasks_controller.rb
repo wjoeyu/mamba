@@ -11,7 +11,7 @@ class Api::TasksController < ApplicationController
 
   def get_user_tasks
     # debugger
-    @tasks = Team.find(params[:team_id]).members.find(params[:user_id]).tasks
+    @tasks = Team.find(params[:team_id]).tasks.where(assignee_id: params[:user_id])
     render 'api/tasks/user_tasks'
   end
 
