@@ -1,7 +1,7 @@
 .task-form {
   font-family: Roboto;
   display: inline-block;
-  border: 3px solid red;
+  border: 1px solid var(--light-grey);
   height: 100%;
   position: absolute;
   top: 70px;
@@ -17,10 +17,11 @@
 }
 
 .completion-button {
+  display: inline-block;
   color: #646e79;
   border-radius: 3px;
   border: 1px solid #b7bfc6;
-  width: 130px;
+  // width: 130px;
   box-sizing: border-box;
   padding: 6px 10px;
   font-size: 13px;
@@ -28,10 +29,63 @@
   align-items: center;
   margin-left: 20px;
   cursor: pointer;
+  transition: background .24s ease-in-out;
+  -moz-transition: background .24s ease-in-out;
+  -webkit-transition: background .24s ease-in-out;
 }
+
+.completion-button:hover {
+  border-color: #646f79;
+  background-color: #f6f8f9;
+  color: #222b37;
+}
+
+.completion-button:hover .check-mark {
+  fill: black;
+}
+
+.completed-button {
+  display: inline-block;
+  color: white;
+  border-radius: 3px;
+  border: 1px solid #b7bfc6;
+  // width: auto;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  font-size: 13px;
+  text-align: center;
+  align-items: center;
+  margin-left: 20px;
+  cursor: pointer;
+  background: #25e8c8;
+  -webkit-animation: greenify .08s;
+   -moz-animation: greenify .08s;
+   position: relative;
+}
+
+@-webkit-keyframes greenify {
+    from { color:#f6f8f9;}
+    to   { color:#25e8c8;}
+}
+
+.completed-button:hover {
+  background: #00bf9c;
+}
+
 .check-mark {
+  display: inline-block;
   height: 12px;
   fill: #848f99;
+  margin-right: 8px;
+  transition: fill .24s ease-in-out;
+  -moz-transition: fill .24s ease-in-out;
+  -webkit-transition: fill .24s ease-in-out;
+
+}
+
+.completed-check {
+  height: 12px;
+  fill: white;
   margin-right: 8px;
   transition: fill .24s ease-in-out;
   -moz-transition: fill .24s ease-in-out;
@@ -39,7 +93,7 @@
 }
 
 .task-form-header {
-  border: 1px solid red;
+  border-bottom: 1px solid var(--light-grey);
   display: block;
   background: #ffffff;
   position: relative;

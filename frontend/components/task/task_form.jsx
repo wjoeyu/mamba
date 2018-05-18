@@ -32,10 +32,11 @@ class TaskForm extends React.Component {
       <div className='task-form'>
         <div className="task-form-header">
           <div onClick={()=>this.completeTask(task.completed)} className={(task && task.completed)? "completed-button" : "completion-button"}>
-            <svg className="check-mark" viewBox="0 0 32 32">
+            <svg className={(task && task.completed)? "completed-check" : "check-mark"}
+              viewBox="0 0 32 32">
               <polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615 "/>
             </svg>
-            Mark Complete</div>
+            {(task && task.completed)? "Completed" : "Mark Complete"}</div>
           <div className="delete-button"></div>
           <div className="task-form-close"
             onClick={()=> this.props.history.push(
