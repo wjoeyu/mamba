@@ -31,7 +31,7 @@ export class Sidebar extends React.Component {
     const teamMembers = this.props.teamMembers.map((member) => {
       return (
         <div className="ind-links" key={member.id}>
-          <Link  to={`/team/${this.props.match.params.teamId}/users/${member.id}`}>{member.name}
+          <Link to={`/team/${this.props.match.params.teamId}/users/${member.id}`}>{member.name}
           </Link>
         </div>
       );
