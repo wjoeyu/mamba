@@ -102,10 +102,9 @@ export class TaskIndex extends React.Component {
   render() {
     const { tasks } = this.props;
     const taskIndexLinks = tasks.map(task =>
-      <div className="task-index-item-wrapper">
+      <div className="task-index-item-wrapper" key={task.id}>
         <Link className="index-link"
-          to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
-          component = {TaskFormContainer}>
+          to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}>
           <div className ="for-line-under-circle">
             <div className={task.completed ? "checked-circle" : "check-circle"} onClick={()=>this.completeTask(task.id, task.completed)}>
               <svg className={task.completed ? "checked-task-index-check" : "task-index-check"} viewBox="0 0 32 32">

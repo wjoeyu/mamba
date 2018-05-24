@@ -11,8 +11,9 @@ export class Sidebar extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
-    this.props.fetchTeamMembers(this.props.match.params.teamId);
+    if (this.props.match.teamId) {
+      this.props.fetchTeamMembers(this.props.match.params.teamId);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -29,8 +30,8 @@ export class Sidebar extends React.Component {
   render() {
     const teamMembers = this.props.teamMembers.map((member) => {
       return (
-        <div className="ind-links">
-          <Link  to={`/team/${this.props.match.params.teamId}/users/${member.id}`} key={member.id}>{member.name}
+        <div className="ind-links" key={member.id}>
+          <Link  to={`/team/${this.props.match.params.teamId}/users/${member.id}`}>{member.name}
           </Link>
         </div>
       );

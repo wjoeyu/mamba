@@ -1,20 +1,18 @@
 .main-nav {
-  height: 40px;
   background: white;
   width: 100%;
   min-width: 350px;
-  border-bottom: 1px solid var(--light-grey);
   font-family: Roboto;
   right: 0px;
   float: right;
   z-index: 3;
   display: block;
-  height: 100%;
+  box-sizing: border-box;
   white-space: nowrap;
   overflow: ellipsis;
-  // flex-shrink: 0;
-  // -webkit-animation: slide-left 1s;
-  //  -moz-animation: slide-left 1s;
+  border-left: 1px solid var(--light-grey);
+  // -webkit-animation: slide-left .7s;
+  //  -moz-animation: slide-left .7s;
 
   -webkit-animation: fade-in 2s;
     -moz-animation: fade-in 2s;
@@ -61,15 +59,13 @@
   width: 200px;
   display: inline-block;
   cursor: pointer;
-  height: 40px;
   text-align: right;
-  padding-top: 5px;
   margin-right: 20px;
   box-sizing: border-box;
   font-weight: 500;
   transition: color .24s ease-in-out;
-  -moz-transition: color .24s ease-in-out;
-  -webkit-transition: color .24s ease-in-out;
+    -moz-transition: color .24s ease-in-out;
+    -webkit-transition: color .24s ease-in-out;
 }
 
 .workspace-links {
@@ -89,14 +85,28 @@
 }
 
 .current-team {
+  font-weight: 400;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 150px;
+  display: inline-block;
+  transform: translateY(3px);
+  color: #929ca5;
 }
 
-.dropdown-button div {
+.current-user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+  padding-top: 7px;
+  box-sizing: border-box;
   display: inline-block;
+  margin-left: 8px;
+  margin-top: 5px;
+  color: white;
+  background: #fc91ad;
 }
 
 .dropdown-button:hover {
@@ -120,7 +130,7 @@
   cursor: pointer;
   z-index: 24;
   right: 20px;
-  top: 41px;
+  top: 42px;
   // -webkit-animation: slide-down .32s;
   //  -moz-animation: slide-down .32s;
 }

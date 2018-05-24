@@ -10,6 +10,7 @@ export class Dropdown extends React.Component {
     };
     this.toggleVisibility = this.toggleVisibility.bind(this);
     this.currentTeamName = this.currentTeamName.bind(this);
+    this.toggleInvisible = this.toggleInvisible.bind(this);
     this.myTaskButton = this.myTaskButton.bind(this);
   }
 
@@ -23,8 +24,12 @@ export class Dropdown extends React.Component {
   }
 
   toggleVisibility() {
-    const currentState = this.state.visible;
-    this.setState( {visible: !currentState} );
+    this.setState( {visible: true} );
+    document.addEventListener('click', () => this.setState({visible: false}), {once: true});
+  }
+
+  toggleInvisible() {
+    this.setState( {visible: false} );
   }
 
   currentTeamName() {
@@ -52,15 +57,18 @@ export class Dropdown extends React.Component {
       );
     });
 
-    //need to get currentTeamName to show up
+    const currentUserInitials = this.props.currentUser.name.split(" ").map(el=>el[0]).join("");
+
     return (
       <div className="dropdown">
         {this.myTaskButton()}
-        <div className="dropdown-button" onClick={this.toggleVisibility}>
+        <div className="dropdown-button" onMouseEnter={this.toggleVisibility} >
           <div className="current-team">{this.currentTeamName()}</div>
-          <AvatarContainer />
+          <div className="current-user-avatar">
+            {currentUserInitials}
+          </div>
         </div>
-          <div className={this.state.visible ?
+          <div onMouseLeave={this.toggleInvisible} className={this.state.visible ?
               "dropdown-list" : "dropdown-hidden"}>
             {currentTeams}
             <div id="dropdown-line"></div>

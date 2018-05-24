@@ -11,10 +11,10 @@
   margin: 20px 68px;
   background: white;
   border-radius: 3px;
-  // -webkit-animation: slideup .4s;
-  //  -moz-animation: slideup .48s;
-  -webkit-animation: shadow 2.4s infinite;
-    -moz-animation: shadow 2.4s infinite;
+  -webkit-animation: slideup .4s;
+   -moz-animation: slideup .48s;
+  // -webkit-animation: shadow 2.4s infinite;
+  //   -moz-animation: shadow 2.4s infinite;
 }
 
 @-webkit-keyframes slideup {
@@ -64,7 +64,7 @@
   display: inline-block;
   color: white;
   border-radius: 3px;
-  border: 1px solid #b7bfc6;
+  border: 1px solid #25e8c8;
   // width: auto;
   box-sizing: border-box;
   padding: 6px 10px;
@@ -86,6 +86,7 @@
 
 .completed-button:hover {
   background: #00bf9c;
+  border: 1px solid #00bf9c;
 }
 
 .check-mark {

@@ -54,7 +54,7 @@
   text-decoration: none;
   color: white;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   margin-bottom: -4px;
   font-size: 32px;
   // width: 100px;
@@ -96,16 +96,15 @@
 }
 
 .hamburger {
-  height: 41px;
-  width: 41px;
+  height: 35px;
+  width: 42px;
   font-size: 18px;
-  border: 1px solid var(--light-grey);
-  border-top: none;
+  border-bottom: 1px solid var(--light-grey);
   color: #838f98;
   left: 240px;
   text-align: center;
   padding-top: 6px;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   cursor: pointer;
   display: block;
   transition: background .24s ease-in-out;
