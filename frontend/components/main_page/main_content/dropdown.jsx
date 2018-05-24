@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, withRouter } from 'react-router-dom';
-import AvatarContainer from '../../avatar/avatar_container'
 
 export class Dropdown extends React.Component {
   constructor(props) {
