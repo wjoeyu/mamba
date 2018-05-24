@@ -56,16 +56,12 @@
   color: #222b37;
 }
 
-.completion-button:hover .check-mark {
-  fill: black;
-}
-
-.completed-button {
+.deletion-button {
   display: inline-block;
-  color: white;
+  color: #646e79;
   border-radius: 3px;
-  border: 1px solid #25e8c8;
-  // width: auto;
+  border: 1px solid #b7bfc6;
+  // width: 130px;
   box-sizing: border-box;
   padding: 6px 10px;
   font-size: 13px;
@@ -73,7 +69,39 @@
   align-items: center;
   margin-left: 20px;
   cursor: pointer;
+  transition: background .24s ease-in-out;
+  -moz-transition: background .24s ease-in-out;
+  -webkit-transition: background .24s ease-in-out;
+}
+
+.deletion-button:hover {
+  border-color: #de1e2f;
+  background: #ff5263;;
+  color: white;
+}
+
+.deletion-button:active {
+  background: #de1e2f;
+}
+
+
+.completion-button:hover .check-mark {
+  fill: #25e8c8;
+}
+
+.completed-button {
+  display: inline-block;
+  color: white;
+  border-radius: 3px;
+  border: 1px solid #25e8c8;
   background: #25e8c8;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  font-size: 13px;
+  text-align: center;
+  align-items: center;
+  margin-left: 20px;
+  cursor: pointer;
   -webkit-animation: greenify .08s;
    -moz-animation: greenify .08s;
    position: relative;
