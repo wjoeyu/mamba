@@ -35,10 +35,11 @@
   display: flex;
   position: sticky;
   flex-wrap: wrap;
+  top: 24%;
   left: 24%;
   width: 500px;
-  margin-right: 120px;
-  margin-top: 120px;
+  margin-right: 220px;
+  margin-bottom: 260px;
 }
 
 .masthead a {
@@ -104,6 +105,7 @@
 .splash {
   background-image: image_url('mamba_bg.png');
   height: 100vh;
+  min-height: 655px;
   background-size: cover;
   background-position: top;
   animation: magic 5s infinite;
