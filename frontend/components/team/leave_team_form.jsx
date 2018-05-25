@@ -24,7 +24,7 @@ class LeaveTeamForm extends React.Component {
       <div className="new-team-form-container">
         <div onClick={this.props.closeModal} className="new-team-close-x">&times;</div>
         <form onSubmit={this.handleSubmit} className="new-team-form-box">
-          <div className="new-team-form-title">Remove yourself from the Workspace?</div>
+          <div className="new-team-form-title">Remove Yourself from the Workspace?</div>
           <div className="leave-team-text">
             If you remove yourself, you won't be able to access any of the
             projects or tasks in this team. If you want to regain access,
