@@ -66,7 +66,7 @@ export class TaskIndex extends React.Component {
     if (this.props.match.params.userId) {
       if (this.props.users[this.props.match.params.userId] === this.props.currentUser) {
         return ("My");
-      } else {
+      } else if (this.props.users[this.props.match.params.userId]) {
         return (`${this.props.users[this.props.match.params.userId].name}'s`);
       }
     } else {
@@ -82,7 +82,7 @@ export class TaskIndex extends React.Component {
         description: "",
         due_date: '2018-05-18',
         completed: false,
-        assignee_id: this.props.currentUser.id,
+        assignee_id: this.props.match.params.userId,
         team_id: this.props.match.params.teamId
       }
     ).then(
@@ -141,6 +141,3 @@ export class TaskIndex extends React.Component {
 }
 
 export default withRouter(TaskIndex);
-
-// <div className="task-index-row-name-inputs" onClick={this.createNewTask}></div>
-// <Route path="/team/:teamId/users/:userId/tasks/:taskId" component={TaskFormContainer} />
