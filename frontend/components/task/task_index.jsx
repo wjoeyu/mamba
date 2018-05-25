@@ -83,7 +83,7 @@ export class TaskIndex extends React.Component {
         description: "",
         due_date: '2018-05-18',
         completed: false,
-        assignee_id: {assigneeId},
+        assignee_id: assigneeId,
         team_id: this.props.match.params.teamId
       }
     ).then(

@@ -41,7 +41,6 @@ export class Dropdown extends React.Component {
   }
 
   handleLeaveRequest() {
-    debugger
     if (Object.keys(this.props.currentTeams).length > 1) {
       this.props.openModal('leave_team_form');
     }
