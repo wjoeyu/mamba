@@ -11,6 +11,7 @@ export class Dropdown extends React.Component {
     this.currentTeamName = this.currentTeamName.bind(this);
     this.toggleInvisible = this.toggleInvisible.bind(this);
     this.myTaskButton = this.myTaskButton.bind(this);
+    this.handleLeaveRequest = this.handleLeaveRequest.bind(this);
   }
 
   componentDidMount() {
@@ -36,6 +37,13 @@ export class Dropdown extends React.Component {
       if (this.props.currentTeams[this.props.match.params.teamId]) {
         return this.props.currentTeams[this.props.match.params.teamId].team_name;
       }
+    }
+  }
+
+  handleLeaveRequest() {
+    debugger
+    if (Object.keys(this.props.currentTeams).length > 1) {
+      this.props.openModal('leave_team_form');
     }
   }
 
@@ -72,7 +80,7 @@ export class Dropdown extends React.Component {
             {currentTeams}
             <div id="dropdown-line"></div>
             <div className="workspace-links" onClick={() => this.props.openModal('new_team_form')}>Create New Workspace</div>
-            <div className="workspace-links" onClick={() => this.props.openModal('leave_team_form')}>Remove me from this Workspace</div>
+            <div className="workspace-links" onClick={this.handleLeaveRequest}>Remove me from this Workspace</div>
             <div id="dropdown-line"></div>
             <button onClick={() => this.props.logout()}>Log Out</button>
           </div>
