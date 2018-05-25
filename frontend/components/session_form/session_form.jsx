@@ -23,7 +23,6 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(this.props.closeModal);
   }
-  // .then(this.props.fetchCurrentTeams())
 
   renderErrors() {
     return(
@@ -38,7 +37,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    // const demo = {email:"demo@mamba.com", password: "demodemo"};
     return (
       <div className="login-form-container">
         <div onClick={this.props.closeModal} className="close-x">&times;</div>

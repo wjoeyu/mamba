@@ -76,13 +76,14 @@ export class TaskIndex extends React.Component {
   }
 
   createNewTask() {
+    const assigneeId = this.props.match.params.userId ? this.props.match.params.userId : this.props.currentUser.id;
     this.props.createTask(
       {
         task_name: "",
         description: "",
         due_date: '2018-05-18',
         completed: false,
-        assignee_id: this.props.match.params.userId,
+        assignee_id: {assigneeId},
         team_id: this.props.match.params.teamId
       }
     ).then(
