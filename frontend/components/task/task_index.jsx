@@ -100,8 +100,9 @@ export class TaskIndex extends React.Component {
     const { tasks } = this.props;
     const taskIndexLinks = tasks.map(task =>
       <div className="task-index-item-wrapper" key={task.id}>
-        <Link className="index-link"
-          to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}>
+        <Link to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
+          className="index-link"
+          draggable="false">
           <div className ="for-line-under-circle">
             <div className={task.completed ? "checked-circle" : "check-circle"} onClick={()=>this.completeTask(task.id, task.completed)}>
               <svg className={task.completed ? "checked-task-index-check" : "task-index-check"} viewBox="0 0 32 32">
@@ -110,6 +111,7 @@ export class TaskIndex extends React.Component {
             </div>
           </div>
           <input type="text"
+            autoFocus
             value={task.task_name}
             onChange= {this.update(task.id,'task_name')}
             className="task-index-row-name-inputs"
