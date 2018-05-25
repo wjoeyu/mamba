@@ -69,13 +69,13 @@ export class Dropdown extends React.Component {
     return (
       <div className="dropdown">
         {this.myTaskButton()}
-        <div className="dropdown-button" onMouseEnter={this.toggleVisibility} >
+        <div className="dropdown-button" onClick={this.toggleVisibility} >
           <div className="current-team">{this.currentTeamName()}</div>
           <div className="current-user-avatar">
             {currentUserInitials}
           </div>
         </div>
-          <div onMouseLeave={this.toggleInvisible} className={this.state.visible ?
+          <div className={this.state.visible ?
               "dropdown-list" : "dropdown-hidden"}>
             {currentTeams}
             <div id="dropdown-line"></div>
