@@ -87,7 +87,6 @@ export class TaskIndex extends React.Component {
       }
     ).then(
       payload => {
-        debugger
         if (this.props.match.params.userId) {
           this.props.history.push(
             `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}/tasks/${payload.task.id}`

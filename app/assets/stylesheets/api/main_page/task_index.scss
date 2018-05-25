@@ -1,7 +1,6 @@
 .main-content {
   display: block;
   border-top: 1px solid var(--light-grey);
-  // border-left: 1px solid var(--light-grey);
   position: absolute;
   top: 41px;
   margin: auto;
@@ -13,7 +12,6 @@
 }
 
 .main-content-header {
-  // position: relative;
   display: block;
   border-bottom: 1px solid var(--light-grey);
   width: 100%;
@@ -55,8 +53,7 @@
 
 .task-wrapper {
   padding: 0px 16px;
-  display: inline-block;
-  width: 100%;
+  display: flex;
 }
 
 .task-index {
