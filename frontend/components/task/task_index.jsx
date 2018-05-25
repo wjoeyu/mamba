@@ -44,7 +44,7 @@ export class TaskIndex extends React.Component {
       }
         this.timeout = setTimeout(()=> {
           this.props.updateTask({id: [taskId], [field]: toBePersisted});
-        }, 200);
+        }, 500);
       };
   }
 
@@ -87,13 +87,10 @@ export class TaskIndex extends React.Component {
       }
     ).then(
       payload => {
+        debugger
         if (this.props.match.params.userId) {
           this.props.history.push(
-            `/team/${this.props.match.params.teamId}/users/${this.match.params.userId}/tasks/${payload.task.id}`
-          );
-        } else {
-          this.props.history.push(
-            `/team/${this.props.match.params.teamId}/users/${this.props.currentUser.id}/tasks/${payload.task.id}`
+            `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}/tasks/${payload.task.id}`
           );
         }
     });
