@@ -11,7 +11,8 @@ Mamba is a single-page team and task management app, inspired by [Asana](https:/
 Users can:
 * Create and leave teams/workspace.
 * Create and assign tasks and for themselves or their team members.
-* View due dates
+* View a task list and task due dates for entire team and team members.
+* Complete and delete tasks.
 
 ## Technologies
 
@@ -19,9 +20,45 @@ In this fullstack project, I employed the following technologies:
 * React.js
 * Redux
 * Javascript
+* AJAX
 * HTML
 * CSS3
 * Ruby
 * Ruby on Rails
 * SQL
 * JBuilder
+
+## Key Features
+
+### Automatic Update of Task Information
+
+Any information entered in a task form (assignee, description, task name, and due date), will be automatically updated in the front and back end.
+
+#### Debouncing
+
+With the use of a technique called debouncing, the redux state is updated on every key press, so that the entered information is rendered on the screen to give the user visual feedback, specifically the Task Name. However, the information is only stored into the database on set intervals. As result of this, calls to the database to persist information are limited, ensuring a more responsive and lighter-weight experience.
+
+# taskForm.jsx
+
+```javascript
+
+update(field) {
+    return (e) => {
+      this.props.updateReduxTask({id: [this.props.match.params.taskId], [field]: e.currentTarget.value});
+      const toBePersisted = e.currentTarget.value;
+      if (this.timeout) {
+        clearTimeout(this.timeout);
+      }
+        this.timeout = setTimeout(()=> {
+          this.props.updateTask({id: [this.props.match.params.taskId], [field]: toBePersisted});
+        }, 200);
+      };
+  }
+
+```
+
+## Future Feature to Implement
+I will:
+* Implement a search feature for tasks and team members.
+* Introduce commenting on tasks.
+* Create user profiles with avatars.
