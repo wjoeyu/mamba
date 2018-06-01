@@ -56,7 +56,7 @@ update(field) {
 
 ```
 
-## Future Feature to Implement
+## Future Implementations
 I will:
 * Implement a search feature for tasks and team members.
 * Introduce commenting on tasks.
