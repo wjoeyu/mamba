@@ -1,24 +1,31 @@
-# README
+# Mamba README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+Mamba is a single-page team and task management app, inspired by [Asana](https://www.asana.com/). It utilizes purposeful aesthestics and motion to galvanize team milestone achievement.
 
-* Ruby version
+[View the TreasureMap wiki](https://github.com/AliciaUnderhill/TreasureMap/wiki)
 
-* System dependencies
+### Main Features:
 
-* Configuration
+Users can:
+* Create and leave teams/workspace.
+* Create and assign tasks and for themselves or their team members.
+* View due dates
 
-* Database creation
+### Live Demo
 
-* Database initialization
+[Mamba](https://aa-mamba.herokuapp.com/#/)
 
-* How to run the test suite
+## Technologies
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+In this fullstack project, I employed the following technologies:
+* React.js
+* Redux
+* Javascript
+* HTML
+* CSS3
+* Ruby
+* Ruby on Rails
+* SQL
+* JBuilder
