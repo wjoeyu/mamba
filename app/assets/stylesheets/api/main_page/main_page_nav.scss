@@ -11,8 +11,6 @@
   white-space: nowrap;
   overflow: ellipsis;
   border-left: 1px solid var(--light-grey);
-  // -webkit-animation: slide-left .7s;
-  //  -moz-animation: slide-left .7s;
 
   -webkit-animation: fade-in 2s;
     -moz-animation: fade-in 2s;
@@ -30,7 +28,6 @@
 
 
 .my-tasks-button {
-  // display: inline-block;
   position: relative;
   float: left;
   color: black;
