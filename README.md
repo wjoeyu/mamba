@@ -2,7 +2,7 @@
 
 [Mamba Live Demo](https://aa-mamba.herokuapp.com/#/)
 
-![wireframes]()
+![wireframes](https://github.com/wjoeyu/mamba/blob/master/wireframes/mamba_demo.gif)
 
 ## Description
 
