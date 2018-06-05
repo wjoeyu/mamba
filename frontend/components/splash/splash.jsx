@@ -15,9 +15,9 @@ class Splash extends React.Component {
             <div className="splash-logo"/><div className="splash-mamba">m a m b a</div>
           </a>
           <div className="personal-links">
-            <div className="home-page-link"><a href='https://www.joey-wu.com'>
+            <a href='https://www.joey-wu.com'>
+              <div className="home-page-link"></div>
             </a>
-            </div>
             <div className="github-wrapper">
               <a href="https://github.com/wjoeyu" className="fab fa-github-square" aria-hidden="true">
                 <svg width="32" height="32" viewBox="0 0 24 24">
