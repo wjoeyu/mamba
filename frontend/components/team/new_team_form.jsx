@@ -16,8 +16,6 @@ class NewTeamForm extends React.Component {
     });
   }
 
-  //figure out how to route properly first with history.push
-
   handleSubmit(e) {
     e.preventDefault();
     const team = Object.assign({}, this.state);

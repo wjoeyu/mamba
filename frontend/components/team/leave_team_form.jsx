@@ -7,9 +7,6 @@ class LeaveTeamForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  //redirect is not working properly, it re-directs, but nothing renders because
-  // there are no currentTeams for some reason
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.removeSelf(this.props.match.params.teamId).then(({teams}) => {

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { login } from '../../actions/session_actions';
+import { login, clearErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { fetchCurrentTeams } from "../../actions/team_actions";
@@ -25,7 +25,8 @@ const mapDispatchToProps = dispatch => {
     ),
     closeModal: () => dispatch(closeModal()),
     openModal: modal => dispatch(openModal(modal)),
-    fetchCurrentTeams: () => dispatch(fetchCurrentTeams())
+    fetchCurrentTeams: () => dispatch(fetchCurrentTeams()),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 
