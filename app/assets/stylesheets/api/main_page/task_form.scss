@@ -1,10 +1,10 @@
 .task-form {
   font-family: Roboto;
   display: inline-block;
-  border: 1px solid #14aaf5;
+  border: 1px solid var(--light-grey);
   height: 100%;
   position: absolute;
-  top: 70px;
+  top: 66px;
   right: 24px;
   z-index: 20;
   width: 600px;
@@ -23,10 +23,6 @@
 @-moz-keyframes slide-in {
     from { transform: translate(100%, 0%);}
     to   { transform: translate(0%, 0%);}
-}
-
-.task-form-header {
-  padding: 10px;
 }
 
 .completion-button {
@@ -137,10 +133,12 @@
 }
 
 .task-form-header {
-  border-bottom: 1px solid var(--light-grey);
+  border-bottom: 1px solid transparent;
+  border-radius: 3px 3px 0px 0px;
   display: block;
   background: #ffffff;
   position: relative;
+  padding: 10px;
 }
 
 .task-form-close {
@@ -159,6 +157,7 @@
 }
 
 .task-form-content {
+  border-top: 1px solid var(--light-grey);
   padding: 10px 30px;
   background: #ffffff;
 }
