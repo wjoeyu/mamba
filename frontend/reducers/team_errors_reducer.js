@@ -1,6 +1,7 @@
 import {
   RECEIVE_TEAM_ERRORS,
-  RECEIVE_NEW_TEAM
+  RECEIVE_NEW_TEAM,
+  CLEAR_ERRORS
 } from '../actions/team_actions';
 
 export default (state = [], action) => {
@@ -10,6 +11,8 @@ export default (state = [], action) => {
     case RECEIVE_TEAM_ERRORS:
       return action.errors;
     case RECEIVE_NEW_TEAM:
+      return [];
+    case CLEAR_ERRORS:
       return [];
     default:
       return state;
