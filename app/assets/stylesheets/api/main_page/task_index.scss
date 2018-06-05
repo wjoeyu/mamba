@@ -85,14 +85,18 @@
 }
 
 .task-index-item-wrapper:hover {
-  padding-left: 24px;
-  padding-right: 50px;
   background: #f6f8f9;
   border-top: 1px solid var(--light-grey);
   border-bottom: 1px solid var(--light-grey);
   box-sizing: border-box;
 }
-
+.task-index-item-wrapper:focus-within {
+  background: white;
+  border-top: 1px solid #14aaf5;
+  border-bottom: 1px solid #14aaf5;
+  box-shadow: inset 0 3px 4px -1px var(--light-grey);
+  box-sizing: border-box;
+}
 
 .check-circle {
   display: inline-block;
@@ -177,10 +181,6 @@
   box-sizing: border-box;
 }
 
-.task-index-item-wrapper:hover {
-  border-top: 1px solid #14aaf5;
-  border-bottom: 1px solid #14aaf5;
-}
 
 .task-index-row-name-inputs:focus {
   cursor: text;

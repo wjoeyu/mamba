@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom';
 
 const MainContent = () => {
   return (
-    <div className="main-nav">
+    <div className="main">
       <DropdownContainer/>
       <Route path="/team/:teamId/users/:userId/tasks/:taskId" component={TaskFormContainer} />
       <Route path="/team/:teamId/users/:userId" component={TaskIndexContainer} />
