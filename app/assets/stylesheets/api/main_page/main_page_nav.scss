@@ -128,13 +128,6 @@
   z-index: 24;
   right: 20px;
   top: 42px;
-  // -webkit-animation: slide-down .32s;
-  //  -moz-animation: slide-down .32s;
-}
-
-@-webkit-keyframes slide-down {
-    from { transform: translate(0%, -100%) }
-    to   { transform: translate(0%, 0%) }
 }
 
 .dropdown-links{

@@ -110,7 +110,6 @@
   transition: border-color .24s ease-in-out;
     -moz-transition: border-color .24s ease-in-out;
     -webkit-transition: border-color .24s ease-in-out;
-  // margin-bottom: 9px;
 }
 
 .checked-circle {
@@ -143,8 +142,8 @@
   height: 12px;
   fill: #848f99;
   transition: fill .24s ease-in-out;
-  -moz-transition: fill .24s ease-in-out;
-  -webkit-transition: fill .24s ease-in-out;
+    -moz-transition: fill .24s ease-in-out;
+    -webkit-transition: fill .24s ease-in-out;
 }
 
 .checked-task-index-check {
@@ -157,7 +156,6 @@
 }
 
 .for-line-under-circle {
-  // border-bottom: 1px solid var(--light-grey);
   display: inline-flex;
   width: auto;
   box-sizing: border-box;

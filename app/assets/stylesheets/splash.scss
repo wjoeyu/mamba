@@ -20,15 +20,80 @@
   margin-right: 24px;
 }
 
+.nav-left {
+  min-width: 124px;
+  flex-shrink: 0;
+}
+
+.nav-left div{
+  display: inline-block;
+}
+
+.splash-logo {
+  background-image: image_url('mamba-logo-dark-bg.png');
+  width: 26px;
+  height: 24px;
+  background-size: cover;
+  transform: translateY(5px);
+}
+
+.splash-mamba {
+  font-size: 24px;
+  margin-left: 8px;
+  margin-right: 22px;
+}
+
 .nav-right {
   flex-shrink: 0;
   font-size: 24px;
   left: 18px;
   margin-top: 0px;
-  margin-left: 20px;
   min-width: 105px;
   font-family: Questrial;
   letter-spacing: -2px;
+}
+
+.personal-links {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.personal-links div {
+  display: inline-block;
+}
+
+.personal-links svg {
+  fill: #646e78;
+  transition: fill .24s ease-in-out;
+  -moz-transition: fill .24s ease-in-out;
+  -webkit-transition: fill .24s ease-in-out;
+}
+
+.home-page-link:hover {
+  border: 2px solid #ffc107;
+}
+.fa-github-square:hover svg {
+  fill: var(--purple);
+}
+.fa-linkedin:hover svg {
+  fill: var(--light-blue);
+}
+.fa-angellist:hover svg {
+  fill: #25e8c8;
+}
+
+.home-page-link {
+  background-image: image_url('profilePic.jpg');
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  box-sizing: border-box;
+  border: 2px solid #646e78;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border .24s ease-in-out;
+  -moz-transition: border .24s ease-in-out;
+  -webkit-transition: border .24s ease-in-out;
 }
 
 .masthead {
@@ -59,7 +124,7 @@
   line-height: 1.636;
   font-weight: 400;
   color: #636e79;
-  font-family: Raleway;
+  font-family: 'Raleway', sans-serif;
 }
 
 .nav-login {
@@ -92,7 +157,7 @@
 .splash-nav a{
   font-size: 24px;
   left: 18px;
-  margin-left: 20px;
+  margin-left: 16px;
   min-width: 105px;
   font-family: Questrial;
   letter-spacing: -2px;
@@ -110,5 +175,4 @@
   min-height: 800px;
   background-size: cover;
   background-position: top;
-  animation: magic 5s infinite;
 }

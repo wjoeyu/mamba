@@ -20,12 +20,10 @@
     from { transform: translate(100%, 0%);}
     to   { transform: translate(0%, 0%);}
 }
-
-@-webkit-keyframes shadow {
-    from { box-shadow: 0px 0px 3px #25e8c8;}
-    to   { box-shadow: 0px 0px 24px #e2fffa;}
+@-moz-keyframes slide-in {
+    from { transform: translate(100%, 0%);}
+    to   { transform: translate(0%, 0%);}
 }
-
 
 .task-form-header {
   padding: 10px;
@@ -36,7 +34,6 @@
   color: #646e79;
   border-radius: 3px;
   border: 1px solid #b7bfc6;
-  // width: 130px;
   box-sizing: border-box;
   padding: 6px 10px;
   font-size: 13px;
@@ -106,6 +103,10 @@
 }
 
 @-webkit-keyframes greenify {
+    from { color:#f6f8f9;}
+    to   { color:#25e8c8;}
+}
+@-moz-keyframes greenify {
     from { color:#f6f8f9;}
     to   { color:#25e8c8;}
 }
