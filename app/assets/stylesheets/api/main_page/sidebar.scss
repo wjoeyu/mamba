@@ -110,15 +110,15 @@
 }
 
 .hamburger {
-  height: 35px;
+  height: 42px;
   width: 42px;
   font-size: 18px;
   border-bottom: 1px solid var(--light-grey);
   color: #838f98;
   left: 240px;
   text-align: center;
-  padding-top: 6px;
-  // box-sizing: border-box;
+  padding-top: 10px;
+  box-sizing: border-box;
   cursor: pointer;
   display: block;
   transition: background .24s ease-in-out;

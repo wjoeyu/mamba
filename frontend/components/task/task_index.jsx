@@ -125,7 +125,7 @@ export class TaskIndex extends React.Component {
       <div className="main-content">
         <div className="main-content-header">{this.currentTeamMember()} Tasks in {this.currentTeamName()}</div>
         <div className="task-wrapper">
-          <div className="task-index">
+          <div className={"task-index-condensed"}>
             <div className="task-index-header">
               <div onClick={this.createNewTask} className="add-task-button">Add Task</div>
             </div>
