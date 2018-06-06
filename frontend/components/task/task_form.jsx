@@ -37,17 +37,21 @@ class TaskForm extends React.Component {
     return (
       <div className='task-form'>
         <div className="task-form-header">
+
           <div onClick={()=>this.completeTask(task.completed)} className={(task && task.completed)? "completed-button" : "completion-button"}>
             <svg className={(task && task.completed)? "completed-check" : "check-mark"}
               viewBox="0 0 32 32">
               <polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615 "/>
             </svg>
             {(task && task.completed)? "Completed" : "Mark Complete"}</div>
+
           <div className="deletion-button" onClick={()=>this.removeTask()}>Delete</div>
+
           <div className="task-form-close"
             onClick={()=> this.props.history.push(
               `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}`
             )}>&times;</div>
+
         </div>
       <form className="task-form-content">
         <input type="text"
@@ -56,17 +60,20 @@ class TaskForm extends React.Component {
           className="task-form-name"
           placeholder="Write a task name"
         />
-      <div className="form-spacer">
+
+      <input type="date" className="date-input" value={task ? task.due_date.slice(0,10) : ""} onChange={this.update('due_date')}/>
+
+        <div className="form-spacer">
         <svg className ="desc-icon" viewBox="0 0 32 32">
           <path d="M26,8H2V6h24V8z M22,12H2v2h20V12z M28,18H2v2h26V18z M24,24H2v2h22V24z"></path>
         </svg>
         <Textarea
-          value={task? task.description : ""}
+          value={task ? task.description : ""}
           onChange={this.update('description')}
           className="task-form-description"
           placeholder="Description"
           />
-      </div>
+        </div>
       </form>
     </div>
     );
