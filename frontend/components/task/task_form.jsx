@@ -34,6 +34,10 @@ class TaskForm extends React.Component {
 
   render() {
     const { task } = this.props;
+
+    const dueDate = task && task.due_date? new Date(task.due_date).toString().slice(4,10) : "";
+
+
     return (
       <div className='task-form'>
         <div className="task-form-header">
@@ -79,7 +83,7 @@ class TaskForm extends React.Component {
         </div>
           <div className ="due-date">
             <div className="due-date-heading">Due Date</div>
-            <div className="parsed-date">{task && task.due_date? task.due_date.slice(0,10) : "" }</div>
+            <div className="parsed-date">{dueDate}</div>
           </div>
           <input
             type="date"
