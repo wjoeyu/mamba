@@ -1,4 +1,4 @@
-<img align="left" width="88" height="auto" src="https://github.com/wjoeyu/mamba/blob/master/app/assets/images/mamba-logo.png">
+<img align="left" width="24" height="auto" src="https://github.com/wjoeyu/mamba/blob/master/app/assets/images/mamba-logo.png">
 
 # Mamba
 
