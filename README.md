@@ -2,9 +2,13 @@
 
 ## Description
 
-Mamba is a single-page team and task management app, inspired by [Asana](https://www.asana.com/). It utilizes purposeful aesthestics and motion to galvanize team milestone achievement.
+<p align="center">
+  <img width="460" height="auto" src="https://github.com/wjoeyu/mamba/blob/master/app/assets/images/mamba-logo.png">
+</p>
 
 ![mamba_logo](https://github.com/wjoeyu/mamba/blob/master/app/assets/images/mamba-logo.png)
+
+Mamba is a single-page team and task management app, inspired by [Asana](https://www.asana.com/). It utilizes purposeful aesthestics and motion to galvanize team milestone achievement.
 
 [Mamba Live Demo](https://aa-mamba.herokuapp.com/#/)
 
