@@ -1,5 +1,5 @@
+<img align="left" width="88" height="auto" src="https://github.com/wjoeyu/mamba/blob/master/app/assets/images/mamba-logo.png">
 # Mamba
-<img align="left" width="100" height="auto" src="https://github.com/wjoeyu/mamba/blob/master/app/assets/images/mamba-logo.png">
 
 ## Description
 
