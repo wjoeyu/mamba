@@ -295,12 +295,7 @@
     text-transform: uppercase;
     font-weight: 400;
   }
-  .parsed-date {
-    display: block;
-    color: #222b37;
-    margin-right: 15px;
-    font-size: 13px;
-  }
+
   .past {
     display: block;
     margin-right: 20px;
@@ -308,17 +303,20 @@
     font-weight: 400;
     color: #ed4758;
   }
-  .soon{
+  .soon {
     display: block;
     margin-right: 20px;
     font-size: 13px;
     font-weight: 400;
     color: #00bf9c;
   }
-
-.date-selector span {
-
-}
+  .future {
+    display: block;
+    margin-right: 20px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #646f79;
+  }
 
 .desc-icon {
   height: 16px;

@@ -52,7 +52,8 @@ export const dueDateClass = (task) => {
     return "soon";
   } else if (dueDate) {
     if (dueDate.getTime() < today.getTime()) {
-    return "past";
+      return "past";
     }
   }
+  return "future";
 };
