@@ -61,7 +61,33 @@ class TaskForm extends React.Component {
           placeholder="Write a task name"
         />
 
-      <input type="date" className="date-input" value={task ? task.due_date.slice(0,10) : ""} onChange={this.update('due_date')}/>
+      <div className="date-button">
+        <div className={ task && task.due_date? "calendar-circle" : "dotted-calendar-circle"}>
+          <svg className="due-date-calendar" viewBox="0 0 32 32">
+            <rect x="16" y="16" width="2" height="2"></rect>
+            <rect x="20" y="16" width="2" height="2"></rect>
+            <rect x="20" y="20" width="2" height="2"></rect>
+            <rect x="16" y="20" width="2" height="2"></rect>
+            <rect x="8" y="20" width="2" height="2"></rect>
+            <rect x="8" y="24" width="2" height="2"></rect>
+            <rect x="16" y="24" width="2" height="2"></rect>
+            <rect x="12" y="16" width="2" height="2"></rect>
+            <rect x="12" y="20" width="2" height="2"></rect>
+            <rect x="12" y="24" width="2" height="2"></rect>
+            <path d="M22,2V0h-2v2h-8V0h-2v2H2v30h28V2H22z M28,30H4V12h24V30z M28,10H4V4h6v2h2V4h8v2h2V4h6V10z"></path>
+          </svg>
+        </div>
+          <div className ="due-date">
+            <div className="due-date-heading">Due Date</div>
+            <div className="parsed-date">{task && task.due_date? task.due_date.slice(0,10) : "" }</div>
+          </div>
+          <input
+            type="date"
+            className="date-input"
+            value={task && task.due_date? task.due_date.slice(0,10) : "" }
+            onChange={this.update('due_date')}
+            />
+      </div>
 
         <div className="form-spacer">
         <svg className ="desc-icon" viewBox="0 0 32 32">
