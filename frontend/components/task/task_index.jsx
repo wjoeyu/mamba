@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Link, withRouter } from 'react-router-dom';
 import TaskFormContainer from './task_form_container';
+import { dueDate, dueDateClass } from './date';
 
 export class TaskIndex extends React.Component {
   constructor(props) {
@@ -117,6 +118,7 @@ export class TaskIndex extends React.Component {
             className="task-index-row-name-inputs"
             placeholder="Add a task name"
             />
+            <div className={dueDateClass(task)}>{dueDate(task)}</div>
         </Link>
       </div>
     );

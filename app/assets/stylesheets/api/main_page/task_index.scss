@@ -95,9 +95,11 @@
 }
 
 .task-index-item-wrapper {
+  position: relative;
   padding-left: 24px;
-  padding-right: 50px;
+  padding-right: 24px;
   border: 1px solid transparent;
+  flex-shrink: 0;
 }
 
 .task-index-item-wrapper:hover {
@@ -116,6 +118,7 @@
 
 .check-circle {
   display: inline-block;
+  float: left;
   width: 19px;
   height: 19px;
   border-radius: 24px;
@@ -135,6 +138,7 @@
 
 .checked-circle {
   display: inline-block;
+  float: left;
   width: 19px;
   height: 19px;
   border-radius: 24px;
@@ -162,6 +166,7 @@
 
 .task-index-check {
   height: 12px;
+  transform: translateY(3px);
   fill: #848f99;
   cursor: pointer;
   transition: fill .24s ease-in-out;
@@ -190,7 +195,7 @@
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  width: 100%;
+  width: 82%;
   height: 36px;
   cursor: pointer;
   font-size: 13px;
@@ -201,11 +206,18 @@
   box-sizing: border-box;
 }
 
-
 .task-index-row-name-inputs:focus {
   cursor: text;
 }
 
-.index-link {
+Link {
   text-decoration: none;
+}
+
+.index-link div:last-child {
+  display: inline-block;
+  font-size: 11px;
+  right: 0px;
+  float: right;
+  margin-top: 15px;
 }

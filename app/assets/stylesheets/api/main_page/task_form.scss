@@ -296,24 +296,23 @@
     font-weight: 400;
   }
 
+  .due-date div:last-child {
+    font-size: 13px;
+    margin-right: 20px;
+  }
+
   .past {
     display: block;
-    margin-right: 20px;
-    font-size: 13px;
     font-weight: 400;
     color: #ed4758;
   }
   .soon {
     display: block;
-    margin-right: 20px;
-    font-size: 13px;
     font-weight: 400;
     color: #00bf9c;
   }
   .future {
     display: block;
-    margin-right: 20px;
-    font-size: 13px;
     font-weight: 400;
     color: #646f79;
   }
