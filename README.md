@@ -8,6 +8,7 @@ Mamba is a single-page team and task management app, inspired by [Asana](https:/
 [Mamba Live Demo](https://aa-mamba.herokuapp.com/#/)
 
 <img align="left" width="24" height="auto" src="https://github.com/wjoeyu/mamba/blob/master/app/assets/images/mamba-logo.png">
+
 ![mamba_demo](https://github.com/wjoeyu/mamba/blob/master/wireframes/mamba_demo.gif)
 
 ### Main Features:
