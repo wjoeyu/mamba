@@ -49,6 +49,10 @@ class Splash extends React.Component {
           <a>Move work forward</a>
           <section>Mamba is the easiest way for teams to <br/>track their work—and get results.</section>
         </div>
+        <div className="lol">
+            <div className="lol-1"></div>
+            <div className="lol-1"></div>
+        </div>
       </div>
     );
   }

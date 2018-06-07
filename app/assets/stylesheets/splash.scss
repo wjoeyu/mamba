@@ -170,9 +170,89 @@
 }
 
 .splash {
-  background-image: image_url('mamba_bg.png');
+  // background-image: image_url('mamba_bg.png');
   height: 100vh;
   min-height: 800px;
   background-size: cover;
   background-position: top;
+}
+
+.lol {
+  z-index: -999;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 198px;
+}
+
+.lol-1{
+    display: block;
+    background: url(asset-path('lol.svg')) repeat-x;
+    position: absolute;
+    top: 0px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 8s ease-in-out infinite;
+    transform: translate3d(0, 0, 0);
+    filter: invert(1.5) sepia(1) saturate(8) hue-rotate(210deg);
+}
+
+.lol-1:nth-of-type(2){
+    display: block;
+    top: 22px;
+    animation: wave 24s ease-in-out -0.125s infinite,swell 7s ease -1.25s infinite;
+    opacity: 1;
+    filter: invert(3) sepia(1) saturate(8) hue-rotate(15deg);
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
+}
+@-webkit-keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@-webkit-keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
+}
+@-moz-keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@-moz-keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
 }
