@@ -39,7 +39,7 @@ export const dueDate = (task) => {
 
 export const dueDateClass = (task) => {
   const dueDate = task && task.due_date ?
-    new Date(task.due_date.replace(/-/g, '\/').replace(/T.+/, '')).toString(): "";
+    new Date(task.due_date.replace(/-/g, '\/').replace(/T.+/, '')): "";
 
   const today = new Date();
   const tomorrow = new Date();
@@ -47,10 +47,12 @@ export const dueDateClass = (task) => {
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
 
-  if (today.toString().slice(4,15) === dueDate.slice(4,15) ||
-    tomorrow.toString().slice(4,15) === dueDate.slice(4,15)) {
+  if (today.toString().slice(4,15) === dueDate.toString().slice(4,15) ||
+    tomorrow.toString().slice(4,15) === dueDate.toString().slice(4,15)) {
     return "soon";
-  } else if (dueDate.getTime() < today.getTime()) {
+  } else if (dueDate) {
+    if (dueDate.getTime() < today.getTime()) {
     return "past";
+    }
   }
 };
