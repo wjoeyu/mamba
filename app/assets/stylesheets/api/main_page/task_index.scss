@@ -95,10 +95,12 @@
 }
 
 .task-index-item-wrapper {
+  display: inline-block;
   position: relative;
   padding-left: 24px;
-  padding-right: 24px;
+  padding-right: 0px;
   border: 1px solid transparent;
+  box-sizing: border-box;
   flex-shrink: 0;
 }
 
@@ -118,10 +120,9 @@
 
 .check-circle {
   display: inline-block;
-  float: left;
-  width: 19px;
-  height: 19px;
-  border-radius: 24px;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
   border: 1px solid black;
   padding-bottom: 4px;
   padding-left: 3px;
@@ -138,10 +139,10 @@
 
 .checked-circle {
   display: inline-block;
-  float: left;
-  width: 19px;
-  height: 19px;
-  border-radius: 24px;
+  width: 20px;
+  height: 20px;
+  transform: translateY(1px);
+  border-radius: 20px;
   border: 1px solid black;
   cursor: pointer;
   padding-bottom: 4px;
@@ -166,7 +167,6 @@
 
 .task-index-check {
   height: 12px;
-  transform: translateY(3px);
   fill: #848f99;
   cursor: pointer;
   transition: fill .24s ease-in-out;
@@ -179,7 +179,6 @@
 }
 
 .checked-task-index-check {
-  transform: translateY(3px);
   cursor: pointer;
   height: 12px;
   fill: #25e8c8;
@@ -196,7 +195,7 @@
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  width: 82%;
+  width: 78%;
   height: 36px;
   cursor: pointer;
   font-size: 13px;
@@ -204,6 +203,7 @@
   background: none;
   align-items: center;
   padding-left: 12px;
+  padding-right: 12px;
   box-sizing: border-box;
 }
 
@@ -215,10 +215,11 @@ Link {
   text-decoration: none;
 }
 
-.index-link div:last-child {
-  display: inline-block;
+.dateWrapper div:last-of-type {
+  position: absolute;
+  padding: 4px;
+  text-align: right;
   font-size: 11px;
-  right: 0px;
-  float: right;
-  margin-top: 15px;
+  top: 8px;
+  right: 20px;
 }

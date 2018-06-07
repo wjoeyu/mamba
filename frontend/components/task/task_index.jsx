@@ -118,7 +118,9 @@ export class TaskIndex extends React.Component {
             className="task-index-row-name-inputs"
             placeholder="Add a task name"
             />
+          <div className="dateWrapper">
             <div className={dueDateClass(task)}>{dueDate(task)}</div>
+          </div>
         </Link>
       </div>
     );
