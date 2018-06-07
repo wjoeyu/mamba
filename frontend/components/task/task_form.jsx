@@ -1,13 +1,13 @@
 import React from "react";
 import { Link, withRouter } from 'react-router-dom';
 import Textarea from "react-textarea-autosize";
+import { dueDate, dueDateClass } from './date';
 
 class TaskForm extends React.Component {
   constructor(props) {
     super(props);
     this.completeTask = this.completeTask.bind(this);
     this.removeTask = this.removeTask.bind(this);
-    this.dueDate = this.dueDate.bind(this);
     this.timeout = null;
   }
 
@@ -31,43 +31,6 @@ class TaskForm extends React.Component {
           this.props.updateTask({id: [this.props.match.params.taskId], [field]: toBePersisted});
         }, 200);
       };
-  }
-
-  dueDate() {
-    const dueDate = this.props.task && this.props.task.due_date ?
-      new Date(this.props.task.due_date.replace(/-/g, '\/').replace(/T.+/, '')).toString(): "";
-
-    const today = new Date().toString();
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-
-    if (today.slice(4,10) === dueDate.slice(4,10)) {
-      return "Today";
-    } else if (tomorrow.toString().slice(4,15) === dueDate.slice(4,15)) {
-      return "Tomorrow";
-    } else if (yesterday.toString().slice(4,15) === dueDate.slice(4,15)) {
-      return "Yesterday";
-    } else if (today.toString().slice(11,15) !== dueDate.slice(11,15)) {
-      let splitDate = dueDate.slice(4,15).split(" ");
-      if (splitDate[1]) {
-        if(splitDate[1].length === 2 && splitDate[1][0] === "0") {
-          splitDate[1] = splitDate[1].slice(1,2) + ",";
-        } else {
-          splitDate[1] = splitDate[1] + ",";
-        }
-      }
-      return splitDate.join(" ");
-    } else if (today.toString().slice(11,15) === dueDate.slice(11,15)) {
-      let splitDate = dueDate.slice(4,11).split(" ");
-      if (splitDate[1]) {
-        if(splitDate[1].length === 2 && splitDate[1][0] === "0") {
-          splitDate[1] = splitDate[1].slice(1,2);
-        }
-      }
-      return splitDate.join(" ");
-    }
   }
 
   render() {
@@ -118,7 +81,7 @@ class TaskForm extends React.Component {
         </div>
           <div className ="due-date">
             <div className="due-date-heading">Due Date</div>
-            <div className="parsed-date">{this.dueDate()}</div>
+            <div className={dueDateClass(task)}>{dueDate(task)}</div>
           </div>
           <input
             type="date"
