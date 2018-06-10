@@ -82,7 +82,7 @@ export class TaskIndex extends React.Component {
       {
         task_name: "",
         description: "",
-        due_date: '2018-05-18',
+        due_date: '',
         completed: false,
         assignee_id: assigneeId,
         team_id: this.props.match.params.teamId
@@ -134,7 +134,7 @@ export class TaskIndex extends React.Component {
               <div onClick={this.createNewTask} className="add-task-button">Add Task</div>
             </div>
             {taskIndexLinks}
-            <div className="task-index-item-wrappper"></div>
+            <div className="task-index-item-wrapper"></div>
           </div>
         </div>
       </div>

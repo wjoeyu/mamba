@@ -102,6 +102,10 @@
   border: 1px solid transparent;
   box-sizing: border-box;
   flex-shrink: 0;
+
+  &:last-of-type {
+      height: 100vh;
+  }
 }
 
 .task-index-item-wrapper:hover {
