@@ -102,10 +102,17 @@
   border: 1px solid transparent;
   box-sizing: border-box;
   flex-shrink: 0;
+}
 
-  &:last-of-type {
-      height: 100vh;
-  }
+.task-index-filler {
+    display: inline-block;
+    position: relative;
+    padding-left: 24px;
+    padding-right: 0px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    height: 100vh;
 }
 
 .task-index-item-wrapper:hover {

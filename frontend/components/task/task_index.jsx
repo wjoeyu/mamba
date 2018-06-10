@@ -134,7 +134,7 @@ export class TaskIndex extends React.Component {
               <div onClick={this.createNewTask} className="add-task-button">Add Task</div>
             </div>
             {taskIndexLinks}
-            <div className="task-index-item-wrapper"></div>
+            <div className="task-index-filler"></div>
           </div>
         </div>
       </div>
