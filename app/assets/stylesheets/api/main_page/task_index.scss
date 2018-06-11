@@ -22,6 +22,7 @@
 }
 
 .add-task-button {
+  display: flex;
   width: 75px;
   font-size: 13px;
   font-weight: 400;
@@ -31,10 +32,10 @@
   border-radius: 3px;
   background: #14aaf5;
   height: 30px;
+  align-items: center;
   text-align: center;
+  justify-content: space-around;
   color: white;
-  display: block;
-  padding-top: 8px;
   box-sizing: border-box;
   cursor: pointer;
   transition: background .24s ease-in-out;
