@@ -78,7 +78,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid var(--light-grey);
-  width: 50%;
+  width: 51%;
   min-width: 400px;
   margin-top: 14px;
   justify-content: space-between;
@@ -95,14 +95,66 @@
   box-sizing: border-box;
 }
 
+.task-index-item-selected {
+  display: inline-block;
+  position: relative;
+  padding-left: 24px;
+  padding-right: 0px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  background: #eef9fe;
+}
+
+.task-index-item-selected:hover {
+  border-top: 1px solid var(--light-grey);
+  border-bottom: 1px solid var(--light-grey);
+  box-sizing: border-box;
+}
+
+.task-index-item-selected:focus-within {
+  background: white;
+  border-top: 1px solid #14aaf5;
+  border-bottom: 1px solid #14aaf5;
+  box-shadow: inset 0 3px 4px -1px var(--light-grey);
+  box-sizing: border-box;
+
+  & + .task-index-item-wrapper{
+    border-top: 1px solid transparent;
+  }
+
+}
+
 .task-index-item-wrapper {
   display: inline-block;
   position: relative;
   padding-left: 24px;
   padding-right: 0px;
-  border: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
   box-sizing: border-box;
   flex-shrink: 0;
+}
+
+.task-index-item-wrapper:hover {
+  background: #f6f8f9;
+  border-top: 1px solid var(--light-grey);
+  border-bottom: 1px solid var(--light-grey);
+  box-sizing: border-box;
+}
+
+.task-index-item-wrapper:focus-within {
+  background: white;
+  border-top: 1px solid #14aaf5;
+  border-bottom: 1px solid #14aaf5;
+  box-shadow: inset 0 3px 4px -1px var(--light-grey);
+  box-sizing: border-box;
+
+  & + .task-index-item-wrapper{
+    border-top: 1px solid transparent;
+  }
+
 }
 
 .task-index-filler {
@@ -116,22 +168,9 @@
     height: 100vh;
 }
 
-.task-index-item-wrapper:hover {
-  background: #f6f8f9;
-  border-top: 1px solid var(--light-grey);
-  border-bottom: 1px solid var(--light-grey);
-  box-sizing: border-box;
-}
-.task-index-item-wrapper:focus-within {
-  background: white;
-  border-top: 1px solid #14aaf5;
-  border-bottom: 1px solid #14aaf5;
-  box-shadow: inset 0 3px 4px -1px var(--light-grey);
-  box-sizing: border-box;
-}
-
 .check-circle {
   display: inline-block;
+  background: white;
   width: 20px;
   height: 20px;
   border-radius: 20px;
@@ -207,7 +246,7 @@
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  width: 78%;
+  width: 79%;
   height: 36px;
   cursor: pointer;
   font-size: 13px;
@@ -234,4 +273,39 @@ Link {
   font-size: 11px;
   top: 8px;
   right: 20px;
+}
+
+.index-date-input {
+  z-index: 23;
+  font-family: Roboto;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 88px;
+  color: transparent;
+  height: 100%;
+  background: none;
+  border: none;
+  border-radius: 38px;
+
+  &::-webkit-datetime-edit {
+    visibility: hidden;
+  }
+  &::-webkit-inner-spin-button {
+    visibility: hidden;
+  }
+  &::-webkit-clear-button {
+    visibility: hidden;
+  }
+  &::-webkit-calendar-picker-indicator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &:focus ::-webkit-datetime-edit {
+      visibility: visible;
+  }
 }

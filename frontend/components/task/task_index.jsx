@@ -100,7 +100,7 @@ export class TaskIndex extends React.Component {
   render() {
     const { tasks } = this.props;
     const taskIndexLinks = tasks.map(task =>
-      <div className="task-index-item-wrapper" key={task.id}>
+      <div className={this.props.match.params.taskId === task.id.toString() ? "task-index-item-selected" : "task-index-item-wrapper"} key={task.id}>
         <Link to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
           className="index-link"
           draggable="false">
@@ -118,10 +118,16 @@ export class TaskIndex extends React.Component {
             className="task-index-row-name-inputs"
             placeholder="Add a task name"
             />
-          <div className="dateWrapper">
-            <div className={dueDateClass(task)}>{dueDate(task)}</div>
-          </div>
         </Link>
+        <div className="dateWrapper">
+            <div className={dueDateClass(task)}>{dueDate(task)}</div>
+            <input
+            type="date"
+            className="index-date-input"
+            value={task.due_date? task.due_date.slice(0,10) : "" }
+            onChange={this.update(task.id,'due_date')}
+            />
+        </div>
       </div>
     );
 
@@ -129,7 +135,7 @@ export class TaskIndex extends React.Component {
       <div className="main-content">
         <div className="main-content-header">{this.currentTeamMember()} Tasks in {this.currentTeamName()}</div>
         <div className="task-wrapper">
-          <div className={"task-index-condensed"}>
+          <div className={this.props.match.params.taskId ? "task-index-condensed" : "task-index"}>
             <div className="task-index-header">
               <div onClick={this.createNewTask} className="add-task-button">Add Task</div>
             </div>

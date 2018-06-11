@@ -10,7 +10,7 @@ const MainContent = () => {
       <DropdownContainer/>
       <Route path="/team/:teamId/users/:userId/tasks/:taskId" component={TaskFormContainer} />
       <Route path="/team/:teamId/users/:userId/tasks/:taskId" component={TaskIndexContainer} />
-      <Route path="/team/:teamId/users/:userId" component={TaskIndexContainer} />
+      <Route exact path="/team/:teamId/users/:userId" component={TaskIndexContainer} />
       <Route exact path="/team/:teamId" component={TaskIndexContainer} />
     </div>
   );
