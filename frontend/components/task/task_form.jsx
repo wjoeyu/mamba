@@ -8,6 +8,7 @@ class TaskForm extends React.Component {
     super(props);
     this.completeTask = this.completeTask.bind(this);
     this.removeTask = this.removeTask.bind(this);
+    this.closeForm = this.closeForm.bind(this);
     this.timeout = null;
   }
 
@@ -33,6 +34,12 @@ class TaskForm extends React.Component {
       };
   }
 
+  closeForm() {
+      this.props.history.push(
+        `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}`
+      )
+  }
+
   render() {
     const { task } = this.props;
 
@@ -50,9 +57,7 @@ class TaskForm extends React.Component {
           <div className="deletion-button" onClick={()=>this.removeTask()}>Delete</div>
 
           <div className="task-form-close"
-            onClick={()=> this.props.history.push(
-              `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}`
-            )}>&times;</div>
+            onClick={()=> this.closeForm()}>&times;</div>
 
         </div>
       <form className="task-form-content">

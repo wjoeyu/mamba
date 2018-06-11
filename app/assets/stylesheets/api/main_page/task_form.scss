@@ -11,10 +11,15 @@
   margin-top: 19px;
   background: white;
   border-radius: 3px;
+  animation: slide-in .4s;
   -webkit-animation: slide-in .4s;
    -moz-animation: slide-in .48s;
 }
 
+@keyframes slide-in {
+    from { transform: translate(100%, 0%);}
+    to   { transform: translate(0%, 0%);}
+}
 @-webkit-keyframes slide-in {
     from { transform: translate(100%, 0%);}
     to   { transform: translate(0%, 0%);}
@@ -22,6 +27,36 @@
 @-moz-keyframes slide-in {
     from { transform: translate(100%, 0%);}
     to   { transform: translate(0%, 0%);}
+}
+.task-form-exit {
+  position: absolute;
+  font-family: Roboto;
+  border: 1px solid var(--light-grey);
+  height: 100vh;
+  top: 67px;
+  right: 16px;
+  z-index: 20;
+  width: 46%;
+  min-width: 430px;
+  margin-top: 19px;
+  background: white;
+  border-radius: 3px;
+  animation: slide-out .4s;
+  -webkit-animation: slide-out .4s;
+   -moz-animation: slide-out .48s;
+}
+
+@keyframes slide-out {
+    from { transform: translate(0%, 0%);}
+    to   { transform: translate(100%, 0%);}
+}
+@-webkit-keyframes slide-out {
+    from { transform: translate(0%, 0%);}
+    to   { transform: translate(100%, 0%);}
+}
+@-moz-keyframes slide-out {
+    from { transform: translate(0%, 0%);}
+    to   { transform: translate(100%, 0%);}
 }
 
 .completion-button {
@@ -92,18 +127,7 @@
   align-items: center;
   margin-left: 20px;
   cursor: pointer;
-  -webkit-animation: greenify .08s;
-   -moz-animation: greenify .08s;
-   position: relative;
-}
-
-@-webkit-keyframes greenify {
-    from { color:#f6f8f9;}
-    to   { color:#25e8c8;}
-}
-@-moz-keyframes greenify {
-    from { color:#f6f8f9;}
-    to   { color:#25e8c8;}
+  position: relative;
 }
 
 .completed-button:hover {
