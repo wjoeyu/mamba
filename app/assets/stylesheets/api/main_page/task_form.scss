@@ -355,10 +355,9 @@
     visibility: hidden;
   }
   &::-webkit-clear-button {
-    background: black;
+    color: yellow;
     position: absolute;
     right: 8px;
-    top: 12px;
     z-index: 24;
     cursor: pointer;
   }

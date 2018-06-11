@@ -8,8 +8,8 @@ export class Dropdown extends React.Component {
       visible: false,
     };
     this.toggleVisibility = this.toggleVisibility.bind(this);
+    this.handleOutsideDropdown = this.handleOutsideDropdown.bind(this);
     this.currentTeamName = this.currentTeamName.bind(this);
-    this.toggleInvisible = this.toggleInvisible.bind(this);
     this.myTaskButton = this.myTaskButton.bind(this);
     this.handleLeaveRequest = this.handleLeaveRequest.bind(this);
   }
@@ -24,12 +24,20 @@ export class Dropdown extends React.Component {
   }
 
   toggleVisibility() {
-    this.setState( {visible: true} );
-    document.addEventListener('click', () => this.setState({visible: false}), {once: true});
+    if(!this.state.visible) {
+      document.addEventListener("click", this.handleOutsideDropdown);
+    } else {
+      document.removeEventListener("click", this.handleOutsideDropdown);
+    }
+
+    this.setState({visible: !this.state.visible});
   }
 
-  toggleInvisible() {
-    this.setState( {visible: false} );
+  handleOutsideDropdown(e) {
+    if(this.node.contains(e.target)) {
+      return;
+    }
+    this.toggleVisibility();
   }
 
   currentTeamName() {
@@ -68,7 +76,9 @@ export class Dropdown extends React.Component {
     return (
       <div className="dropdown">
         {this.myTaskButton()}
-        <div className="dropdown-button" onClick={this.toggleVisibility} >
+        <div
+          className="dropdown-button" onClick={this.toggleVisibility}
+          ref={ node => this.node = node }>
           <div className="current-team">{this.currentTeamName()}</div>
           <div className="current-user-avatar">
             {currentUserInitials}
