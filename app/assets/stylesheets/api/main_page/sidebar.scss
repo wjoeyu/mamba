@@ -117,10 +117,11 @@
   color: #838f98;
   left: 240px;
   text-align: center;
-  padding: 10px;
+  align-items: center;
+  justify-content: space-around;
   box-sizing: border-box;
   cursor: pointer;
-  display: block;
+  display: flex;
   transition: background .24s ease-in-out;
   -moz-transition: background .24s ease-in-out;
   -webkit-transition: background .24s ease-in-out;
@@ -131,4 +132,10 @@
 }
 .hamburger-hidden {
   display: none;
+}
+
+.hamburger-icon {
+    fill: #848f99;
+    height: 16px;
+    width: 16px;
 }

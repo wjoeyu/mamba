@@ -48,7 +48,13 @@ export class Sidebar extends React.Component {
           </div>
         </div>
         <div className={this.state.visible ?
-            "hamburger-hidden" : "hamburger"} onClick={this.toggleVisibility}>&#9776;</div>
+            "hamburger-hidden" : "hamburger"} onClick={this.toggleVisibility}>
+            <svg
+            class="hamburger-icon" 
+            focusable="false"
+            viewBox="0 0 32 32"><rect x="2" y="4" width="28" height="4"></rect><rect x="2" y="14" width="28" height="4"></rect><rect x="2" y="24" width="28" height="4"></rect>
+            </svg>
+        </div>
       </div>
     );
   }

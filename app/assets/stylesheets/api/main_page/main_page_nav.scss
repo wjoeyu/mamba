@@ -9,7 +9,7 @@
   z-index: 3;
   box-sizing: border-box;
   white-space: nowrap;
-  border-left: 1px solid var(--light-grey);
+  border-left: 1px solid #edf1f2;
   animation: fade-in 2s;
   -webkit-animation: fade-in 2s;
     -moz-animation: fade-in 2s;
@@ -90,7 +90,10 @@
   width: 150px;
   display: inline-block;
   transform: translateY(3px);
-  color: #929ca5;
+  color: #848f99;
+  transition: color .24s ease-in-out;
+  -moz-transition: color .24s ease-in-out;
+  -webkit-transition: color .24s ease-in-out;
 }
 
 .current-user-avatar {
