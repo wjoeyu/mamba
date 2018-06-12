@@ -35,10 +35,9 @@
   margin-left: 26px;
   margin-top: 13px;
   text-decoration: none;
-}
-
-.my-tasks-button:hover {
-  color: var(--light-blue);
+    &:hover {
+        color: var(--light-blue);
+    }
 }
 
 .dropdown {
@@ -108,7 +107,7 @@
   background: #fc91ad;
 }
 
-.dropdown-button:hover {
+.dropdown-button:hover .current-team{
   color: var(--light-blue);
 }
 
