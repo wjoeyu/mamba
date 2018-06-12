@@ -103,9 +103,10 @@
   height: 30px;
   border-radius: 20px;
   text-align: center;
-  padding-top: 7px;
+  align-items: center;
+  justify-content: space-around;
   box-sizing: border-box;
-  display: inline-block;
+  display: inline-flex;
   margin-left: 8px;
   color: white;
   background: #fc91ad;
