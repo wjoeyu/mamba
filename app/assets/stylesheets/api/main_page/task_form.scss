@@ -413,12 +413,32 @@
     &:hover {
         background:#646f79;
     }
+    & svg {
+        fill: white;
+        height: 10px;
+        width: 10px;
+    }
 }
 
-.clear-date-button svg {
-    fill: white;
-    height: 10px;
-    width: 10px;
+.cleared-date-button {
+    height: 0px;
+    width: 0px;
+    border-radius: 10px;
+    background: #848f99;
+    display: flex;
+    box-sizing: border-box;
+    padding: 2px;
+    z-index: 24;
+    visibility: hidden;
+    cursor: pointer;
+    &:hover {
+        background:#646f79;
+    }
+    & svg {
+        fill: white;
+        height: 0px;
+        width: 0px;
+    }
 }
 
 .task-form-description {

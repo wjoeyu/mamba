@@ -99,7 +99,7 @@ class TaskForm extends React.Component {
             value={task && task.due_date? task.due_date.slice(0,10) : "" }
             onChange={this.update('due_date')}
         />
-        <div className={task && task.due_date ? "clear-date-button" : ""} onClick={() => this.clearDate()}>
+        <div className={task && task.due_date ? "clear-date-button" : "cleared-date-button"} onClick={() => this.clearDate()}>
             <svg focusable="false" viewBox="0 0 32 32">
               <polygon points="24.485,27.314 27.314,24.485 18.828,16 27.314,7.515 24.485,4.686 16,13.172 7.515,4.686 4.686,7.515 13.172,16 4.686,24.485 7.515,27.314 16,18.828 ">
               </polygon>
