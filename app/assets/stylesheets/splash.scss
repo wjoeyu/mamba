@@ -8,7 +8,7 @@
   justify-content: space-between;
   padding: 12px 0px;
   box-sizing: border-box;
-  box-shadow: 0px 2px 2px rgba(100, 111, 121, .25);
+  // box-shadow: 0px 2px 2px rgba(100, 111, 121, .25);
 }
 
 .splash-nav button {
@@ -41,6 +41,7 @@
   font-size: 24px;
   margin-left: 8px;
   margin-right: 22px;
+  color: white;
 }
 
 .nav-right {
@@ -63,15 +64,13 @@
 }
 
 .personal-links svg {
-  fill: #646e78;
+  // fill: #646e78;
+  fill: white;
   transition: fill .24s ease-in-out;
   -moz-transition: fill .24s ease-in-out;
   -webkit-transition: fill .24s ease-in-out;
 }
 
-.home-page-link:hover {
-  border: 2px solid #ffc107;
-}
 .fa-github-square:hover svg {
   fill: var(--purple);
 }
@@ -88,12 +87,16 @@
   height: 32px;
   background-size: cover;
   box-sizing: border-box;
-  border: 2px solid #646e78;
+  // border: 2px solid #646e78;
+  border: 2px solid white;
   border-radius: 6px;
   cursor: pointer;
   transition: border .24s ease-in-out;
   -moz-transition: border .24s ease-in-out;
   -webkit-transition: border .24s ease-in-out;
+  &:hover {
+      border: 2px solid #ffc107;
+  }
 }
 
 .masthead {
@@ -115,6 +118,7 @@
   font-weight: 200;
   width: 480px;
   margin-bottom: 48px;
+  color: white;
 }
 
 .masthead section {
@@ -123,13 +127,15 @@
   font-size: 1.375rem;
   line-height: 1.636;
   font-weight: 400;
-  color: #636e79;
+  // color: #636e79;
+  color: #afc8e0;
   font-family: 'Raleway', sans-serif;
 }
 
 .nav-login {
-  color: #646e78;
-  background: white;
+  // color: #646e78;
+  color: white;
+  background: var(--slate);
   padding: 0px;
   border: none;
 }
@@ -139,7 +145,8 @@
 }
 
 .demo {
-  background: white;
+  background: var(--slate);
+  // background: white;
   color: #796eff;
     transition: color .24s ease-in-out;
     -moz-transition: color .24s ease-in-out;
@@ -175,10 +182,11 @@
   min-height: 800px;
   background-size: cover;
   background-position: top;
+  background-color: var(--slate);
 }
 
 .lol {
-  z-index: -999;
+  // z-index: -999;
   width: 100%;
   position: absolute;
   bottom: 0;
