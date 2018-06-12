@@ -253,25 +253,6 @@
   &:hover .clear-date-button{
       visibility: visible;
   }
-  &:focus-within {
-    background-color: #f6f8f9;
-    border-color: #646f79;
-    border-style: solid;
-    color: #222b37;
-  }
-  &:focus-within .due-date-calendar {
-    fill: #222b37;
-  }
-  &:focus-within .calendar-circle {
-    border-color: #646f79;
-    border-style: solid;
-    color: #222b37;
-  }
-  &:focus-within .dotted-calendar-circle {
-    border-color: #646f79;
-    border-style: solid;
-    color: #222b37;
-  }
 }
 
 
@@ -402,7 +383,7 @@
 .clear-date-button {
     height: 14px;
     width: 14px;
-    border-radius: 10px;
+    border-radius: 14px;
     background: #848f99;
     display: flex;
     box-sizing: border-box;
@@ -424,17 +405,6 @@
 .cleared-date-button {
     height: 0px;
     width: 0px;
-    border-radius: 10px;
-    background: #848f99;
-    display: flex;
-    box-sizing: border-box;
-    padding: 2px;
-    z-index: 24;
-    visibility: hidden;
-    cursor: pointer;
-    &:hover {
-        background:#646f79;
-    }
     & svg {
         fill: white;
         height: 0px;
