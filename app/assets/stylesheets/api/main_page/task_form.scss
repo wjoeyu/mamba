@@ -406,7 +406,8 @@
     background: #848f99;
     display: flex;
     box-sizing: border-box;
-    padding: 2px;
+    justify-content: space-around;
+    align-items: center;
     z-index: 24;
     visibility: hidden;
     cursor: pointer;
