@@ -36,7 +36,3 @@ class LeaveTeamForm extends React.Component {
 }
 
 export default withRouter(LeaveTeamForm);
-
-// <input type="hidden"
-//   value={this.props.match.params.teamId}
-//   />

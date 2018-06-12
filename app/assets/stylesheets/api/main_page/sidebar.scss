@@ -110,12 +110,16 @@
 }
 
 .hamburger {
+  position: absolute;
+  z-index: 24;
   height: 42px;
   width: 42px;
   font-size: 18px;
+  border-right: 1px solid #edf1f2;
   border-bottom: 1px solid var(--light-grey);
   color: #838f98;
-  left: 240px;
+  top: 0px;
+  // left: 240px;
   text-align: center;
   align-items: center;
   justify-content: space-around;
@@ -129,6 +133,7 @@
 
 .hamburger:hover {
   background: #edf1f2;
+  border-bottom: 1px solid #edf1f2;
 }
 .hamburger-hidden {
   display: none;

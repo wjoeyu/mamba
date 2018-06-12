@@ -38,7 +38,6 @@ export const receiveTeam = team => {
   };
 };
 
-// to be merged into state, not retrieved, just for info
 export const receiveNewTeam = newTeam => {
   return {
     type: RECEIVE_NEW_TEAM,

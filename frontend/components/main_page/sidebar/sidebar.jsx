@@ -25,6 +25,12 @@ export class Sidebar extends React.Component {
   toggleVisibility() {
     const currentState = this.state.visible;
     this.setState( {visible: !currentState} );
+    let taskButton = document.getElementsByClassName("my-tasks-button")[0];
+    if (this.state.visible) {
+        taskButton.style.marginLeft = "66px";
+    } else {
+        taskButton.style.marginLeft = "26px";
+    }
   }
 
   render() {
@@ -50,7 +56,7 @@ export class Sidebar extends React.Component {
         <div className={this.state.visible ?
             "hamburger-hidden" : "hamburger"} onClick={this.toggleVisibility}>
             <svg
-            class="hamburger-icon" 
+            className="hamburger-icon"
             focusable="false"
             viewBox="0 0 32 32"><rect x="2" y="4" width="28" height="4"></rect><rect x="2" y="14" width="28" height="4"></rect><rect x="2" y="24" width="28" height="4"></rect>
             </svg>
