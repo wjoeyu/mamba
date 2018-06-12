@@ -9,6 +9,7 @@ class TaskForm extends React.Component {
     this.completeTask = this.completeTask.bind(this);
     this.removeTask = this.removeTask.bind(this);
     this.closeForm = this.closeForm.bind(this);
+    this.clearDate = this.clearDate.bind(this);
     this.timeout = null;
   }
 
@@ -38,6 +39,10 @@ class TaskForm extends React.Component {
       this.props.history.push(
         `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}`
       )
+  }
+
+  clearDate() {
+      this.props.updateTask({id: [this.props.match.params.taskId], due_date: ""})
   }
 
   render() {
@@ -84,16 +89,22 @@ class TaskForm extends React.Component {
             <path d="M22,2V0h-2v2h-8V0h-2v2H2v30h28V2H22z M28,30H4V12h24V30z M28,10H4V4h6v2h2V4h8v2h2V4h6V10z"></path>
           </svg>
         </div>
-          <div className ="due-date">
-            <div className="due-date-heading">Due Date</div>
+        <div className ="due-date">
+            <div className={task && task.due_date? "due-dated-heading" : "due-date-heading"}>Due Date</div>
             <div className={dueDateClass(task)}>{dueDate(task)}</div>
-          </div>
-          <input
+        </div>
+        <input
             type="date"
             className="date-input"
             value={task && task.due_date? task.due_date.slice(0,10) : "" }
             onChange={this.update('due_date')}
-            />
+        />
+        <div className={task && task.due_date ? "clear-date-button" : ""} onClick={() => this.clearDate()}>
+            <svg focusable="false" viewBox="0 0 32 32">
+              <polygon points="24.485,27.314 27.314,24.485 18.828,16 27.314,7.515 24.485,4.686 16,13.172 7.515,4.686 4.686,7.515 13.172,16 4.686,24.485 7.515,27.314 16,18.828 ">
+              </polygon>
+            </svg>
+        </div>
       </div>
 
         <div className="form-spacer">
