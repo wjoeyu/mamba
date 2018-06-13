@@ -51,18 +51,22 @@ class TaskForm extends React.Component {
     return (
       <div className='task-form'>
         <div className="task-form-header">
+            <div className="task-form-header-left">
+              <div onClick={()=>this.completeTask(task.completed)} className={(task && task.completed)? "completed-button" : "completion-button"}>
+                <svg className={(task && task.completed)? "completed-check" : "check-mark"}
+                  viewBox="0 0 32 32">
+                  <polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615 "/>
+                </svg>
+                {(task && task.completed)? "Completed" : "Mark Complete"}</div>
 
-          <div onClick={()=>this.completeTask(task.completed)} className={(task && task.completed)? "completed-button" : "completion-button"}>
-            <svg className={(task && task.completed)? "completed-check" : "check-mark"}
-              viewBox="0 0 32 32">
-              <polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615 "/>
-            </svg>
-            {(task && task.completed)? "Completed" : "Mark Complete"}</div>
-
-          <div className="deletion-button" onClick={()=>this.removeTask()}>Delete</div>
-
+              <div className="deletion-button" onClick={()=>this.removeTask()}>Delete</div>
+            </div>
           <div className="task-form-close"
-            onClick={()=> this.closeForm()}>&times;</div>
+            onClick={()=> this.closeForm()}>
+            <svg focusable="false" viewBox="0 0 32 32">
+                <polygon points="24.485,27.314 27.314,24.485 18.828,16 27.314,7.515 24.485,4.686 16,13.172 7.515,4.686 4.686,7.515 13.172,16 4.686,24.485 7.515,27.314 16,18.828 "></polygon>
+            </svg>
+          </div>
 
         </div>
       <form className="task-form-content">
