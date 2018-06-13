@@ -1,5 +1,5 @@
-export const selectCurrentTeams = (state) => {
-  return Object.values(state.entities.currentTeams);
+export const selectTeams = (state) => {
+  return Object.values(state.entities.teams);
 };
 
 export const selectTeamMembers = (state) => {

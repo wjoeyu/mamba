@@ -7,7 +7,7 @@ import userSearchReducer from './user_search_reducer';
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
-  currentTeams: teamsReducer,
+  teams: teamsReducer,
   tasks: tasksReducer,
   userSearch: userSearchReducer
 });

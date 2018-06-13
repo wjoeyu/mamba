@@ -15,8 +15,8 @@ export class Dropdown extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCurrentTeams().then(({currentTeams}) =>  {
-      const teamId = Object.keys(currentTeams)[0];
+    this.props.fetchTeams().then(({teams}) =>  {
+      const teamId = Object.keys(teams)[0];
       if (this.props.location.pathname === '/main') {
         this.props.history.push(`/team/${teamId}`);
       }
@@ -41,15 +41,15 @@ export class Dropdown extends React.Component {
   }
 
   currentTeamName() {
-    if (Object.values(this.props.currentTeams).length && this.props.match.params.teamId) {
-      if (this.props.currentTeams[this.props.match.params.teamId]) {
-        return this.props.currentTeams[this.props.match.params.teamId].team_name;
+    if (Object.values(this.props.teams).length && this.props.match.params.teamId) {
+      if (this.props.teams[this.props.match.params.teamId]) {
+        return this.props.teams[this.props.match.params.teamId].team_name;
       }
     }
   }
 
   handleLeaveRequest() {
-    if (Object.keys(this.props.currentTeams).length > 1) {
+    if (Object.keys(this.props.teams).length > 1) {
       this.props.openModal('leave_team_form');
     }
   }
@@ -65,7 +65,7 @@ export class Dropdown extends React.Component {
   }
 
   render() {
-    const currentTeams = Object.values(this.props.currentTeams).map((team) => {
+    const teams = Object.values(this.props.teams).map((team) => {
       return (
         <Link to={`/team/${team.id}`} key={team.id} className="dropdown-links">{team.team_name}</Link>
       );
@@ -86,7 +86,7 @@ export class Dropdown extends React.Component {
         </div>
           <div className={this.state.visible ?
               "dropdown-list" : "dropdown-hidden"}>
-            {currentTeams}
+            {teams}
             <div id="dropdown-line"></div>
             <div className="workspace-links" onClick={() => this.props.openModal('new_team_form')}>Create New Workspace</div>
             <div className="workspace-links" onClick={this.handleLeaveRequest}>Remove me from this Workspace</div>

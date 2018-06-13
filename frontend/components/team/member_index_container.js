@@ -5,8 +5,8 @@ import { withRouter } from 'react-router-dom';
 
 const mSp = (state, ownProps) => {
 
-  const currentTeam = state.entities.currentTeams[ownProps.match.params.teamId];
-  const teamMembers = currentTeam.memberIds.map(id => state.entities.users[id]);
+  const team = state.entities.teams[ownProps.match.params.teamId];
+  const teamMembers = team.memberIds.map(id => state.entities.users[id]);
   return {
     teamMembers: teamMembers
   };
@@ -15,7 +15,6 @@ const mSp = (state, ownProps) => {
 const mDp = dispatch => {
   return {
     fetchTeamMembers: (id) => dispatch(fetchTeamMembers(id))
-    // fetchCurrentTeams: () => dispatch(fetchCurrentTeams())
   };
 };
 

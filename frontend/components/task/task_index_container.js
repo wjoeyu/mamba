@@ -14,7 +14,7 @@ import { selectTasks } from '../../reducers/selectors.js';
 const mSp = (state) => {
   return {
     tasks: selectTasks(state),
-    currentTeams: state.entities.currentTeams,
+    teams: state.entities.teams,
     users: state.entities.users,
     currentUser: state.entities.users[state.session.id]
   };

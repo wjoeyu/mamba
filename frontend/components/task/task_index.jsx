@@ -56,9 +56,9 @@ export class TaskIndex extends React.Component {
 
 
   currentTeamName() {
-    if (Object.values(this.props.currentTeams).length && this.props.match.params.teamId) {
-      if (this.props.currentTeams[this.props.match.params.teamId]) {
-        return this.props.currentTeams[this.props.match.params.teamId].team_name;
+    if (Object.values(this.props.teams).length && this.props.match.params.teamId) {
+      if (this.props.teams[this.props.match.params.teamId]) {
+        return this.props.teams[this.props.match.params.teamId].team_name;
       }
     }
   }

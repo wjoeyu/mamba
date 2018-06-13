@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import { login, clearErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import { fetchCurrentTeams } from "../../actions/team_actions";
+import { fetchTeams } from "../../actions/team_actions";
 
 const mapStateToProps = ({ errors, entities }) => {
   return {
     errors: errors.session,
     formType: 'Log in',
-    currentTeams: entities.currentTeams
+    teams: entities.teams
   };
 };
 
@@ -25,7 +25,7 @@ const mapDispatchToProps = dispatch => {
     ),
     closeModal: () => dispatch(closeModal()),
     openModal: modal => dispatch(openModal(modal)),
-    fetchCurrentTeams: () => dispatch(fetchCurrentTeams()),
+    fetchTeams: () => dispatch(fetchTeams()),
     clearErrors: () => dispatch(clearErrors())
   };
 };

@@ -1,6 +1,6 @@
 import * as APIUtil from  '../util/teams_api_util';
 
-export const RECEIVE_CURRENT_TEAMS = 'RECEIVE_CURRENT_TEAMS';
+export const RECEIVE_TEAMS = 'RECEIVE_TEAMS';
 export const RECEIVE_TEAM_MEMBERS = 'RECEIVE_TEAM_MEMBERS';
 export const RECEIVE_TEAM_MEMBER = 'RECEIVE_TEAM_MEMBER';
 export const RECEIVE_TEAM = 'RECEIVE_TEAM';
@@ -12,10 +12,10 @@ export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const CLEAR_USER_SEARCH = "CLEAR_USER_SEARCH";
 
 
-export const receiveCurrentTeams = currentTeams => {
+export const receiveTeams = teams => {
   return {
-    type: RECEIVE_CURRENT_TEAMS,
-    currentTeams
+    type: RECEIVE_TEAMS,
+    teams
   };
 };
 
@@ -88,9 +88,9 @@ export const fetchTeam = (teamId) => dispatch => (
   ))
 );
 
-export const fetchCurrentTeams = () => dispatch => (
+export const fetchTeams = () => dispatch => (
   APIUtil.getUserTeams().then(payload => (
-    dispatch(receiveCurrentTeams(payload))
+    dispatch(receiveTeams(payload))
   ))
 );
 
