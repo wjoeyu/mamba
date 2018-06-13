@@ -43,11 +43,18 @@ class Api::TeamsController < ApplicationController
 
   def update
     @team = Team.find(params[:id])
-
-    if @team.update(team_params)
-      render "api/teams/show"
+    member_id = params[:team][:member_id]
+    if member_id
+      membership = Membership.new({team_member_id: member_id, team_id: @team.id})
+      if membership.save
+        render "api/teams/show"
+      end
     else
-      render json: @team.errors.full_messages, status: 422
+      if @team.update(team_params)
+        render "api/teams/show"
+      else
+        render json: @team.errors.full_messages, status: 422
+      end
     end
   end
 

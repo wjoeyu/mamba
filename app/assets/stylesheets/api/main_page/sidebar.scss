@@ -62,9 +62,9 @@
   text-align: right;
   -webkit-animation: slide-in-right .5s;
    -moz-animation: slide-in-right .5s;
- transition: color .24s ease-in-out;
- -moz-transition: color .24s ease-in-out;
- -webkit-transition: color .24s ease-in-out;
+  transition: color .24s ease-in-out;
+  -webkit-transition: color .24s ease-in-out;
+   -moz-transition: color .24s ease-in-out;
 }
 
 @-webkit-keyframes slide-in-right {
@@ -103,10 +103,23 @@
 }
 
 .sidebar-members {
-  position: absolute;
   display: block;
-  top: 70px;
-  left: -46px;
+  margin-top: 48px;
+}
+
+.plus-icon {
+    fill: #9ca6af;
+    padding: 8px 16px;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    float: right;
+    transition: fill .24s ease-in-out;
+    -moz-transition: fill .24s ease-in-out;
+    -webkit-transition: fill .24s ease-in-out;
+    &:hover {
+        fill: #14aaf5;
+    }
 }
 
 .hamburger {

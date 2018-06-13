@@ -8,6 +8,7 @@ export const RECEIVE_NEW_TEAM = 'RECEIVE_NEW_TEAM';
 export const RECEIVE_TEAM_ERRORS = 'RECEIVE_TEAM_ERRORS';
 export const REMOVE_TEAM_MEMBER = 'REMOVE_TEAM_MEMBER';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const RECEIVE_ALL_USERS = 'RECIEVE_ALL_USERS';
 
 
 export const receiveCurrentTeams = currentTeams => {
@@ -57,11 +58,24 @@ export const receiveErrors = errors => ({
   errors
 });
 
+export const receiveAllUsers = allUsers => {
+  return {
+    type: RECEIVE_ALL_USERS,
+    users
+  };
+};
+
 export const clearErrors = () => {
   return {
     type: CLEAR_ERRORS
   };
 };
+
+export const fetchUsers = () => dispatch => (
+  APIUtil.getUsers().then(payload => (
+    dispatch(receiveAllUsers(payload))
+  ))
+);
 
 export const fetchTeam = (teamId) => dispatch => (
   APIUtil.getTeam(teamId).then(payload => (

@@ -52,6 +52,9 @@ export class Sidebar extends React.Component {
           <div className="sidebar-members">
             {teamMembers}
           </div>
+          <svg className="plus-icon" focusable="false" viewBox="0 0 32 32">
+              <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18"></polygon>
+          </svg>
         </div>
         <div className={this.state.visible ?
             "hamburger-hidden" : "hamburger"} onClick={this.toggleVisibility}>

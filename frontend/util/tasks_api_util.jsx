@@ -10,7 +10,6 @@ export const getUserTasks = (assigneeId, teamId) => {
   return $.ajax({
     method: 'GET',
     url: `api/tasks/get_user_tasks/${teamId}/${assigneeId}`,
-    // data: {task: {assignee_id: assigneeId, team_id: teamId}}
   });
 };
 
