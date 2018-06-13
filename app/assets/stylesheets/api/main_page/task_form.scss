@@ -188,19 +188,24 @@
 
 .task-form-name {
   width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 42px;
+  overflow-x: hidden;
   display: block;
   border-radius: 3px;
   border: 1px solid transparent;
-  font-weight: 500;
+  font-family: Roboto;
+  font-weight: 400;
   font-size: 24px;
   color: black;
   line-height: 32px;
-  margin-left: -12px;
+  transform: translateX(-12px);
   padding-bottom: 4px;
   padding-top: 4px;
   padding-left: 10px;
-  text-overflow: ellipsis;
   box-sizing: border-box;
+  resize: none;
 
   &::placeholder {
     color: #9ca6af;
@@ -254,8 +259,6 @@
       visibility: visible;
   }
 }
-
-
 
 .calendar-circle {
   display: block;
@@ -416,7 +419,9 @@
   font-family: Roboto;
   overflow-x: hidden;
   width: 100%;
-  min-width: 340px;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 24px;
   box-sizing: border-box;
   border-radius: 3px;
   padding: 8px 10px;
@@ -426,6 +431,7 @@
   color: black;
   font-size: 13px;
   border: 1px solid transparent;
+  resize: none;
   &::placeholder {
     color: #9ca6af;
   }

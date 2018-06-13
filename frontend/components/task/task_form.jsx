@@ -66,7 +66,7 @@ class TaskForm extends React.Component {
 
         </div>
       <form className="task-form-content">
-        <input type="text"
+        <Textarea
           value={task ? task.task_name : ""}
           onChange={this.update('task_name')}
           className="task-form-name"

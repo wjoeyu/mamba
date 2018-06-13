@@ -8,7 +8,8 @@ export const RECEIVE_NEW_TEAM = 'RECEIVE_NEW_TEAM';
 export const RECEIVE_TEAM_ERRORS = 'RECEIVE_TEAM_ERRORS';
 export const REMOVE_TEAM_MEMBER = 'REMOVE_TEAM_MEMBER';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
-export const RECEIVE_ALL_USERS = 'RECIEVE_ALL_USERS';
+export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
+export const CLEAR_USER_SEARCH = "CLEAR_USER_SEARCH";
 
 
 export const receiveCurrentTeams = currentTeams => {
@@ -64,6 +65,10 @@ export const receiveAllUsers = allUsers => {
     users
   };
 };
+
+export const clearUserSearch = () => ({
+  type: CLEAR_USER_SEARCH
+});
 
 export const clearErrors = () => {
   return {
