@@ -9,3 +9,7 @@ export const selectTeamMembers = (state) => {
 export const selectTasks = (state) => {
   return Object.values(state.entities.tasks);
 };
+
+export const selectUserSearch = (state) => {
+  return Object.values(state.entities.userSearch);
+};

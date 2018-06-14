@@ -6,14 +6,18 @@ export class Sidebar extends React.Component {
     super(props);
     this.state = {
       visible: true,
+      userSearchVisible: false
     };
     this.toggleVisibility = this.toggleVisibility.bind(this);
+    this.toggleUserSearchVisibility = this.toggleUserSearchVisibility.bind(this);
+    this.addTeamMember = this.addTeamMember.bind(this);
   }
 
   componentDidMount() {
     if (this.props.match.teamId) {
       this.props.fetchTeamMembers(this.props.match.params.teamId);
     }
+    this.props.fetchUsers();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -33,6 +37,16 @@ export class Sidebar extends React.Component {
     }
   }
 
+  toggleUserSearchVisibility() {
+    const visible = this.state.userSearchVisible;
+    this.setState( {userSearchVisible: !visible});
+  }
+
+  addTeamMember(memberId) {
+      this.props.addTeamMember({id: this.props.match.params.teamId, member_id:memberId});
+      this.props.fetchTeamMembers(this.props.match.params.teamId);
+  }
+
   render() {
     const teamMembers = this.props.teamMembers.map((member) => {
       return (
@@ -41,6 +55,14 @@ export class Sidebar extends React.Component {
           </Link>
         </div>
       );
+    });
+
+    const userSearch = this.props.userSearch.map((user) => {
+      return (
+        <div className="add-members-list" key={user.id}>
+          <div onClick={() => this.addTeamMember(user.id)}>{user.name}</div>
+        </div>
+      )
     });
 
     return (
@@ -52,9 +74,16 @@ export class Sidebar extends React.Component {
           <div className="sidebar-members">
             {teamMembers}
           </div>
-          <svg className="plus-icon" focusable="false" viewBox="0 0 32 32">
+          <svg
+          className="plus-icon"
+          focusable="false"
+          viewBox="0 0 32 32"
+          onClick={this.toggleUserSearchVisibility}>
               <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18"></polygon>
           </svg>
+          <div className={this.state.userSearchVisible ? "new-members" : "new-members-hidden"}>
+            {userSearch}
+          </div>
         </div>
         <div className={this.state.visible ?
             "hamburger-hidden" : "hamburger"} onClick={this.toggleVisibility}>

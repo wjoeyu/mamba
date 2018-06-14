@@ -59,7 +59,7 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const receiveAllUsers = allUsers => {
+export const receiveAllUsers = users => {
   return {
     type: RECEIVE_ALL_USERS,
     users
