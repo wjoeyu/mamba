@@ -21,8 +21,8 @@ export class Sidebar extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-   if (this.props.match.params.teamId !== nextProps.match.params.teamId) {
-     this.props.fetchTeamMembers(nextProps.match.params.teamId);
+    if (this.props.match.params.teamId !== nextProps.match.params.teamId) {
+      this.props.fetchTeamMembers(nextProps.match.params.teamId);
     }
   }
 
@@ -43,8 +43,8 @@ export class Sidebar extends React.Component {
   }
 
   addTeamMember(memberId) {
-      this.props.addTeamMember({id: this.props.match.params.teamId, member_id:memberId});
-      this.props.fetchTeamMembers(this.props.match.params.teamId);
+    this.props.addTeamMember({id: this.props.match.params.teamId, member_id: memberId}).then(
+        payload => {this.props.fetchTeamMembers(this.props.match.params.teamId)});
   }
 
   render() {
@@ -56,6 +56,15 @@ export class Sidebar extends React.Component {
         </div>
       );
     });
+
+    // need to only show non members in user search
+    // const nonMembers = [];
+    // this.props.userSearch.forEach((user) => {
+    //     if(this.props.teamMembers[user.id]) {
+    //         nonMembers.push(user);
+    //     }
+    // }
+    // );
 
     const userSearch = this.props.userSearch.map((user) => {
       return (

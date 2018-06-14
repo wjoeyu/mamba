@@ -44,7 +44,6 @@ class Api::TeamsController < ApplicationController
   def update
     @team = Team.find(params[:id])
     member_id = params[:team][:member_id].to_i
-    # debugger
     if member_id
       membership = Membership.new({team_member_id: member_id, team_id: @team.id})
       if membership.save
