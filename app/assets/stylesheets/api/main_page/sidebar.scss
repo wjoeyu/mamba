@@ -86,29 +86,42 @@
 
 .new-members {
     width: 230px;
+    height: 260px;
+    overflow: scroll;
+    overflow-x: hidden;
     border-radius: 24px;
-    // padding: 8px 16px;
     float: right;
     display: block;
-    color: white;
+    color: #14aaf5;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
     font-size: 24px;
     text-align: right;
-    animation: slide-down .5s;
-    -webkit-animation: slide-down .5s;
-     -moz-animation: slide-down .5s;
+    animation: slide-up .5s;
+    -webkit-animation: slide-up .5s;
+     -moz-animation: slide-up .5s;
 }
 
-@keyframes slide-down {
+::-webkit-scrollbar {
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+::-webkit-scrollbar-thumb {
+    background: #14aaf5;
+    border-radius: 24px;
+    &:active {
+        background: #008ce3;
+    }
+}
+
+@keyframes slide-up {
     from { transform: translate(0%, 200%);}
     to   { transform: translate(0%, 0%);}
 }
-@-webkit-keyframes slide-down {
+@-webkit-keyframes slide-up {
     from { transform: translate(0%, 200%);}
     to   { transform: translate(0%, 0%);}
 }
-@-moz-keyframes slide-down {
+@-moz-keyframes slide-up {
     from { transform: translate(0%, 200%);}
     to   { transform: translate(0%, 0%);}
 }
@@ -118,7 +131,7 @@
 }
 
 .add-members-list div {
-    margin: 12px 16px;
+    margin: 12px 10px;
     cursor: pointer;
     transition: color .24s ease-in-out;
     -webkit-transition: color .24s ease-in-out;
@@ -127,7 +140,7 @@
         margin-top: 8px;
     }
     &:hover {
-        color: #14aaf5;
+        color: white;
     }
 }
 
@@ -170,6 +183,21 @@
     -webkit-transition: fill .24s ease-in-out;
     &:hover {
         fill: #14aaf5;
+    }
+}
+
+.active-plus-icon {
+    fill: #14aaf5;
+    padding: 8px 16px;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    float: right;
+    transition: fill .24s ease-in-out;
+    -moz-transition: fill .24s ease-in-out;
+    -webkit-transition: fill .24s ease-in-out;
+    &:hover {
+        fill: #9ca6af;
     }
 }
 

@@ -13,7 +13,8 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    current_team_members = params[:user][:current_team]
+    @users = User.where.not({id: current_team_members})
     render "api/users/index"
   end
 

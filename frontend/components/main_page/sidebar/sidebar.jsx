@@ -17,7 +17,6 @@ export class Sidebar extends React.Component {
     if (this.props.match.teamId) {
       this.props.fetchTeamMembers(this.props.match.params.teamId);
     }
-    this.props.fetchUsers();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -35,16 +34,22 @@ export class Sidebar extends React.Component {
     } else {
         taskButton.style.marginLeft = "26px";
     }
+    this.setState( {userSearchVisible: false});
   }
 
   toggleUserSearchVisibility() {
+    if (!this.state.userSearchVisible) {
+      this.props.fetchUsers({current_team: this.props.teamMemberKeys});
+    }
     const visible = this.state.userSearchVisible;
     this.setState( {userSearchVisible: !visible});
   }
 
   addTeamMember(memberId) {
     this.props.addTeamMember({id: this.props.match.params.teamId, member_id: memberId}).then(
-        payload => {this.props.fetchTeamMembers(this.props.match.params.teamId)});
+        payload => {this.props.fetchTeamMembers(this.props.match.params.teamId)}).then(
+            this.toggleUserSearchVisibility()
+        );
   }
 
   render() {
@@ -56,15 +61,6 @@ export class Sidebar extends React.Component {
         </div>
       );
     });
-
-    // need to only show non members in user search
-    // const nonMembers = [];
-    // this.props.userSearch.forEach((user) => {
-    //     if(this.props.teamMembers[user.id]) {
-    //         nonMembers.push(user);
-    //     }
-    // }
-    // );
 
     const userSearch = this.props.userSearch.map((user) => {
       return (
@@ -84,7 +80,7 @@ export class Sidebar extends React.Component {
             {teamMembers}
           </div>
           <svg
-          className="plus-icon"
+          className={this.state.userSearchVisible ? "active-plus-icon" : "plus-icon"}
           focusable="false"
           viewBox="0 0 32 32"
           onClick={this.toggleUserSearchVisibility}>

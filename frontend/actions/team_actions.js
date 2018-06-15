@@ -76,8 +76,8 @@ export const clearErrors = () => {
   };
 };
 
-export const fetchUsers = () => dispatch => (
-  APIUtil.getUsers().then(payload => (
+export const fetchUsers = (user) => dispatch => (
+  APIUtil.getUsers(user).then(payload => (
     dispatch(receiveAllUsers(payload))
   ))
 );

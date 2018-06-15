@@ -8,14 +8,15 @@ import { withRouter } from 'react-router-dom';
 const mSp = (state, ownProps) => {
   return {
     teamMembers: selectTeamMembers(state),
-    userSearch: selectUserSearch(state)
+    userSearch: selectUserSearch(state),
+    teamMemberKeys: Object.keys(state.entities.users),
   };
 };
 
 const mDp = dispatch => {
   return {
     fetchTeamMembers: (id) => dispatch(fetchTeamMembers(id)),
-    fetchUsers: () => dispatch(fetchUsers()),
+    fetchUsers: (user) => dispatch(fetchUsers(user)),
     addTeamMember: (team) => dispatch(addTeamMember(team))
   };
 };

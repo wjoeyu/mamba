@@ -5,11 +5,12 @@ export const getUserTeams = () => {
   });
 };
 
-export const getUsers = () => {
-    return $.ajax({
-        method: 'GET',
-        url: 'api/users'
-    });
+export const getUsers = (user) => {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/users',
+    data: { user }
+  });
 };
 
 export const getTeamMembers = (teamId) => {
