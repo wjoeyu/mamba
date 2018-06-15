@@ -27,15 +27,31 @@ export class Sidebar extends React.Component {
 
   toggleVisibility() {
     const currentState = this.state.visible;
-    this.setState( {visible: !currentState} );
+    const sidebar = document.getElementsByClassName('sidebar')[0];
+    // this.setState( {visible: !currentState} );
     let taskButton = document.getElementsByClassName("my-tasks-button")[0];
     if (this.state.visible) {
-        taskButton.style.marginLeft = "66px";
+        sidebar.classList.remove('sidebar');
+        sidebar.classList.add('sidebar-out');
+        setTimeout(() => {
+            this.setState( {visible: !currentState} );
+            taskButton.style.marginLeft = "66px";
+            sidebar.classList.remove('sidebar-out');
+        },320);
     } else {
+        this.setState( {visible: !currentState} );
         taskButton.style.marginLeft = "26px";
     }
-    this.setState( {userSearchVisible: false});
+    this.setState( {userSearchVisible: false} );
   }
+
+  // else {
+  //   const sidebar = document.querySelector('div.sidebar');
+  //   sidebar.classList.add('sidebar-out');
+  //   setTimeout(() => {
+  //       sidebar.classList.remove('sidebar-out')
+  //   },320)
+  // }
 
   toggleUserSearchVisibility() {
     if (!this.state.userSearchVisible) {
