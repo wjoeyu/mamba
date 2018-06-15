@@ -36,9 +36,13 @@ class TaskForm extends React.Component {
   }
 
   closeForm() {
-      this.props.history.push(
-        `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}`
-      )
+      const taskFormSlide = document.getElementsByClassName('task-form')[0];
+      taskFormSlide.classList.add('task-form-out');
+      setTimeout(() => {
+          taskFormSlide.classList.remove('task-form-out');
+          this.props.history.push(
+            `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}`)
+        },480);
   }
 
   clearDate() {

@@ -28,10 +28,8 @@ export class Sidebar extends React.Component {
   toggleVisibility() {
     const currentState = this.state.visible;
     const sidebar = document.getElementsByClassName('sidebar')[0];
-    // this.setState( {visible: !currentState} );
     let taskButton = document.getElementsByClassName("my-tasks-button")[0];
     if (this.state.visible) {
-        sidebar.classList.remove('sidebar');
         sidebar.classList.add('sidebar-out');
         setTimeout(() => {
             this.setState( {visible: !currentState} );
@@ -45,20 +43,18 @@ export class Sidebar extends React.Component {
     this.setState( {userSearchVisible: false} );
   }
 
-  // else {
-  //   const sidebar = document.querySelector('div.sidebar');
-  //   sidebar.classList.add('sidebar-out');
-  //   setTimeout(() => {
-  //       sidebar.classList.remove('sidebar-out')
-  //   },320)
-  // }
-
   toggleUserSearchVisibility() {
     if (!this.state.userSearchVisible) {
       this.props.fetchUsers({current_team: this.props.teamMemberKeys});
+      this.setState( {userSearchVisible: !this.state.userSearchVisible});
+  } else {
+      const userSearchList = document.getElementsByClassName('new-members')[0];
+      userSearchList.classList.add('new-members-out');
+      setTimeout(() => {
+          userSearchList.classList.remove('new-members-out');
+          this.setState( {userSearchVisible: !this.state.userSearchVisible});
+      },360);
     }
-    const visible = this.state.userSearchVisible;
-    this.setState( {userSearchVisible: !visible});
   }
 
   addTeamMember(memberId) {

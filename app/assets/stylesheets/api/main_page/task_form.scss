@@ -11,9 +11,26 @@
   margin-top: 19px;
   background: white;
   border-radius: 3px;
-  animation: slide-in .4s;
-  -webkit-animation: slide-in .4s;
+  animation: slide-in .48s;
+  -webkit-animation: slide-in .48s;
    -moz-animation: slide-in .48s;
+}
+.task-form-out {
+  position: absolute;
+  font-family: Roboto;
+  border: 1px solid var(--light-grey);
+  height: 100vh;
+  top: 67px;
+  right: 16px;
+  z-index: 20;
+  width: 46%;
+  min-width: 430px;
+  margin-top: 19px;
+  background: white;
+  border-radius: 3px;
+  animation: slide-out .5s;
+  -webkit-animation: slide-out .5s;
+   -moz-animation: slide-out .5s;
 }
 
 @keyframes slide-in {
@@ -27,6 +44,19 @@
 @-moz-keyframes slide-in {
     from { transform: translate(100%, 0%);}
     to   { transform: translate(0%, 0%);}
+}
+
+@keyframes slide-out {
+    from { transform: translate(0%, 0%);}
+    to   { transform: translate(120%, 0%);}
+}
+@-webkit-keyframes slide-out {
+    from { transform: translate(0%, 0%);}
+    to   { transform: translate(120%, 0%);}
+}
+@-moz-keyframes slide-out {
+    from { transform: translate(0%, 0%);}
+    to   { transform: translate(120%, 0%);}
 }
 .task-form-exit {
   position: absolute;
