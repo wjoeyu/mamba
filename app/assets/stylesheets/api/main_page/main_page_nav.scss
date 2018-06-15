@@ -10,21 +10,26 @@
   box-sizing: border-box;
   white-space: nowrap;
   border-left: 1px solid #edf1f2;
-  animation: fade-in 2s;
-  -webkit-animation: fade-in 2s;
-    -moz-animation: fade-in 2s;
 }
 
+.main-shift {
+  animation: slide-left .32s;
+  -webkit-animation: slide-left .32s;
+   -moz-animation: slide-left .32s;
+}
+
+@keyframes slide-left {
+    0% { transform: translate(0%, 0%); }
+    100%   { transform: translate(-240px, 0%); }
+}
 @-webkit-keyframes slide-left {
-    from { transform: translate(100%, 0%) }
-    to   { transform: translate(0%, 0%) }
+    0% { transform: translate(0%, 0%); }
+    100%   { transform: translate(-240px, 0%); }
 }
-
-@-webkit-keyframes fade-in {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+@-moz-keyframes slide-left {
+    0% { transform: translate(0%, 0%); }
+    100%   { transform: translate(-240px, 0%); }
 }
-
 
 .my-tasks-button {
   position: relative;
