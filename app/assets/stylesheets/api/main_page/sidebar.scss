@@ -62,13 +62,54 @@
   top: 0;;
 }
 
-.sidebar-close-x {
-  position: absolute;
+.sidebar-header {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+.sidebar-header-left {
+  padding: 0px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 118px;
+  user-select: none;
+    -moz-user-select: none;
+      -webkit-user-select: none;
+}
+
+.sidebar-logo {
+  background-image: image_url('mamba-logo-dark-bg.png');
+  width: 24px;
+  height: 22px;
+  background-size: cover;
+  display: inline-block;
+}
+
+.sidebar span {
+  display: inline-block;
+  font-family: Questrial;
   font-size: 24px;
-  color: #9ca6af;
+  letter-spacing: 1px;
+}
+.sidebar-out span {
+  display: inline-block;
+  font-family: Questrial;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.sidebar-close-x svg{
+  padding: 0px 10px;
+  height: 16px;
+  width: 16px;
+  fill: #9ca6af;
   cursor: pointer;
-  top: 8px;
-  right: 15px;
+  &:hover {
+    fill: white;
+  }
 }
 
 .sidebar a {
@@ -171,36 +212,6 @@
     &:hover {
         color: white;
     }
-}
-
-.sidebar-logo {
-  background-image: image_url('mamba-logo-dark-bg.png');
-  width: 24px;
-  height: 22px;
-  background-size: cover;
-  margin-left: 16px;
-  transform: translateY(11px);
-}
-
-.sidebar span {
-  position: absolute;
-  font-family: Questrial;
-  top: 10px;
-  left: 44px;
-  font-size: 24px;
-  letter-spacing: 1px;
-}
-.sidebar-out span {
-  position: absolute;
-  font-family: Questrial;
-  top: 10px;
-  left: 44px;
-  font-size: 24px;
-  letter-spacing: 1px;
-}
-
-.sidebar-close-x:hover {
-  color: white;
 }
 
 .sidebar-members {
