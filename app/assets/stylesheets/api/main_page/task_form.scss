@@ -89,8 +89,12 @@
     to   { transform: translate(100%, 0%);}
 }
 
+.task-form-header-left {
+    display: inline-flex;
+}
+
 .completion-button {
-  display: inline-block;
+  display: inline-flex;
   color: #646e79;
   border-radius: 3px;
   border: 1px solid #b7bfc6;
@@ -104,16 +108,16 @@
   transition: background .24s ease-in-out;
   -moz-transition: background .24s ease-in-out;
   -webkit-transition: background .24s ease-in-out;
-}
 
-.completion-button:hover {
-  border-color: #646f79;
-  background-color: #f6f8f9;
-  color: #222b37;
+  &:hover {
+    border-color: #646f79;
+    background-color: #f6f8f9;
+    color: #222b37;
+  }
 }
 
 .deletion-button {
-  display: inline-block;
+  display: inline-flex;
   color: #646e79;
   border-radius: 3px;
   border: 1px solid #b7bfc6;
@@ -141,11 +145,11 @@
 
 
 .completion-button:hover .check-mark {
-  fill: #25e8c8;
+  fill: black;
 }
 
 .completed-button {
-  display: inline-block;
+  display: inline-flex;
   color: white;
   border-radius: 3px;
   border: 1px solid #25e8c8;
@@ -166,8 +170,7 @@
 }
 
 .check-mark {
-  display: inline-block;
-  height: 12px;
+  height: 16px;
   fill: #848f99;
   margin-right: 8px;
   transition: fill .24s ease-in-out;
@@ -177,7 +180,7 @@
 }
 
 .completed-check {
-  height: 12px;
+  height: 16px;
   fill: white;
   margin-right: 8px;
   transition: fill .24s ease-in-out;

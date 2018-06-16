@@ -63,7 +63,7 @@ class TaskForm extends React.Component {
                 </svg>
                 {(task && task.completed)? "Completed" : "Mark Complete"}</div>
 
-              <div className="deletion-button" onClick={()=>this.removeTask()}>Delete</div>
+              <div className="deletion-button" onClick={()=>this.removeTask()}>Delete Task</div>
             </div>
           <div className="task-form-close"
             onClick={()=> this.closeForm()}>
