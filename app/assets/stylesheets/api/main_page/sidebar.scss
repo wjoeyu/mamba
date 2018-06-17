@@ -40,6 +40,10 @@
   -webkit-animation: slide-out-left .32s;
    -moz-animation: slide-out-left .32s;
 }
+@keyframes slide-out-left {
+    from { transform: translate(0%, 0%);}
+    to   { transform: translate(-100%, 0%);}
+}
 @-webkit-keyframes slide-out-left {
     from { transform: translate(0%, 0%);}
     to   { transform: translate(-100%, 0%);}
@@ -260,7 +264,6 @@
   border-bottom: 1px solid var(--light-grey);
   color: #838f98;
   top: 0px;
-  // left: 240px;
   text-align: center;
   align-items: center;
   justify-content: space-around;
