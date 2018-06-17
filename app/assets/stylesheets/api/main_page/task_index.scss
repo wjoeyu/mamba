@@ -244,6 +244,7 @@
 
 .task-index-row-name-inputs {
   display: inline-block;
+  color: black;
   white-space: nowrap;
   overflow: hidden;
   width: 79%;
@@ -256,6 +257,7 @@
   padding-left: 12px;
   padding-right: 12px;
   box-sizing: border-box;
+  font-family: Roboto;
 }
 
 .task-index-row-name-inputs:focus {
@@ -306,6 +308,26 @@ Link {
   }
 
   &:focus ::-webkit-datetime-edit {
+      visibility: visible;
+  }
+  &::-moz-datetime-edit {
+    visibility: hidden;
+  }
+  &::-moz-inner-spin-button {
+    visibility: hidden;
+  }
+  &::-moz-clear-button {
+    visibility: hidden;
+  }
+  &::-moz-calendar-picker-indicator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &:focus ::-moz-datetime-edit {
       visibility: visible;
   }
 }
