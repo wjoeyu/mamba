@@ -26,18 +26,18 @@ export class Sidebar extends React.Component {
   }
 
   toggleVisibility() {
-    const currentState = this.state.visible;
+    // const currentState = this.state.visible;
     const sidebar = document.getElementsByClassName('sidebar')[0];
     let taskButton = document.getElementsByClassName("my-tasks-button")[0];
     if (this.state.visible) {
         sidebar.classList.add('sidebar-out');
         setTimeout(() => {
-            this.setState( {visible: !currentState} );
+            this.setState( {visible: false} );
             taskButton.style.marginLeft = "66px";
             sidebar.classList.remove('sidebar-out');
         },320);
     } else {
-        this.setState( {visible: !currentState} );
+        this.setState( {visible: true} );
         taskButton.style.marginLeft = "26px";
     }
     this.setState( {userSearchVisible: false} );
