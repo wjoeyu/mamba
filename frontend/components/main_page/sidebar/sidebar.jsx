@@ -46,13 +46,13 @@ export class Sidebar extends React.Component {
   toggleUserSearchVisibility() {
     if (!this.state.userSearchVisible) {
       this.props.fetchUsers({current_team: this.props.teamMemberKeys});
-      this.setState( {userSearchVisible: !this.state.userSearchVisible});
+      this.setState( {userSearchVisible: true});
   } else {
       const userSearchList = document.getElementsByClassName('new-members')[0];
       userSearchList.classList.add('new-members-out');
       setTimeout(() => {
           userSearchList.classList.remove('new-members-out');
-          this.setState( {userSearchVisible: !this.state.userSearchVisible});
+          this.setState( {userSearchVisible: false});
       },360);
     }
   }

@@ -8,7 +8,7 @@ export const RECEIVE_NEW_TEAM = 'RECEIVE_NEW_TEAM';
 export const RECEIVE_TEAM_ERRORS = 'RECEIVE_TEAM_ERRORS';
 export const REMOVE_TEAM_MEMBER = 'REMOVE_TEAM_MEMBER';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
-export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
+export const RECEIVE_NON_MEMBERS = 'RECEIVE_NON_MEMBERS';
 export const CLEAR_USER_SEARCH = "CLEAR_USER_SEARCH";
 
 
@@ -59,10 +59,10 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const receiveAllUsers = users => {
+export const receiveNonMembers = nonMembers => {
   return {
-    type: RECEIVE_ALL_USERS,
-    users
+    type: RECEIVE_NON_MEMBERS,
+    nonMembers
   };
 };
 
@@ -78,7 +78,7 @@ export const clearErrors = () => {
 
 export const fetchUsers = (user) => dispatch => (
   APIUtil.getUsers(user).then(payload => (
-    dispatch(receiveAllUsers(payload))
+    dispatch(receiveNonMembers(payload))
   ))
 );
 

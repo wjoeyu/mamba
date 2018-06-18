@@ -1,10 +1,10 @@
-import { RECEIVE_ALL_USERS, CLEAR_USER_SEARCH } from '../actions/team_actions';
+import { RECEIVE_NON_MEMBERS, CLEAR_USER_SEARCH } from '../actions/team_actions';
 
 const userSearchReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
-    case RECEIVE_ALL_USERS:
-      return action.users;
+    case RECEIVE_NON_MEMBERS:
+      return action.nonMembers;
     case CLEAR_USER_SEARCH:
       return {};
     default:

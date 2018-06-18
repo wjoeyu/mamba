@@ -8,7 +8,7 @@ import { fetchTeams } from '../../../actions/team_actions';
 const mSp = (state) => {
   return {
     currentUser: state.entities.users[state.session.id],
-    teams: state.entities.teams
+    teams: state.entities.teams,
   };
 };
 
@@ -16,7 +16,7 @@ const mDp = dispatch => {
   return {
     logout: () => dispatch(logout()),
     openModal: modal => dispatch(openModal(modal)),
-    fetchTeams: () => dispatch(fetchTeams())
+    fetchTeams: () => dispatch(fetchTeams()),
   };
 };
 
