@@ -51,7 +51,9 @@ export class Dropdown extends React.Component {
   handleLeaveRequest() {
     if (Object.keys(this.props.teams).length > 1) {
       this.props.openModal('leave_team_form');
-    }
+  } else {
+      window.alert("You must belong to a team. Please create a new workspace before leaving this one.")
+  }
   }
 
   myTaskButton () {

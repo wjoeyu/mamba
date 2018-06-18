@@ -25,7 +25,7 @@ class LeaveTeamForm extends React.Component {
           <div className="leave-team-text">
             If you remove yourself, you won't be able to access any of the
             projects or tasks in this team. If you want to regain access,
-            you'll need to ask a coworker to invite you to the workspace again.
+            you'll need to ask a team member to add you to the workspace again.
           </div>
           <input id="leave-team-submit" type="submit" value="Remove Me"/>
           <div onClick={this.props.closeModal} className="leave-team-cancel">Cancel</div>
