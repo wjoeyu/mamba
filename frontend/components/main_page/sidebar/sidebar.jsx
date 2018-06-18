@@ -36,7 +36,9 @@ export class Sidebar extends React.Component {
             taskButton.style.marginLeft = "66px";
             sidebar.classList.remove('sidebar-out');
         },320);
-    } else if (!this.state.visible){
+    } else {
+        const sidebarHidden = document.getElementsByClassName('sidebar-hidden')[0];
+        sidebarHidden.classList.add('sidebar');
         this.setState( {visible: !currentState} );
         taskButton.style.marginLeft = "26px";
     }
