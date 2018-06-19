@@ -85,7 +85,9 @@ class TaskForm extends React.Component {
           <div className="assignee-due-date">
 
             <div className="assignee-button">
-                <div className={ task && task.assignee_id? "calendar-circle" : "dotted-calendar-circle"}>
+                <div
+                  className={ task && task.assignee_id? "calendar-circle" : "dotted-calendar-circle"}
+                  onClick={() => window.alert("assign member coming soon")}>
                   {assigneeIcon("assignee-icon")}
                 </div>
             </div>

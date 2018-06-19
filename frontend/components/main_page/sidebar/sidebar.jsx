@@ -11,6 +11,7 @@ export class Sidebar extends React.Component {
     this.toggleVisibility = this.toggleVisibility.bind(this);
     this.toggleUserSearchVisibility = this.toggleUserSearchVisibility.bind(this);
     this.addTeamMember = this.addTeamMember.bind(this);
+    this.handleOutsidePlusClick = this.handleOutsidePlusClick.bind(this);
   }
 
   componentDidMount() {
@@ -45,11 +46,11 @@ export class Sidebar extends React.Component {
 
   toggleUserSearchVisibility() {
     if (!this.state.userSearchVisible) {
-      // document.addEventListener("click", this.handleOutsidePlusClick);
+      document.addEventListener("click", this.handleOutsidePlusClick);
       this.props.fetchUsers({current_team: this.props.teamMemberKeys});
       this.setState( {userSearchVisible: true});
   } else {
-      // document.removeEventListener("click", this.handleOutsidePlusClick);
+      document.removeEventListener("click", this.handleOutsidePlusClick);
       const userSearchList = document.getElementsByClassName('new-members')[0];
       userSearchList.classList.add('new-members-out');
       setTimeout(() => {
@@ -58,13 +59,13 @@ export class Sidebar extends React.Component {
       },360);
     }
   }
-  //
-  // handleOutsidePlusClick(e) {
-  //   if(this.node.contains(e.target)) {
-  //     return;
-  //   }
-  //   this.toggleUserSearchVisibility();
-  // }
+
+  handleOutsidePlusClick(e) {
+    if(this.node.contains(e.target)) {
+      return;
+    }
+    this.toggleUserSearchVisibility();
+  }
 
   addTeamMember(memberId) {
     this.props.addTeamMember({id: this.props.match.params.teamId, member_id: memberId}).then(
