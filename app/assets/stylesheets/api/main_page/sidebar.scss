@@ -101,7 +101,7 @@
 }
 
 .sidebar-close-x svg{
-    margin-top: 6px;
+  margin-top: 6px;
   padding: 0px 10px;
   height: 16px;
   width: 16px;
@@ -112,18 +112,20 @@
   }
 }
 
+.ind-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .sidebar a {
-  width: 230px;
-  border-radius: 24px;
-  padding: 8px 16px;
-  float: right;
+  width: auto;
+  margin: 8px 24px;
   display: block;
   cursor: pointer;
   text-decoration: none;
   color: white;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
-  margin-bottom: -4px;
   font-size: 24px;
   text-align: right;
   animation: slide-in-right .5s;
@@ -221,7 +223,7 @@
 
 .plus-icon {
     fill: #9ca6af;
-    padding: 8px 16px;
+    margin: 8px 16px;
     height: 20px;
     width: 20px;
     cursor: pointer;
@@ -236,7 +238,7 @@
 
 .active-plus-icon {
     fill: #14aaf5;
-    padding: 8px 16px;
+    margin: 8px 16px;
     height: 20px;
     width: 20px;
     cursor: pointer;
