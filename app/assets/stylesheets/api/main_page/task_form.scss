@@ -254,6 +254,58 @@
   outline: none;
 }
 
+.assignee-due-date {
+    width: 295px;
+    display: flex;
+    justify-content: space-between;
+}
+
+//assignee icon styling
+
+.assignee-button {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    float: left;
+    border: 1px solid transparent;
+    align-items: center;
+    padding: 3px;
+    height: 38px;
+    border-radius: 38px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 10px;
+
+    &:hover {
+      background-color: #f6f8f9;
+      border-color: #646f79;
+      border-style: solid;
+      color: #222b37;
+    }
+//     &:hover .due-date-calendar {
+//       fill: #222b37;
+//     }
+//     &:hover .calendar-circle {
+//       border-color: #646f79;
+//       border-style: solid;
+//       color: #222b37;
+//     }
+//     &:hover .dotted-calendar-circle {
+//       border-color: #646f79;
+//       border-style: solid;
+//       color: #222b37;
+//     }
+//     &:hover .clear-date-button{
+//         visibility: visible;
+//     }
+}
+
+.assignee-icon {
+  fill: #848f99;
+  height: 16px;
+  width: 16px;
+}
+
 //due date styling
 
 .date-button{

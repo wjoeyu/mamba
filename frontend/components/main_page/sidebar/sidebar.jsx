@@ -45,9 +45,11 @@ export class Sidebar extends React.Component {
 
   toggleUserSearchVisibility() {
     if (!this.state.userSearchVisible) {
+      // document.addEventListener("click", this.handleOutsidePlusClick);
       this.props.fetchUsers({current_team: this.props.teamMemberKeys});
       this.setState( {userSearchVisible: true});
   } else {
+      // document.removeEventListener("click", this.handleOutsidePlusClick);
       const userSearchList = document.getElementsByClassName('new-members')[0];
       userSearchList.classList.add('new-members-out');
       setTimeout(() => {
@@ -56,6 +58,13 @@ export class Sidebar extends React.Component {
       },360);
     }
   }
+  //
+  // handleOutsidePlusClick(e) {
+  //   if(this.node.contains(e.target)) {
+  //     return;
+  //   }
+  //   this.toggleUserSearchVisibility();
+  // }
 
   addTeamMember(memberId) {
     this.props.addTeamMember({id: this.props.match.params.teamId, member_id: memberId}).then(
@@ -101,7 +110,8 @@ export class Sidebar extends React.Component {
           className={this.state.userSearchVisible ? "active-plus-icon" : "plus-icon"}
           focusable="false"
           viewBox="0 0 32 32"
-          onClick={this.toggleUserSearchVisibility}>
+          onClick={this.toggleUserSearchVisibility}
+          ref={ node => this.node = node }>
               <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18"></polygon>
           </svg>
           <div className={this.state.userSearchVisible ? "new-members" : "new-members-hidden"}>
