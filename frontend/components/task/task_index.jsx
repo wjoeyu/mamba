@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Link, withRouter } from 'react-router-dom';
 import TaskFormContainer from './task_form_container';
 import { dueDate, dueDateClass } from './date';
+import { checkmark } from '../svgs/svgs'
 
 export class TaskIndex extends React.Component {
   constructor(props) {
@@ -106,9 +107,7 @@ export class TaskIndex extends React.Component {
           draggable="false">
           <div className ="for-line-under-circle">
             <div className={task.completed ? "checked-circle" : "check-circle"} onClick={()=>this.completeTask(task.id, task.completed)}>
-              <svg className={task.completed ? "checked-task-index-check" : "task-index-check"} viewBox="0 0 32 32">
-                <polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615 "/>
-              </svg>
+              {checkmark(task.completed ? "checked-task-index-check" : "task-index-check")}
             </div>
           </div>
           <input type="text"
