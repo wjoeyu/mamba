@@ -6,74 +6,23 @@
   color: white;
   background-color: var(--slate);
   top: 0;
-  animation: slide-in-right .32s;
-  -webkit-animation: slide-in-right .32s;
-   -moz-animation: slide-in-right .32s;
-}
-
-@keyframes slide-in-right {
-    from { transform: translate(-100%, 0%);}
-    to   { transform: translate(0%, 0%);}
-}
-@-webkit-keyframes slide-in-right {
-    from { transform: translate(-100%, 0%);}
-    to   { transform: translate(0%, 0%);}
-}
-@-moz-keyframes slide-in-right {
-    from { transform: translate(-100%, 0%);}
-    to   { transform: translate(0%, 0%);}
-}
-
-.sidebar-out {
-  height: 100vh;
-  width: 240px;
-  font-family: Roboto;
-  font-size: 13px;
-  color: white;
-  background-color: var(--slate);
-  top: 0;
-  -webkit-animation: slide-out-left .32s;
-   -moz-animation: slide-out-left .32s;
-}
-@keyframes slide-out-left {
-    from { transform: translate(0%, 0%);}
-    to   { transform: translate(-100%, 0%);}
-}
-@-webkit-keyframes slide-out-left {
-    from { transform: translate(0%, 0%);}
-    to   { transform: translate(-100%, 0%);}
-}
-@-moz-keyframes slide-out-left {
-    from { transform: translate(0%, 0%);}
-    to   { transform: translate(-100%, 0%);}
-}
-
-.sidebar-hidden {
-  left: -240px;
-  position: absolute;
-  display: block;
-  height: 100vh;
-  width: 240px;
-  font-family: Roboto;
-  font-size: 13px;
-  color: white;
-  background-color: var(--slate);
-  top: 0;;
+  transition: .32s;
 }
 
 .sidebar-header {
   display:flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0px;
+  padding: 14px 0px;
 }
 
 .sidebar-header-left {
   padding: 0px 16px;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
-  width: 118px;
+  width: 124px;
   user-select: none;
     -moz-user-select: none;
       -webkit-user-select: none;
@@ -81,19 +30,13 @@
 
 .sidebar-logo {
   background-image: image_url('mamba-logo-dark-bg.png');
-  width: 24px;
-  height: 22px;
+  width: 26px;
+  height: 24px;
   background-size: cover;
   display: inline-block;
 }
 
 .sidebar span {
-  display: inline-block;
-  font-family: Questrial;
-  font-size: 24px;
-  letter-spacing: 1px;
-}
-.sidebar-out span {
   display: inline-block;
   font-family: Questrial;
   font-size: 24px;
@@ -119,6 +62,7 @@
 
 .sidebar a {
   width: auto;
+  flex-shrink: 0;
   margin: 8px 24px;
   display: block;
   cursor: pointer;

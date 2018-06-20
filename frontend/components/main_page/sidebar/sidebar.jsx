@@ -31,14 +31,14 @@ export class Sidebar extends React.Component {
     const sidebar = document.getElementsByClassName('sidebar')[0];
     let taskButton = document.getElementsByClassName("my-tasks-button")[0];
     if (this.state.visible) {
-        sidebar.classList.add('sidebar-out');
+        sidebar.style.width = "0";
         setTimeout(() => {
             this.setState( {visible: !currentState} );
-            taskButton.style.marginLeft = "66px";
-            sidebar.classList.remove('sidebar-out');
         },320);
+        taskButton.style.marginLeft = "66px";
     } else {
         this.setState( {visible: !currentState} );
+        sidebar.style.width = "240px";
         taskButton.style.marginLeft = "26px";
     }
     this.setState( {userSearchVisible: false} );
@@ -94,8 +94,7 @@ export class Sidebar extends React.Component {
 
     return (
       <div className="sidebar-wrapper">
-        <div className={this.state.visible ?
-            "sidebar" : "sidebar-hidden"}>
+        <div className="sidebar">
           <div className ="sidebar-header">
             <div className="sidebar-header-left"><div className="sidebar-logo"/><span>mamba</span></div>
             <div className="sidebar-close-x" onClick={this.toggleVisibility}>
