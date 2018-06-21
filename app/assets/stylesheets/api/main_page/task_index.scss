@@ -131,7 +131,7 @@
     left: 0px;
     height: 100%;
     width: 0px;
-    background-image: linear-gradient(90deg, #25e8c8,#25e8c8 50%, #14aaf5);
+    background-image: linear-gradient(90deg, #25e8c8, #25e8c8 50%, #14aaf5);
     background-size: cover;
     z-index: 22;
     transition: width .24s, opacity .36s;
@@ -188,7 +188,6 @@
   height: 20px;
   transform: translateY(1px);
   border-radius: 20px;
-  border: 1px solid black;
   box-sizing: border-box;
   border: 1px solid #b7bfc6;
   cursor: pointer;
@@ -198,7 +197,36 @@
   transition: border-color .24s ease-in-out;
     -moz-transition: border-color .24s ease-in-out;
     -webkit-transition: border-color .24s ease-in-out;
+  &:hover {
+    border-color: #25e8c8;
+    background: #e2fffa;
+  }
+  &:active {
+    background: #e2fffa;
+  }
+  &:hover .task-index-check{
+    fill: #25e8c8;
+  }
 }
+
+// .flash-circle {
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   width: 20px;
+//   height: 20px;
+//   transform: translateY(1px);
+//   border-radius: 20px;
+//   cursor: pointer;
+//   box-sizing: border-box;
+//   border: 1px solid #25e8c8;
+//   background: white;
+//   z-index: 23;
+// }
+//
+// .flash-circle > svg {
+//     fill: #25e8c8;
+// }
 
 .checked-circle {
   display: inline-flex;
@@ -208,25 +236,15 @@
   height: 20px;
   transform: translateY(1px);
   border-radius: 20px;
-  border: 1px solid black;
   cursor: pointer;
   box-sizing: border-box;
-  border: 1px solid #25e8c8;
-  background: #e2fffa;
-  z-index:22;
-}
-
-.check-circle:hover {
-  border-color: #25e8c8;
-  background: #e2fffa;
-}
-
-.check-circle:active {
-  background: #e2fffa;
-}
-
-.check-circle:hover .task-index-check{
-  fill: #25e8c8
+  border: 1px solid #b2ebe1;
+  background: #b2ebe1;
+  z-index: 23;
+  &:hover {
+    border-color: #00bf9c;
+    background: #00bf9c;
+  }
 }
 
 .task-index-check {
@@ -245,8 +263,8 @@
 .checked-task-index-check {
   cursor: pointer;
   height: 12px;
-  fill: #25e8c8;
-  z-index:23;
+  fill: white;
+  z-index: 23;
 }
 
 .for-line-under-circle {
