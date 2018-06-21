@@ -2,7 +2,8 @@ import React from "react";
 import { Route, Link, withRouter } from 'react-router-dom';
 import TaskFormContainer from './task_form_container';
 import { dueDate, dueDateClass } from './date';
-import { checkmark } from '../svgs/svgs'
+import { checkmark } from '../svgs/svgs';
+import { flashCompletion } from './flash'
 
 export class TaskIndex extends React.Component {
   constructor(props) {
@@ -52,6 +53,7 @@ export class TaskIndex extends React.Component {
 
   completeTask(taskId, completedStatus) {
     this.props.updateTask({id: [taskId], completed: !(completedStatus)});
+    flashCompletion(completedStatus, taskId);
   }
 
 
@@ -102,14 +104,16 @@ export class TaskIndex extends React.Component {
     const { tasks } = this.props;
     const taskIndexLinks = tasks.map(task =>
       <div className={this.props.match.params.taskId === task.id.toString() ? "task-index-item-selected" : "task-index-item-wrapper"} key={task.id}>
+        <div className={`flash ${task.id}`}/>
+        <div className ="for-line-under-circle">
+          <div className={task.completed ? "checked-circle" : "check-circle"} onClick={()=>this.completeTask(task.id, task.completed)}>
+            {checkmark(task.completed ? "checked-task-index-check" : "task-index-check")}
+          </div>
+        </div>
         <Link to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
           className="index-link"
           draggable="false">
-          <div className ="for-line-under-circle">
-            <div className={task.completed ? "checked-circle" : "check-circle"} onClick={()=>this.completeTask(task.id, task.completed)}>
-              {checkmark(task.completed ? "checked-task-index-check" : "task-index-check")}
-            </div>
-          </div>
+
           <input type="text"
             autoFocus
             value={task.task_name}

@@ -123,7 +123,18 @@
   & + .task-index-item-wrapper{
     border-top: 1px solid transparent;
   }
+}
 
+.flash {
+    align-items: stretch;
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 0px;
+    background-image: linear-gradient(90deg, #25e8c8,#25e8c8 50%, #14aaf5);
+    background-size: cover;
+    z-index: 22;
+    transition: width .24s, opacity .36s;
 }
 
 .task-index-item-wrapper {
@@ -169,15 +180,15 @@
 }
 
 .check-circle {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
   background: white;
   width: 20px;
   height: 20px;
   transform: translateY(1px);
   border-radius: 20px;
   border: 1px solid black;
-  padding-bottom: 4px;
-  padding-left: 3px;
   box-sizing: border-box;
   border: 1px solid #b7bfc6;
   cursor: pointer;
@@ -190,18 +201,19 @@
 }
 
 .checked-circle {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
   width: 20px;
   height: 20px;
   transform: translateY(1px);
   border-radius: 20px;
   border: 1px solid black;
   cursor: pointer;
-  padding-bottom: 4px;
-  padding-left: 3px;
   box-sizing: border-box;
   border: 1px solid #25e8c8;
   background: #e2fffa;
+  z-index:22;
 }
 
 .check-circle:hover {
@@ -234,13 +246,14 @@
   cursor: pointer;
   height: 12px;
   fill: #25e8c8;
+  z-index:23;
 }
 
 .for-line-under-circle {
   display: inline-flex;
   width: auto;
   box-sizing: border-box;
-  padding-bottom: 9px;
+  align-items: center;
 }
 
 .task-index-row-name-inputs {
