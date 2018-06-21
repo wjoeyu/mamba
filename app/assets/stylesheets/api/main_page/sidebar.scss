@@ -1,28 +1,39 @@
 .sidebar {
   height: 100vh;
   width: 240px;
-  font-family: Roboto;
-  font-size: 13px;
   color: white;
   background-color: var(--slate);
   top: 0;
   transition: .32s;
+  animation: push-in-right .32s;
+  -webkit-animation: push-in-right .32s;
+  -moz-animation: push-in-right .32s;
+}
+
+@keyframes push-in-right {
+  from { width: 0px;}
+  to   { width: 240px;}
+}
+@-webkit-keyframes push-in-right {
+  from { width: 0px;}
+  to   { width: 240px;}
+}
+@-moz-keyframes push-in-right {
+  from { width: 0px;}
+  to   { width: 240px;}
 }
 
 .sidebar-header {
   display:flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 0px;
+  padding: 12px 0px;
 }
 
 .sidebar-header-left {
   padding: 0px 16px;
   display: flex;
   flex-shrink: 0;
-  align-items: center;
-  justify-content: space-between;
-  width: 124px;
   user-select: none;
     -moz-user-select: none;
       -webkit-user-select: none;
@@ -33,13 +44,13 @@
   width: 26px;
   height: 24px;
   background-size: cover;
-  display: inline-block;
 }
 
 .sidebar span {
-  display: inline-block;
   font-family: Questrial;
   font-size: 24px;
+  margin-left: 8px;
+  margin-right: 22px;
   letter-spacing: 1px;
 }
 
@@ -58,6 +69,12 @@
 .ind-links {
   display: flex;
   justify-content: flex-end;
+  animation: slide-in-right .5s;
+  -webkit-animation: slide-in-right .5s;
+   -moz-animation: slide-in-right .5s;
+  animation-fill-mode: backwards;
+  -webkit-animation-fill-mode: backwards;
+  -moz-animation-fill-mode: backwards;
 }
 
 .sidebar a {
@@ -72,15 +89,25 @@
   font-weight: 300;
   font-size: 24px;
   text-align: right;
-  animation: slide-in-right .5s;
-  -webkit-animation: slide-in-right .5s;
-   -moz-animation: slide-in-right .5s;
   transition: color .24s ease-in-out;
   -webkit-transition: color .24s ease-in-out;
    -moz-transition: color .24s ease-in-out;
    &:hover {
-       color:yellow;
+       color: yellow;
    }
+}
+
+@keyframes slide-in-right {
+    from { transform: translate(-100%, 0%);}
+    to   { transform: translate(0%, 0%);}
+}
+@-webkit-keyframes slide-in-right {
+    from { transform: translate(-100%, 0%);}
+    to   { transform: translate(0%, 0%);}
+}
+@-moz-keyframes slide-in-right {
+    from { transform: translate(-100%, 0%);}
+    to   { transform: translate(0%, 0%);}
 }
 
 .new-members {
@@ -127,6 +154,18 @@
     &:active {
         background: #008ce3;
     }
+}
+@keyframes slide-out-left {
+    from { transform: translate(0%, 0%);}
+    to   { transform: translate(-100%, 0%);}
+}
+@-webkit-keyframes slide-out-left {
+    from { transform: translate(0%, 0%);}
+    to   { transform: translate(-100%, 0%);}
+}
+@-moz-keyframes slide-out-left {
+    from { transform: translate(0%, 0%);}
+    to   { transform: translate(-100%, 0%);}
 }
 
 @keyframes slide-up {

@@ -281,22 +281,6 @@
       border-style: solid;
       color: #222b37;
     }
-//     &:hover .due-date-calendar {
-//       fill: #222b37;
-//     }
-//     &:hover .calendar-circle {
-//       border-color: #646f79;
-//       border-style: solid;
-//       color: #222b37;
-//     }
-//     &:hover .dotted-calendar-circle {
-//       border-color: #646f79;
-//       border-style: solid;
-//       color: #222b37;
-//     }
-//     &:hover .clear-date-button{
-//         visibility: visible;
-//     }
 }
 
 .assignee-icon {
@@ -505,6 +489,7 @@
 .task-form-description {
   font-family: Roboto;
   overflow-x: hidden;
+  overflow-y: hidden;
   width: 96%;
   max-width: 96%;
   min-width: 96%;
