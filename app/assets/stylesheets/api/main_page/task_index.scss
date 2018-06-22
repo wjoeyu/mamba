@@ -256,6 +256,7 @@
 }
 
 .task-index-row-name-inputs {
+  position: relative;
   display: inline-block;
   color: black;
   white-space: nowrap;
@@ -271,12 +272,14 @@
   padding-right: 12px;
   box-sizing: border-box;
   font-family: Roboto;
+  z-index: 23;
   &:focus {
     cursor: text;
   }
 }
 
 .task-index-row-name-inputs-completed {
+  position: relative;
   display: inline-block;
   color: #bfc7cc;
   white-space: nowrap;
@@ -292,6 +295,7 @@
   padding-right: 12px;
   box-sizing: border-box;
   font-family: Roboto;
+  z-index: 23;
   &:focus {
     cursor: text;
   }

@@ -106,7 +106,8 @@ export class TaskIndex extends React.Component {
       <div className={this.props.match.params.taskId === task.id.toString() ? "task-index-item-selected" : "task-index-item-wrapper"} key={task.id}>
         <div className={`flash ${task.id}`}/>
         <div className ="for-line-under-circle">
-          <div className={task.completed ? `checked-circle ${task.id}` : `check-circle ${task.id}`} onClick={()=>this.completeTask(task.id, task.completed)}>
+          <div className={task.completed ? `checked-circle ${task.id}` : `check-circle ${task.id}`}
+            onClick={()=>this.completeTask(task.id, task.completed)}>
             {checkmark(task.completed ? "checked-task-index-check" : "task-index-check")}
           </div>
         </div>
@@ -118,7 +119,7 @@ export class TaskIndex extends React.Component {
             autoFocus
             value={task.task_name}
             onChange= {this.update(task.id,'task_name')}
-            className={task.completed ? "task-index-row-name-inputs-completed" : "task-index-row-name-inputs"}
+            className={task.completed ? "task-index-row-name-inputs-completed" : `task-index-row-name-inputs ${task.id}`}
             placeholder="Add a task name"
             />
         </Link>
