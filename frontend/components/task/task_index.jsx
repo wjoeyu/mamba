@@ -118,7 +118,7 @@ export class TaskIndex extends React.Component {
             autoFocus
             value={task.task_name}
             onChange= {this.update(task.id,'task_name')}
-            className="task-index-row-name-inputs"
+            className={task.completed ? "task-index-row-name-inputs-completed" : "task-index-row-name-inputs"}
             placeholder="Add a task name"
             />
         </Link>
