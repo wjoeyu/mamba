@@ -17,7 +17,7 @@ const mSp = (state, ownProps) => {
     task: state.entities.tasks[ownProps.match.params.taskId],
     user: state.entities.users[ownProps.match.params.userId],
     currentUser: state.entities.users[state.session.id],
-    teamMembers: selectTeamMembers(state)
+    teamMembers: state.entities.users
   };
 };
 

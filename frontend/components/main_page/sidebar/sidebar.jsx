@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { closeX } from '../../svgs/svgs'
 
 export class Sidebar extends React.Component {
   constructor(props) {
@@ -98,9 +99,7 @@ export class Sidebar extends React.Component {
           <div className ="sidebar-header">
             <div className="sidebar-header-left"><div className="sidebar-logo"/><span>mamba</span></div>
             <div className="sidebar-close-x" onClick={this.toggleVisibility}>
-              <svg focusable="false" viewBox="0 0 32 32">
-                <polygon points="24.485,27.314 27.314,24.485 18.828,16 27.314,7.515 24.485,4.686 16,13.172 7.515,4.686 4.686,7.515 13.172,16 4.686,24.485 7.515,27.314 16,18.828 "></polygon>
-              </svg>
+              {closeX()}
             </div>
           </div>
           <div className="sidebar-members">

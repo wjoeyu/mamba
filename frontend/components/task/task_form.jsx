@@ -13,6 +13,8 @@ class TaskForm extends React.Component {
     this.closeForm = this.closeForm.bind(this);
     this.clearDate = this.clearDate.bind(this);
     this.openAssigneeDropdown = this.openAssigneeDropdown.bind(this);
+    this.assigneeInitials = this.assigneeInitials.bind(this);
+    this.assigneeName = this.assigneeName.bind(this);
     this.timeout = null;
   }
 
@@ -53,6 +55,22 @@ class TaskForm extends React.Component {
       this.props.updateTask({id: [this.props.match.params.taskId], due_date: ""})
   }
 
+  assigneeInitials() {
+      if (this.props.task && this.props.task.assignee_id) {
+        if (this.props.teamMembers[this.props.task.assignee_id]) {
+          return this.props.teamMembers[this.props.task.assignee_id].name.split(" ").map(el=>el[0]).join("");
+        }
+      }
+  }
+
+  assigneeName() {
+      if (this.props.task && this.props.task.assignee_id) {
+        if (this.props.teamMembers[this.props.task.assignee_id]) {
+          return this.props.teamMembers[this.props.task.assignee_id].name;
+        }
+      }
+  }
+
   openAssigneeDropdown() {
       this.props.fetchTeamMembers(this.props.match.params.teamId);
   }
@@ -88,9 +106,13 @@ class TaskForm extends React.Component {
 
             <div className="assignee-button">
                 <div
-                  className={ task && task.assignee_id? "calendar-circle" : "dotted-calendar-circle"}
+                  className={ task && task.assignee_id ? "avatar-circle" : "dotted-calendar-circle"}
                   onClick={() => window.alert("assign member coming soon")}>
-                  {assigneeIcon("assignee-icon")}
+                  { task && task.assignee_id ? this.assigneeInitials() : assigneeIcon("assignee-icon")}
+                </div>
+                <div className ="due-date">
+                  <div className={task && task.assignee_id? "assigned-heading" : "unassigned"}>ASSIGNED TO</div>
+                  <div className="assignee-name">{this.assigneeName()}</div>
                 </div>
             </div>
 

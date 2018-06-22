@@ -269,6 +269,7 @@
     border: 1px solid transparent;
     align-items: center;
     padding: 3px;
+    padding-right: 8px;
     height: 38px;
     border-radius: 38px;
     box-sizing: border-box;
@@ -289,6 +290,36 @@
   width: 16px;
 }
 
+.avatar-circle {
+    display: flex;
+    vertical-align: bottom;
+    border: 1px solid #fc91ad;
+    align-items: center;
+    justify-content: space-around;
+    height: 30px;
+    width: 30px;
+    border-radius: 24px;
+    box-sizing: border-box;
+    margin-right: 0px;
+    background: #fc91ad;
+    color: white;
+    font-family: Roboto;
+    font-size: 12px;
+}
+
+.assigned-heading {
+    display: block;
+    color: #646f79;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.assignee-name {
+    display: block;
+    font-weight: 400;
+    color: black;
+}
 //due date styling
 
 .date-button{
@@ -328,6 +359,7 @@
       visibility: visible;
   }
 }
+
 
 .calendar-circle {
   display: block;
