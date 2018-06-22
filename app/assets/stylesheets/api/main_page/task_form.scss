@@ -259,10 +259,24 @@
     justify-content: space-between;
 }
 
-//assignee icon styling
+.unassigned {
+  display: block;
+  color: #646f79;
+  font-size: 13px;
+  font-weight: 400;
+}
+.button-heading {
+  display: block;
+  color: #646f79;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+//assignee styling
 
 .assignee-button {
-    cursor: pointer;
+    // cursor: pointer;
     display: flex;
     position: relative;
     float: left;
@@ -276,11 +290,14 @@
     margin-top: 6px;
     margin-bottom: 10px;
 
-    &:hover {
-      background-color: #f6f8f9;
-      border-color: #646f79;
-      border-style: solid;
-      color: #222b37;
+    // &:hover {
+    //   background-color: #f6f8f9;
+    //   border-color: #646f79;
+    //   border-style: solid;
+    //   color: #222b37;
+    // }
+    &:hover .clear-date-button{
+        visibility: visible;
     }
 }
 
@@ -305,14 +322,6 @@
     color: white;
     font-family: Roboto;
     font-size: 12px;
-}
-
-.assigned-heading {
-    display: block;
-    color: #646f79;
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: 400;
 }
 
 .assignee-name {
@@ -350,7 +359,7 @@
     border-style: solid;
     color: #222b37;
   }
-  &:hover .dotted-calendar-circle {
+  &:hover .dotted-circle {
     border-color: #646f79;
     border-style: solid;
     color: #222b37;
@@ -359,7 +368,6 @@
       visibility: visible;
   }
 }
-
 
 .calendar-circle {
   display: block;
@@ -374,7 +382,7 @@
   margin-right: 0px;
 }
 
-.dotted-calendar-circle {
+.dotted-circle {
   display: block;
   vertical-align: bottom;
   border: 1px dashed #b7bfc6;
@@ -398,20 +406,6 @@
   margin-left: 10px;
   margin-right: 5px;
 }
-
-  .due-date-heading {
-    display: block;
-    color: #646f79;
-    font-size: 13px;
-    font-weight: 400;
-  }
-  .due-dated-heading {
-    display: block;
-    color: #646f79;
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: 400;
-  }
 
   .due-date div:last-child {
     font-size: 13px;

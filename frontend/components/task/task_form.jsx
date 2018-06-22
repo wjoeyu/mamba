@@ -11,7 +11,7 @@ class TaskForm extends React.Component {
     this.completeTask = this.completeTask.bind(this);
     this.removeTask = this.removeTask.bind(this);
     this.closeForm = this.closeForm.bind(this);
-    this.clearDate = this.clearDate.bind(this);
+    this.clearAttr = this.clearAttr.bind(this);
     this.openAssigneeDropdown = this.openAssigneeDropdown.bind(this);
     this.assigneeInitials = this.assigneeInitials.bind(this);
     this.assigneeName = this.assigneeName.bind(this);
@@ -51,8 +51,9 @@ class TaskForm extends React.Component {
         },480);
   }
 
-  clearDate() {
-      this.props.updateTask({id: [this.props.match.params.taskId], due_date: ""})
+  clearAttr(attribute) {
+      debugger
+      this.props.updateTask({id: [this.props.match.params.taskId], [attribute]: ""})
   }
 
   assigneeInitials() {
@@ -74,6 +75,12 @@ class TaskForm extends React.Component {
   openAssigneeDropdown() {
       this.props.fetchTeamMembers(this.props.match.params.teamId);
   }
+
+  // <div
+  //   className={task && task.assignee_id ? "clear-date-button" : "cleared-date-button"}
+  //   onClick={() => this.clearAttr("assignee_id")}>
+  //   {clear()}
+  // </div>
 
   render() {
     const { task } = this.props;
@@ -104,24 +111,24 @@ class TaskForm extends React.Component {
           />
           <div className="assignee-due-date">
 
-            <div className="assignee-button">
+            <div className="assignee-button" onClick={() => window.alert("assign member coming soon")}>
                 <div
-                  className={ task && task.assignee_id ? "avatar-circle" : "dotted-calendar-circle"}
-                  onClick={() => window.alert("assign member coming soon")}>
+                  className={ task && task.assignee_id ? "avatar-circle" : "dotted-circle"}>
                   { task && task.assignee_id ? this.assigneeInitials() : assigneeIcon("assignee-icon")}
                 </div>
                 <div className ="due-date">
-                  <div className={task && task.assignee_id? "assigned-heading" : "unassigned"}>ASSIGNED TO</div>
+                  <div className={task && task.assignee_id ? "button-heading" : "unassigned"}>
+                  {task && task.assignee_id ? "ASSIGNED TO" : "Unassigned"}</div>
                   <div className="assignee-name">{this.assigneeName()}</div>
                 </div>
             </div>
 
             <div className="date-button">
-              <div className={ task && task.due_date? "calendar-circle" : "dotted-calendar-circle"}>
+              <div className={ task && task.due_date? "calendar-circle" : "dotted-circle"}>
                 {calendar("due-date-calendar")}
               </div>
               <div className ="due-date">
-                <div className={task && task.due_date? "due-dated-heading" : "due-date-heading"}>Due Date</div>
+                <div className={task && task.due_date? "button-heading" : "unassigned"}>Due Date</div>
                 <div className={dueDateClass(task)}>{dueDate(task)}</div>
               </div>
               <input
@@ -132,7 +139,7 @@ class TaskForm extends React.Component {
               />
               <div
                 className={task && task.due_date ? "clear-date-button" : "cleared-date-button"}
-                onClick={() => this.clearDate()}>
+                onClick={() => this.clearAttr("due_date")}>
                 {clear()}
               </div>
             </div>
