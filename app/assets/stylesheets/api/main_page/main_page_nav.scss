@@ -103,6 +103,8 @@
 }
 
 .current-user-avatar {
+  font-family: Questrial;
+  font-size: 12px;
   font-weight: 400;
   width: 30px;
   height: 30px;
@@ -114,7 +116,7 @@
   display: inline-flex;
   margin-left: 8px;
   color: white;
-  background: #fc91ad;
+  background: linear-gradient(824deg, #00ffdc 0%, #5314ff 24%, #fcd101 75%, #fcdd01 100%);
 }
 
 .dropdown-button:hover .current-team{
