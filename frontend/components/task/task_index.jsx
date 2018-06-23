@@ -38,21 +38,21 @@ export class TaskIndex extends React.Component {
       }
   }
 
-  update(taskId,field) {
+  update(taskId, field) {
     return (e) => {
-      this.props.updateReduxTask({id: [taskId], [field]: e.currentTarget.value});
+      this.props.updateReduxTask({id: taskId, [field]: e.currentTarget.value});
       const toBePersisted = e.currentTarget.value;
       if (this.timeout) {
         clearTimeout(this.timeout);
       }
         this.timeout = setTimeout(()=> {
-          this.props.updateTask({id: [taskId], [field]: toBePersisted});
+          this.props.updateTask({id: taskId, [field]: toBePersisted});
         }, 500);
       };
   }
 
   completeTask(taskId, completedStatus) {
-    this.props.updateTask({id: [taskId], completed: !(completedStatus)});
+    this.props.updateTask({id: taskId, completed: !(completedStatus)});
     flashCompletion(completedStatus, taskId);
   }
 
@@ -139,13 +139,14 @@ export class TaskIndex extends React.Component {
       <div className="main-content">
         <div className="main-content-header">{this.currentTeamMember()} Tasks in {this.currentTeamName()}</div>
         <div className="task-wrapper">
-          <div className={this.props.match.params.taskId ? "task-index-condensed" : "task-index"}>
+          <div className="task-index">
             <div className="task-index-header">
               <div onClick={this.createNewTask} className="add-task-button">Add Task</div>
             </div>
             {taskIndexLinks}
             <div className="task-index-filler"></div>
           </div>
+          <Route path="/team/:teamId/users/:userId/tasks/:taskId" component={TaskFormContainer} />
         </div>
       </div>
     );

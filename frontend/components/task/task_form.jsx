@@ -30,13 +30,13 @@ class TaskForm extends React.Component {
 
   update(field) {
     return (e) => {
-      this.props.updateReduxTask({id: [this.props.match.params.taskId], [field]: e.currentTarget.value});
+      this.props.updateReduxTask({id: this.props.match.params.taskId, [field]: e.currentTarget.value});
       const toBePersisted = e.currentTarget.value;
       if (this.timeout) {
         clearTimeout(this.timeout);
       }
         this.timeout = setTimeout(()=> {
-          this.props.updateTask({id: [this.props.match.params.taskId], [field]: toBePersisted});
+          this.props.updateTask({id: this.props.match.params.taskId, [field]: toBePersisted});
         }, 200);
       };
   }
@@ -52,8 +52,7 @@ class TaskForm extends React.Component {
   }
 
   clearAttr(attribute) {
-      debugger
-      this.props.updateTask({id: [this.props.match.params.taskId], [attribute]: ""})
+      this.props.updateTask({id: this.props.match.params.taskId, [attribute]: null})
   }
 
   assigneeInitials() {
@@ -77,9 +76,9 @@ class TaskForm extends React.Component {
   }
 
   // <div
-  //   className={task && task.assignee_id ? "clear-date-button" : "cleared-date-button"}
-  //   onClick={() => this.clearAttr("assignee_id")}>
-  //   {clear()}
+  // className={task && task.assignee_id ? "clear-date-button" : "cleared-date-button"}
+  // onClick={() => this.clearAttr("assignee_id")}>
+  // {clear()}
   // </div>
 
   render() {
@@ -111,7 +110,7 @@ class TaskForm extends React.Component {
           />
           <div className="assignee-due-date">
 
-            <div className="assignee-button" onClick={() => window.alert("assign member coming soon")}>
+            <div className="assignee-button">
                 <div
                   className={ task && task.assignee_id ? "avatar-circle" : "dotted-circle"}>
                   { task && task.assignee_id ? this.assigneeInitials() : assigneeIcon("assignee-icon")}

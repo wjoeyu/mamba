@@ -1,12 +1,11 @@
 .task-form {
-  position: absolute;
+  position: relative;
   font-family: Roboto;
-  border: 1px solid var(--light-grey);
-  height: 100vh;
-  top: 86px;
-  right: 16px;
+ box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);  height: 100vh;
+  margin-left: 16px;
   z-index: 24;
-  width: 46%;
+  width: 100%;
+  max-width: 660px;
   min-width: 430px;
   background: white;
   border-radius: 3px;
@@ -15,14 +14,13 @@
    -moz-animation: slide-in .48s;
 }
 .task-form-out {
-  position: absolute;
+  position: relative;
   font-family: Roboto;
-  border: 1px solid var(--light-grey);
-  height: 100vh;
-  top: 86px;
-  right: 16px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);  height: 100vh;
+  margin-left: 16px;
   z-index: 24;
-  width: 46%;
+  width: 100%;
+  max-width: 660px;
   min-width: 430px;
   background: white;
   border-radius: 3px;
@@ -46,15 +44,15 @@
 
 @keyframes slide-out {
     from { transform: translate(0%, 0%);}
-    to   { transform: translate(120%, 0%);}
+    to   { transform: translate(140%, 0%);}
 }
 @-webkit-keyframes slide-out {
     from { transform: translate(0%, 0%);}
-    to   { transform: translate(120%, 0%);}
+    to   { transform: translate(140%, 0%);}
 }
 @-moz-keyframes slide-out {
     from { transform: translate(0%, 0%);}
-    to   { transform: translate(120%, 0%);}
+    to   { transform: translate(140%, 0%);}
 }
 .task-form-exit {
   position: absolute;
@@ -187,7 +185,6 @@
 }
 
 .task-form-header {
-  border-bottom: 1px solid transparent;
   border-radius: 3px 3px 0px 0px;
   display: flex;
   align-items: center;
