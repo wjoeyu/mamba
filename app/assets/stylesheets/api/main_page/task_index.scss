@@ -41,14 +41,13 @@
   transition: background .24s ease-in-out;
     -moz-transition: background .24s ease-in-out;
     -webkit-transition: background .24s ease-in-out;
-}
 
-.add-task-button:hover {
-  background: #008ce3;
-}
-
-.add-task-button:active {
-  background: #0269a9;
+    &:hover {
+      background: #008ce3;
+    }
+    &:active {
+      background: #0269a9;
+    }
 }
 
 .task-wrapper {
@@ -168,26 +167,25 @@
   border-bottom: 1px solid transparent;
   box-sizing: border-box;
   flex-shrink: 0;
-}
 
-.task-index-item-wrapper:hover {
-  background: #f6f8f9;
-  border-top: 1px solid var(--light-grey);
-  border-bottom: 1px solid var(--light-grey);
-  box-sizing: border-box;
-}
-
-.task-index-item-wrapper:focus-within {
-  background: white;
-  border-top: 1px solid #14aaf5;
-  border-bottom: 1px solid #14aaf5;
-  box-shadow: inset 0 3px 4px -1px var(--light-grey);
-  box-sizing: border-box;
-
-  & + .task-index-item-wrapper{
-    border-top: 1px solid transparent;
+  &:hover {
+    background: #f6f8f9;
+    border-top: 1px solid var(--light-grey);
+    border-bottom: 1px solid var(--light-grey);
+    box-sizing: border-box;
   }
+  &:focus-within {
+    background: white;
+    border-top: 1px solid #14aaf5;
+    border-bottom: 1px solid #14aaf5;
+    box-shadow: inset 0 3px 4px -1px var(--light-grey);
+    box-sizing: border-box;
 
+    & + .task-index-item-wrapper{
+      border-top: 1px solid transparent;
+    }
+
+  }
 }
 
 .task-index-filler {
@@ -257,10 +255,6 @@
   transition: fill .24s ease-in-out;
     -moz-transition: fill .24s ease-in-out;
     -webkit-transition: fill .24s ease-in-out;
-}
-
-.task-index-check:hover {
-  fill: #25e8c8;
 }
 
 .checked-task-index-check {
