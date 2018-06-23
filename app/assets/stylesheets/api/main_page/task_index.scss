@@ -105,6 +105,15 @@
   box-sizing: border-box;
   flex-shrink: 0;
   background: #eef9fe;
+
+  & .checked-circle {
+    background: #25e8c8;
+    border: 1px solid #25e8c8;
+  }
+
+  & .task-index-row-name-inputs-completed {
+    color: #647079;
+  }
 }
 
 .task-index-item-selected:hover {
@@ -122,6 +131,19 @@
 
   & + .task-index-item-wrapper{
     border-top: 1px solid transparent;
+  }
+
+  & .checked-circle {
+    background: #b2ebe1;
+    border: 1px solid #b2ebe1;
+    &:hover {
+      border-color: #00bf9c;
+      background: #00bf9c;
+    }
+  }
+
+  & .task-index-row-name-inputs-completed {
+    color: #bfc7cc;
   }
 }
 
@@ -275,6 +297,12 @@
   z-index: 23;
   &:focus {
     cursor: text;
+    &::placeholder {
+      color: #bfc7cc;
+    }
+  }
+  &::placeholder {
+    color: transparent;
   }
 }
 
@@ -298,6 +326,12 @@
   z-index: 23;
   &:focus {
     cursor: text;
+    &::placeholder {
+      color: #bfc7cc;
+    }
+  }
+  &::placeholder {
+    color: transparent;
   }
 }
 

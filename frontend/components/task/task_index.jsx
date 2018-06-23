@@ -120,7 +120,7 @@ export class TaskIndex extends React.Component {
             value={task.task_name}
             onChange= {this.update(task.id,'task_name')}
             className={task.completed ? "task-index-row-name-inputs-completed" : `task-index-row-name-inputs ${task.id}`}
-            placeholder="Add a task name"
+            placeholder="Write a task name"
             />
         </Link>
         <div className="dateWrapper">
