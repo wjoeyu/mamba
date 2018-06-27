@@ -9,10 +9,6 @@ import MainPage from './main_page/main_page';
 import Modal from './modal/modal';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
-// import TaskForm from './task/task_form_container';
-// import TaskIndexContainer from './task/task_index_container';
-// import TaskFormContainer from './task/task_form_container';
-
 const App = () => {
   return (
     <div>
@@ -27,5 +23,3 @@ const App = () => {
 };
 
 export default App;
-
-// <ProtectedRoute path="/team/:teamId/user/:userId/" component={TaskListContainer} />
