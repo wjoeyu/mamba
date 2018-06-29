@@ -27,6 +27,55 @@
   font-weight: normal;
 }
 
+.demo-login {
+  flex-shrink: 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 24px;
+  box-shadow: 0 3px 5px 0 rgba(36,50,66,.2);
+  position: relative;
+  transition: box-shadow .15s;
+  background: white;
+  &:hover {
+    box-shadow: 0 11px 12px 0 rgba(36,50,66,.12);
+  }
+}
+
+.form-option {
+  color: #9ca6af;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-bottom: 32px;
+  padding-top: 32px;
+  position: relative;
+  text-align: center;
+  &:before {
+    border-top: 1px solid #d5dce0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    z-index: 0;
+
+  }
+  &:after {
+    border-top: 1px solid #d5dce0;
+    content: "";
+    height: 1px;
+    left: auto;
+    right: 0;
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    z-index: 0;
+  }
+}
+
 .login-form label {
   display: block;
   text-align: left;
@@ -84,27 +133,20 @@
   margin: auto;
 }
 
-.login-form-container button {
+.signup-login-button {
+  display: inline-block;
   background: none;
   border: none;
+  margin-left: 3px;
   cursor: pointer;
-  padding: none;
   font-family: Raleway;
   font-size: 16px;
   font-weight: 600;
   color: #796eff;
-}
-
-.login-form-container button:hover {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: none;
-  font-family: Raleway;
-  font-size: 16px;
-  font-weight: 600;
-  color: #635ac7;
-  text-decoration: underline;
+  &:hover {
+    border-bottom: 2px solid #635ac7;
+    color: #635ac7;
+  }
 }
 
 #session-submit {

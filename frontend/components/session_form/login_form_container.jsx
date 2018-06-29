@@ -15,13 +15,14 @@ const mapStateToProps = ({ errors, entities }) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  // const demo = {email:"demo@mamba.com", password: "demodemo"};
+  const demo = {email:"demo@mamba.com", password: "demodemo"};
   return {
+    signInDemo: () => dispatch(login(demo)),
     processForm: (user) => dispatch(login(user)),
     otherForm: (
-      <button onClick={() => dispatch(openModal('signup'))}>
+      <div className="signup-login-button" onClick={() => dispatch(openModal('signup'))}>
         Sign Up
-      </button>
+      </div>
     ),
     closeModal: () => dispatch(closeModal()),
     openModal: modal => dispatch(openModal(modal)),
@@ -31,5 +32,3 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
-
-// <button onClick={() => this.props.signInDemo()}>Demo</button>
