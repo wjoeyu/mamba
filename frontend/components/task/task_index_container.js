@@ -9,7 +9,6 @@ import {
 } from '../../actions/task_actions';
 import { fetchTeam, fetchTeamMembers } from '../../actions/team_actions';
 import { selectTasks } from '../../reducers/selectors.js';
-// import { withRouter } from 'react-router-dom';
 
 const mSp = (state) => {
   return {

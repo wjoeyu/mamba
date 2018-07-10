@@ -2,8 +2,9 @@ import React from "react";
 import { Route, Link, withRouter } from 'react-router-dom';
 import TaskFormContainer from './task_form_container';
 import { dueDate, dueDateClass } from './date';
-import { checkmark } from '../svgs/svgs';
-import { flashCompletion } from './flash'
+import { checkmark, assigneeIcon } from '../svgs/svgs';
+import { flashCompletion } from './flash';
+import { memberInitials } from '../main_page/avatar';
 
 export class TaskIndex extends React.Component {
   constructor(props) {
@@ -24,8 +25,6 @@ export class TaskIndex extends React.Component {
 
     this.props.fetchTeam(this.props.match.params.teamId);
     this.props.fetchTeamMembers(this.props.match.params.teamId);
-
-
 
   }
 
@@ -59,8 +58,6 @@ export class TaskIndex extends React.Component {
     flashCompletion(completedStatus, taskId);
   }
 
-
-
   currentTeamName() {
     if (Object.values(this.props.teams).length && this.props.match.params.teamId) {
       if (this.props.teams[this.props.match.params.teamId]) {
@@ -79,7 +76,6 @@ export class TaskIndex extends React.Component {
     } else {
       return ("Team");
     }
-
   }
 
   createNewTask() {
@@ -104,7 +100,7 @@ export class TaskIndex extends React.Component {
   }
 
   render() {
-    const { tasks } = this.props;
+    const { tasks, users } = this.props;
     const taskIndexLinks = tasks.map(task =>
       <div className={this.props.match.params.taskId === task.id.toString() ? "task-index-item-selected" : "task-index-item-wrapper"} key={task.id}>
         <div className={`flash ${task.id}`}/>
@@ -126,15 +122,25 @@ export class TaskIndex extends React.Component {
             className={task.completed ? `task-index-row-name-inputs-completed ${task.id}` : `task-index-row-name-inputs ${task.id}`}
             placeholder="Write a task name"
             />
+
         </Link>
-        <div className="dateWrapper">
-            <div className={dueDateClass(task)}>{dueDate(task)}</div>
-            <input
-            type="date"
-            className="index-date-input"
-            value={task.due_date? task.due_date.slice(0,10) : "" }
-            onChange={this.update(task.id,'due_date')}
-            />
+        <div className="index-item-right">
+          <div className="date-wrapper">
+              <div className={dueDateClass(task)}>{dueDate(task)}</div>
+              <input
+                type="date"
+                className="index-date-input"
+                value={task.due_date? task.due_date.slice(0,10) : "" }
+                onChange={this.update(task.id,'due_date')}
+              />
+          </div>
+          <div className={ task.assignee_id ? "task-index-item-avatar-circle" : "task-index-item-dotted-circle" }>
+          {
+            task.assignee_id && users[task.assignee_id] ?
+            memberInitials(users[task.assignee_id].name) :
+            assigneeIcon("task-index-item-assignee-icon")
+          }
+          </div>
         </div>
       </div>
     );
