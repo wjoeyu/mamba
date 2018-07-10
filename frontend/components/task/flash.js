@@ -3,6 +3,7 @@ export const flashCompletion = (completedStatus, id) => {
     const circle = document.getElementsByClassName(`check-circle ${id}`)[0];
     const checkedCircle = document.getElementsByClassName(`checked-circle ${id}`)[0];
     const flashText = document.getElementsByClassName(`task-index-row-name-inputs ${id}`)[0];
+
     if (!completedStatus) {
         const check = circle.children[0];
         flash.style.opacity = "1";

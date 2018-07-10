@@ -78,10 +78,12 @@ export class Sidebar extends React.Component {
   render() {
     const teamMembers = this.props.teamMembers.map((member) => {
       return (
-        <div className="ind-links" key={member.id}>
-          <Link to={`/team/${this.props.match.params.teamId}/users/${member.id}`}>{member.name}
-          </Link>
-        </div>
+        <Link
+          className="ind-links"
+          key={member.id}
+          to={`/team/${this.props.match.params.teamId}/users/${member.id}`}>
+            {member.name}
+        </Link>
       );
     });
 
@@ -102,6 +104,11 @@ export class Sidebar extends React.Component {
               {closeX()}
             </div>
           </div>
+
+          <Link className="team-link" to={`/team/${this.props.match.params.teamId}`}>
+            {this.props.currentTeam ? this.props.currentTeam.team_name : ""}
+          </Link>
+
           <div className="sidebar-members">
             {teamMembers}
           </div>

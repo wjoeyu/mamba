@@ -9,7 +9,8 @@ const mSp = (state, ownProps) => {
   return {
     teamMembers: selectTeamMembers(state),
     userSearch: selectUserSearch(state),
-    teamMemberKeys: Object.keys(state.entities.users)
+    teamMemberKeys: Object.keys(state.entities.users),
+    currentTeam: state.entities.teams[ownProps.match.params.teamId]
   };
 };
 

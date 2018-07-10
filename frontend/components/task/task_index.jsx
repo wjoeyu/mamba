@@ -24,6 +24,9 @@ export class TaskIndex extends React.Component {
 
     this.props.fetchTeam(this.props.match.params.teamId);
     this.props.fetchTeamMembers(this.props.match.params.teamId);
+
+
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -80,7 +83,7 @@ export class TaskIndex extends React.Component {
   }
 
   createNewTask() {
-    const assigneeId = this.props.match.params.userId ? this.props.match.params.userId : this.props.currentUser.id;
+    const assigneeId = this.props.match.params.userId ? this.props.match.params.userId : "";
     this.props.createTask(
       {
         task_name: "",
@@ -92,11 +95,11 @@ export class TaskIndex extends React.Component {
       }
     ).then(
       payload => {
-        if (this.props.match.params.userId) {
-          this.props.history.push(
-            `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}/tasks/${payload.task.id}`
-          );
-        }
+        this.props.history.push(
+          this.props.match.params.userId ?
+          `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}/tasks/${payload.task.id}` :
+          `/team/${this.props.match.params.teamId}/tasks/${payload.task.id}`
+        );
     });
   }
 
@@ -111,15 +114,16 @@ export class TaskIndex extends React.Component {
             {checkmark(task.completed ? "checked-task-index-check" : "task-index-check")}
           </div>
         </div>
-        <Link to={`/team/${task.team_id}/users/${task.assignee_id}/tasks/${task.id}`}
+        <Link to={this.props.match.params.userId ?
+          `/team/${task.team_id}/users/${this.props.match.params.userId}/tasks/${task.id}` :
+          `/team/${task.team_id}/tasks/${task.id}`}
           className="index-link"
           draggable="false">
 
           <input type="text"
-            autoFocus
             value={task.task_name}
             onChange= {this.update(task.id,'task_name')}
-            className={task.completed ? "task-index-row-name-inputs-completed" : `task-index-row-name-inputs ${task.id}`}
+            className={task.completed ? `task-index-row-name-inputs-completed ${task.id}` : `task-index-row-name-inputs ${task.id}`}
             placeholder="Write a task name"
             />
         </Link>
@@ -135,6 +139,14 @@ export class TaskIndex extends React.Component {
       </div>
     );
 
+    if (this.props.match.params.taskId) {
+      if (document.getElementsByClassName(`task-index-row-name-inputs ${this.props.match.params.taskId}`)[0]) {
+        document.getElementsByClassName(`task-index-row-name-inputs ${this.props.match.params.taskId}`)[0].focus();
+      } else if (document.getElementsByClassName(`task-index-row-name-inputs-completed ${this.props.match.params.taskId}`)[0]) {
+        document.getElementsByClassName(`task-index-row-name-inputs-completed ${this.props.match.params.taskId}`)[0].focus();
+      }
+    }
+
     return (
       <div className="main-content">
         <div className="main-content-header">{this.currentTeamMember()} Tasks in {this.currentTeamName()}</div>
@@ -147,6 +159,7 @@ export class TaskIndex extends React.Component {
             <div className="task-index-filler"></div>
           </div>
           <Route path="/team/:teamId/users/:userId/tasks/:taskId" component={TaskFormContainer} />
+          <Route exact path="/team/:teamId/tasks/:taskId" component={TaskFormContainer} />
         </div>
       </div>
     );

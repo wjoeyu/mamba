@@ -75,26 +75,41 @@
   animation-fill-mode: backwards;
   -webkit-animation-fill-mode: backwards;
   -moz-animation-fill-mode: backwards;
-}
-
-.sidebar a {
   width: auto;
   flex-shrink: 0;
   margin: 8px 24px;
-  display: block;
   cursor: pointer;
   text-decoration: none;
   color: white;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   font-size: 24px;
-  text-align: right;
   transition: color .24s ease-in-out;
   -webkit-transition: color .24s ease-in-out;
    -moz-transition: color .24s ease-in-out;
-   &:hover {
-       color: yellow;
-   }
+
+  &:hover {
+    color: yellow;
+  }
+}
+
+.team-link {
+  color: #9ca6af;
+  text-decoration: none;
+  font-family: 'josefin sans', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  border-bottom: 1px solid #646f79;
+  margin-top: 16px;
+  padding: 8px;
+  width: 240px;
+  display: flex;
+  box-sizing: border-box;
+  transition: .24s ease-in-out;
+  &:hover {
+    color: white;
+    border-bottom: 1px solid white;
+  }
 }
 
 @keyframes slide-in-right {
@@ -150,7 +165,7 @@
 }
 ::-webkit-scrollbar-thumb {
     background: #14aaf5;
-    border-radius: 24px;
+    // border-radius: 3px;
     &:active {
         background: #008ce3;
     }
@@ -201,7 +216,7 @@
 
 .sidebar-members {
   display: block;
-  margin-top: 48px;
+  margin-top: 24px;
 }
 
 .plus-icon {

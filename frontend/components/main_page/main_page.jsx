@@ -13,7 +13,7 @@ import TaskFormContainer from '../task/task_form_container';
 
 const MainPage = () => (
   <div className="main-page">
-    <SidebarContainer />
+    <Route path="/team/:teamId" component={SidebarContainer} />
     <MainContent />
   </div>
 );

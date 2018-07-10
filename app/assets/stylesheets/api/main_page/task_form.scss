@@ -277,7 +277,7 @@
 //assignee styling
 
 .assignee-button {
-    // cursor: pointer;
+    cursor: pointer;
     display: flex;
     position: relative;
     float: left;
@@ -291,14 +291,20 @@
     margin-top: 6px;
     margin-bottom: 10px;
 
-    // &:hover {
-    //   background-color: #f6f8f9;
-    //   border-color: #646f79;
-    //   border-style: solid;
-    //   color: #222b37;
-    // }
+    &:hover .dotted-circle {
+      border: 1px solid #646f79;
+    }
+    &:hover {
+      background-color: #f6f8f9;
+      border-color: #646f79;
+      border-style: solid;
+      color: #222b37;
+    }
     &:hover .clear-date-button{
         visibility: visible;
+    }
+    &:hover .assignee-icon {
+      fill: #222b37;
     }
 }
 
@@ -316,18 +322,76 @@
     width: 30px;
     border-radius: 24px;
     box-sizing: border-box;
-    margin-right: 0px;
     background: linear-gradient(to top right, #ff5263 0%, #ff7381 35%, #fcbd01 100%);
     color: white;
     font-family: Questrial;
     font-size: 12px;
 }
 
+
 .assignee-name {
     display: block;
     font-weight: 400;
     color: black;
 }
+
+.assignee-list {
+  position: absolute;
+  height: 170px;
+  overflow-y: scroll;
+  top: 37px;
+  left: -13px;
+  visibility: visible;
+  border: 1px solid var(--light-grey);
+  border-radius: 3px;
+}
+
+.assignee-list-hidden {
+  display: none;
+}
+
+.new-assignee-avatar-circle {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 30px;
+  width: 30px;
+  border-radius: 24px;
+  box-sizing: border-box;
+  background: linear-gradient(to top right, #ff5263 0%, #ff7381 35%, #fcbd01 100%);
+  color: white;
+  font-family: Questrial;
+  font-size: 12px;
+  margin: 8px 14px;
+}
+
+.new-assignee-name {
+    font-size: 13px;
+}
+.new-assignee-email {
+    font-size: 11px;
+    color: #b0becc;
+}
+
+.new-assignee-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-bottom: 1px solid var(--light-grey);
+  width: 260px;
+
+  &:hover {
+    background: #44aaf5;
+  }
+
+  &:hover .new-assignee-name {
+    color: white;
+  }
+  &:hover .new-assignee-email {
+    color: white;
+  }
+}
+
 //due date styling
 
 .date-button{

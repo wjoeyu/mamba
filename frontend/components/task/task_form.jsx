@@ -4,18 +4,41 @@ import Textarea from "react-textarea-autosize";
 import { dueDate, dueDateClass } from './date';
 import { flashCompletion } from "./flash";
 import { closeX, calendar, clear, checkmark, descIcon, assigneeIcon } from '../svgs/svgs';
+import { memberInitials } from '../main_page/avatar';
 
 class TaskForm extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      assigneeDropdownVisible: false
+    };
     this.completeTask = this.completeTask.bind(this);
     this.removeTask = this.removeTask.bind(this);
     this.closeForm = this.closeForm.bind(this);
     this.clearAttr = this.clearAttr.bind(this);
     this.openAssigneeDropdown = this.openAssigneeDropdown.bind(this);
-    this.assigneeInitials = this.assigneeInitials.bind(this);
     this.assigneeName = this.assigneeName.bind(this);
     this.timeout = null;
+    this.toggleVisibility = this.toggleVisibility.bind(this);
+    this.handleOutsideDropdown = this.handleOutsideDropdown.bind(this);
+
+  }
+
+  toggleVisibility() {
+    if(!this.state.assigneeDropdownVisible) {
+      document.addEventListener("click", this.handleOutsideDropdown);
+    } else {
+      document.removeEventListener("click", this.handleOutsideDropdown);
+    }
+
+    this.setState({assigneeDropdownVisible: !this.state.assigneeDropdownVisible});
+  }
+
+  handleOutsideDropdown(e) {
+    if(this.node.contains(e.target)) {
+      return;
+    }
+    this.toggleVisibility();
   }
 
   completeTask(completedStatus) {
@@ -25,7 +48,9 @@ class TaskForm extends React.Component {
 
   removeTask() {
     this.props.delTask(this.props.match.params.taskId).then(this.props.history.push(
-      `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}`));
+      this.props.match.params.userId ?
+      `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}`
+      : `/team/${this.props.match.params.teamId}`));
   }
 
   update(field) {
@@ -41,26 +66,24 @@ class TaskForm extends React.Component {
       };
   }
 
+  assign(id) {
+    this.props.updateTask({id:this.props.match.params.taskId, assignee_id: id});
+  }
+
   closeForm() {
       const taskFormSlide = document.getElementsByClassName('task-form')[0];
       taskFormSlide.classList.add('task-form-out');
       setTimeout(() => {
           taskFormSlide.classList.remove('task-form-out');
           this.props.history.push(
-            `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}`)
+            this.props.match.params.userId ?
+            `/team/${this.props.match.params.teamId}/users/${this.props.match.params.userId}` :
+            `/team/${this.props.match.params.teamId}`)
         },480);
   }
 
   clearAttr(attribute) {
       this.props.updateTask({id: this.props.match.params.taskId, [attribute]: null})
-  }
-
-  assigneeInitials() {
-      if (this.props.task && this.props.task.assignee_id) {
-        if (this.props.teamMembers[this.props.task.assignee_id]) {
-          return this.props.teamMembers[this.props.task.assignee_id].name.split(" ").map(el=>el[0]).join("");
-        }
-      }
   }
 
   assigneeName() {
@@ -75,14 +98,24 @@ class TaskForm extends React.Component {
       this.props.fetchTeamMembers(this.props.match.params.teamId);
   }
 
-  // <div
-  // className={task && task.assignee_id ? "clear-date-button" : "cleared-date-button"}
-  // onClick={() => this.clearAttr("assignee_id")}>
-  // {clear()}
-  // </div>
-
   render() {
-    const { task } = this.props;
+    const { task, teamMembers } = this.props;
+    const newAssignees = Object.values(teamMembers).map(newAssignee => {
+      return (
+        <div
+          className="new-assignee-item"
+          key={newAssignee.id}
+          onClick={() => this.assign(newAssignee.id)}>
+          <div className="new-assignee-avatar-circle">
+            {memberInitials(newAssignee.name)}
+          </div>
+          <div className="new-assignee-name-email">
+            <div className="new-assignee-name">{newAssignee.name}</div>
+            <div className="new-assignee-email">{newAssignee.email}</div>
+          </div>
+        </div>
+      );
+    });
 
     return (
       <div className='task-form'>
@@ -110,15 +143,37 @@ class TaskForm extends React.Component {
           />
           <div className="assignee-due-date">
 
-            <div className="assignee-button">
+            <div
+              className="assignee-button"
+              onClick={this.toggleVisibility}
+              ref={ node => this.node = node }>
                 <div
-                  className={ task && task.assignee_id ? "avatar-circle" : "dotted-circle"}>
-                  { task && task.assignee_id ? this.assigneeInitials() : assigneeIcon("assignee-icon")}
+                  className={ task && task.assignee_id ?
+                    "avatar-circle" :
+                    "dotted-circle"}>
+                  { task &&
+                    teamMembers[task.assignee_id] &&
+                    teamMembers[task.assignee_id].name ?
+                      memberInitials(teamMembers[task.assignee_id].name) :
+                      assigneeIcon("assignee-icon")}
                 </div>
                 <div className ="due-date">
                   <div className={task && task.assignee_id ? "button-heading" : "unassigned"}>
                   {task && task.assignee_id ? "ASSIGNED TO" : "Unassigned"}</div>
                   <div className="assignee-name">{this.assigneeName()}</div>
+                </div>
+                <div
+                  className={task && task.assignee_id ? "clear-date-button" : "cleared-date-button"}
+                  onClick={
+                    (e) => {
+                      this.clearAttr("assignee_id");
+                      e.stopPropagation();
+                    }
+                  }>
+                  {clear()}
+                </div>
+                <div className={this.state.assigneeDropdownVisible ? "assignee-list" : "assignee-list-hidden"}>
+                  {newAssignees}
                 </div>
             </div>
 
