@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { closeX } from '../../svgs/svgs'
+import { closeX, closeBurger } from '../../svgs/svgs'
 
 export class Sidebar extends React.Component {
   constructor(props) {
@@ -100,8 +100,8 @@ export class Sidebar extends React.Component {
         <div className="sidebar">
           <div className ="sidebar-header">
             <div className="sidebar-header-left"><div className="sidebar-logo"/><span>mamba</span></div>
-            <div className="sidebar-close-x" onClick={this.toggleVisibility}>
-              {closeX()}
+            <div className="sidebar-close" onClick={this.toggleVisibility}>
+              {closeBurger()}
             </div>
           </div>
 
