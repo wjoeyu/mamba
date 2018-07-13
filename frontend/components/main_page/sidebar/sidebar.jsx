@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { closeX, closeBurger } from '../../svgs/svgs'
+import { hamburger, closeBurger } from '../../svgs/svgs'
 
 export class Sidebar extends React.Component {
   constructor(props) {
@@ -126,11 +126,7 @@ export class Sidebar extends React.Component {
         </div>
         <div className={this.state.visible ?
             "hamburger-hidden" : "hamburger"} onClick={this.toggleVisibility}>
-            <svg
-            className="hamburger-icon"
-            focusable="false"
-            viewBox="0 0 32 32"><rect x="2" y="4" width="28" height="4"></rect><rect x="2" y="14" width="28" height="4"></rect><rect x="2" y="24" width="28" height="4"></rect>
-            </svg>
+            {hamburger()}
         </div>
       </div>
     );
