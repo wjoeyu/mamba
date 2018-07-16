@@ -159,7 +159,7 @@ class TaskForm extends React.Component {
                 </div>
                 <div className ="due-date">
                   <div className={task && task.assignee_id ? "button-heading" : "unassigned"}>
-                  {task && task.assignee_id ? "ASSIGNED TO" : "Unassigned"}</div>
+                  {task && task.assignee_id ? "Assigned To" : "Unassigned"}</div>
                   <div className="assignee-name">{this.assigneeName()}</div>
                 </div>
                 <div

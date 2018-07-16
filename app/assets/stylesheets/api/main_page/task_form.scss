@@ -268,9 +268,8 @@
 }
 .button-heading {
   display: block;
-  color: #646f79;
-  font-size: 11px;
-  text-transform: uppercase;
+  color: #848f99;
+  font-size: 12px;
   font-weight: 400;
 }
 
@@ -305,6 +304,10 @@
     }
     &:hover .assignee-icon {
       fill: #222b37;
+    }
+
+    &:hover .unassigned {
+      color: #222b37
     }
 }
 
@@ -428,6 +431,9 @@
   }
   &:hover .clear-date-button{
       visibility: visible;
+  }
+  &:hover .unassigned {
+    color: #222b37
   }
 }
 
