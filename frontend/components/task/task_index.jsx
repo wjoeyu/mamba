@@ -26,6 +26,13 @@ export class TaskIndex extends React.Component {
     this.props.fetchTeam(this.props.match.params.teamId);
     this.props.fetchTeamMembers(this.props.match.params.teamId);
 
+    if (this.props.match.params.taskId) {
+      if (document.getElementsByClassName(`task-index-row-name-inputs ${this.props.match.params.taskId}`)[0]) {
+        document.getElementsByClassName(`task-index-row-name-inputs ${this.props.match.params.taskId}`)[0].focus();
+      } else if (document.getElementsByClassName(`task-index-row-name-inputs-completed ${this.props.match.params.taskId}`)[0]) {
+        document.getElementsByClassName(`task-index-row-name-inputs-completed ${this.props.match.params.taskId}`)[0].focus();
+      }
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -114,7 +121,8 @@ export class TaskIndex extends React.Component {
           `/team/${task.team_id}/users/${this.props.match.params.userId}/tasks/${task.id}` :
           `/team/${task.team_id}/tasks/${task.id}`}
           className="index-link"
-          draggable="false">
+          draggable="false"
+          >
 
           <input type="text"
             value={task.task_name}
@@ -144,14 +152,6 @@ export class TaskIndex extends React.Component {
         </div>
       </div>
     );
-
-    if (this.props.match.params.taskId) {
-      if (document.getElementsByClassName(`task-index-row-name-inputs ${this.props.match.params.taskId}`)[0]) {
-        document.getElementsByClassName(`task-index-row-name-inputs ${this.props.match.params.taskId}`)[0].focus();
-      } else if (document.getElementsByClassName(`task-index-row-name-inputs-completed ${this.props.match.params.taskId}`)[0]) {
-        document.getElementsByClassName(`task-index-row-name-inputs-completed ${this.props.match.params.taskId}`)[0].focus();
-      }
-    }
 
     return (
       <div className="main-content">
