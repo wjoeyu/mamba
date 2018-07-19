@@ -42,8 +42,7 @@ class SessionForm extends React.Component {
   }
 
   loginDemoCloseModal() {
-    this.props.signInDemo();
-    this.props.closeModal();
+    this.props.signInDemo().then(this.props.closeModal);
   }
 
   render() {
@@ -61,7 +60,7 @@ class SessionForm extends React.Component {
             </div>
             : ""}
           {(this.props.formType === "Log in") ?
-            <div className="form-option">or</div> 
+            <div className="form-option">or</div>
             : ""}
 
           {this.renderErrors()}
