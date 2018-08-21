@@ -42,6 +42,8 @@ Any information entered in a task form (assignee, description, task name, and du
 
 With the use of a technique called debouncing, the redux state is updated on every key press, so that the entered information is rendered on the screen to give the user visual feedback, specifically the Task Name. However, the information is only stored into the database on set intervals. As result of this, calls to the database to persist information are limited, ensuring a more responsive and lighter-weight experience.
 
+![debouncing_demo](https://github.com/wjoeyu/mamba/blob/master/wireframes/debounce.gif)
+
 ```javascript
 // task_form.jsx
 
