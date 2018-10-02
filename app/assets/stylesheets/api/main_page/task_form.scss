@@ -75,15 +75,15 @@
 
 @keyframes slide-out {
     from { transform: translate(0%, 0%);}
-    to   { transform: translate(100%, 0%);}
+    to   { transform: translate(120%, 0%);}
 }
 @-webkit-keyframes slide-out {
     from { transform: translate(0%, 0%);}
-    to   { transform: translate(100%, 0%);}
+    to   { transform: translate(120%, 0%);}
 }
 @-moz-keyframes slide-out {
     from { transform: translate(0%, 0%);}
-    to   { transform: translate(100%, 0%);}
+    to   { transform: translate(120%, 0%);}
 }
 
 .task-form-header-left {
