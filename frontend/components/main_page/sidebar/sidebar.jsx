@@ -100,9 +100,9 @@ export class Sidebar extends React.Component {
         <div className="sidebar">
           <div className ="sidebar-header">
             <div className="sidebar-header-left"><div className="sidebar-logo"/><span>mamba</span></div>
-            <div className="sidebar-close" onClick={this.toggleVisibility}>
+            <button className="sidebar-close" onClick={this.toggleVisibility}>
               {closeBurger()}
-            </div>
+            </button>
           </div>
 
           <Link className="team-link" to={`/team/${this.props.match.params.teamId}`}>
@@ -112,22 +112,23 @@ export class Sidebar extends React.Component {
           <div className="sidebar-members">
             {teamMembers}
           </div>
-          <svg
-          className={this.state.userSearchVisible ? "active-plus-icon" : "plus-icon"}
-          focusable="false"
-          viewBox="0 0 32 32"
-          onClick={this.toggleUserSearchVisibility}
-          ref={ node => this.node = node }>
-              <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18"></polygon>
-          </svg>
+          <button className='plus-icon-holder' onClick={this.toggleUserSearchVisibility}>
+            <svg
+            className={this.state.userSearchVisible ? "active-plus-icon" : "plus-icon"}
+            focusable="false"
+            viewBox="0 0 32 32"
+            ref={ node => this.node = node }>
+                <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18"></polygon>
+            </svg>
+          </button>
           <div className={this.state.userSearchVisible ? "new-members" : "new-members-hidden"}>
             {userSearch}
           </div>
         </div>
-        <div className={this.state.visible ?
+        <button className={this.state.visible ?
             "hamburger-hidden" : "hamburger"} onClick={this.toggleVisibility}>
             {hamburger()}
-        </div>
+        </button>
       </div>
     );
   }

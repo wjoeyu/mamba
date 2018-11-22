@@ -73,14 +73,12 @@
 }
 
 .workspace-links {
+  display: block;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   height: 40px;
-  padding-left: 30px;
-  padding-right: 20px;
-  padding-top: 12px;
   box-sizing: border-box;
 }
 

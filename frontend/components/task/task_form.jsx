@@ -102,18 +102,18 @@ class TaskForm extends React.Component {
     const { task, teamMembers } = this.props;
     const newAssignees = Object.values(teamMembers).map(newAssignee => {
       return (
-        <div
+        <button
           className="new-assignee-item"
           key={newAssignee.id}
           onClick={() => this.assign(newAssignee.id)}>
           <div className="new-assignee-avatar-circle">
             {memberInitials(newAssignee.name)}
           </div>
-          <div className="new-assignee-name-email">
+          <div>
             <div className="new-assignee-name">{newAssignee.name}</div>
             <div className="new-assignee-email">{newAssignee.email}</div>
           </div>
-        </div>
+        </button>
       );
     });
 
@@ -121,12 +121,12 @@ class TaskForm extends React.Component {
       <div className='task-form'>
         <div className="task-form-header">
           <div className="task-form-header-left">
-            <div
+            <button
               onClick={()=>this.completeTask(task.completed)}
               className={(task && task.completed)? "completed-button" : "completion-button"}>
                 {checkmark((task && task.completed)? "completed-check" : "check-mark")}
-                {(task && task.completed)? "Completed" : "Mark Complete"}</div>
-            <div className="deletion-button" onClick={()=>this.removeTask()}>Delete Task</div>
+                {(task && task.completed)? "Completed" : "Mark Complete"}</button>
+            <button className="deletion-button" onClick={()=>this.removeTask()}>Delete Task</button>
           </div>
           <div className="task-form-close"
             onClick={()=> this.closeForm()}>
@@ -143,7 +143,7 @@ class TaskForm extends React.Component {
           />
           <div className="assignee-due-date">
 
-            <div
+            <button
               className="assignee-button"
               onClick={this.toggleVisibility}
               ref={ node => this.node = node }>
@@ -175,7 +175,7 @@ class TaskForm extends React.Component {
                 <div className={this.state.assigneeDropdownVisible ? "assignee-list" : "assignee-list-hidden"}>
                   {newAssignees}
                 </div>
-            </div>
+            </button>
 
             <div className="date-button">
               <div className={ task && task.due_date? "calendar-circle" : "dotted-circle"}>
@@ -191,11 +191,11 @@ class TaskForm extends React.Component {
                 value={task && task.due_date? task.due_date.slice(0,10) : "" }
                 onChange={this.update('due_date')}
               />
-              <div
+              <button
                 className={task && task.due_date ? "clear-date-button" : "cleared-date-button"}
                 onClick={() => this.clearAttr("due_date")}>
                 {clear()}
-              </div>
+              </button>
             </div>
 
           </div>

@@ -91,6 +91,7 @@
 }
 
 .completion-button {
+  outline: none;
   display: inline-flex;
   color: #646e79;
   border-radius: 3px;
@@ -106,7 +107,7 @@
   -moz-transition: background .24s ease-in-out;
   -webkit-transition: background .24s ease-in-out;
 
-  &:hover {
+  &:hover, &:focus {
     border-color: #646f79;
     background-color: #f6f8f9;
     color: #222b37;
@@ -114,6 +115,7 @@
 }
 
 .deletion-button {
+  outline: none;
   display: inline-flex;
   color: #646e79;
   border-radius: 3px;
@@ -128,13 +130,14 @@
   transition: background .24s ease-in-out;
   -moz-transition: background .24s ease-in-out;
   -webkit-transition: background .24s ease-in-out;
+
+  &:hover, &:focus {
+    border-color: #de1e2f;
+    background: #ff5263;;
+    color: white;
+  }
 }
 
-.deletion-button:hover {
-  border-color: #de1e2f;
-  background: #ff5263;;
-  color: white;
-}
 
 .deletion-button:active {
   background: #de1e2f;
@@ -267,6 +270,7 @@
   font-weight: 400;
 }
 .button-heading {
+  text-align: left;
   display: block;
   color: #848f99;
   font-size: 12px;
@@ -276,39 +280,42 @@
 //assignee styling
 
 .assignee-button {
-    cursor: pointer;
-    display: flex;
-    position: relative;
-    float: left;
-    border: 1px solid transparent;
-    align-items: center;
-    padding: 3px;
-    padding-right: 8px;
-    height: 38px;
-    border-radius: 38px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 10px;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  float: left;
+  border: 1px solid transparent;
+  align-items: center;
+  padding: 3px;
+  padding-right: 8px;
+  height: 38px;
+  border-radius: 38px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 10px;
 
-    &:hover .dotted-circle {
-      border: 1px solid #646f79;
-    }
-    &:hover {
-      background-color: #f6f8f9;
-      border-color: #646f79;
-      border-style: solid;
-      color: #222b37;
-    }
-    &:hover .clear-date-button{
-        visibility: visible;
-    }
-    &:hover .assignee-icon {
-      fill: #222b37;
-    }
+  &:hover .dotted-circle {
+    border: 1px solid #646f79;
+  }
+  &:hover, &:focus-within {
+    background-color: #f6f8f9;
+    border-color: #646f79;
+    border-style: solid;
+    color: #222b37;
+  }
+  &:hover, &:focus-within {
+    .clear-date-button{
+      visibility: visible;
+    }  
+  }
+  &:hover .assignee-icon {
+    fill: #222b37;
+  }
 
-    &:hover .unassigned {
-      color: #222b37
-    }
+  &:hover .unassigned {
+    color: #222b37
+  }
 }
 
 .assignee-icon {
@@ -371,14 +378,16 @@
 }
 
 .new-assignee-name {
-    font-size: 13px;
+  // text-align: left;
+  font-size: 13px;
 }
 .new-assignee-email {
-    font-size: 11px;
-    color: #b0becc;
+  font-size: 11px;
+  color: #b0becc;
 }
 
 .new-assignee-item {
+  text-align: left;
   display: flex;
   align-items: center;
   background: white;
@@ -454,16 +463,14 @@
 }
 
 .dotted-circle {
-  display: block;
-  vertical-align: bottom;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   border: 1px dashed #b7bfc6;
-  padding-top: 6px;
-  padding-left: 6px;
   height: 30px;
   width: 30px;
   border-radius: 24px;
   box-sizing: border-box;
-  float:left;
 }
 
 .due-date-calendar {
@@ -478,25 +485,25 @@
   margin-right: 5px;
 }
 
-  .due-date div:last-child {
-    font-size: 13px;
-  }
+.due-date div:last-child {
+  font-size: 13px;
+}
 
-  .past {
-    display: block;
-    font-weight: 400;
-    color: #ed4758;
-  }
-  .soon {
-    display: block;
-    font-weight: 400;
-    color: #00bf9c;
-  }
-  .future {
-    display: block;
-    font-weight: 400;
-    color: #646f79;
-  }
+.past {
+  display: block;
+  font-weight: 400;
+  color: #ed4758;
+}
+.soon {
+  display: block;
+  font-weight: 400;
+  color: #00bf9c;
+}
+.future {
+  display: block;
+  font-weight: 400;
+  color: #646f79;
+}
 
 .desc-icon {
   height: 16px;

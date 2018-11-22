@@ -112,10 +112,10 @@ export class TaskIndex extends React.Component {
       <div className={this.props.match.params.taskId === task.id.toString() ? "task-index-item-selected" : "task-index-item-wrapper"} key={task.id}>
         <div className={`flash ${task.id}`}/>
         <div className ="for-line-under-circle">
-          <div className={task.completed ? `checked-circle ${task.id}` : `check-circle ${task.id}`}
+          <button className={task.completed ? `checked-circle ${task.id}` : `check-circle ${task.id}`}
             onClick={()=>this.completeTask(task.id, task.completed)}>
             {checkmark(task.completed ? "checked-task-index-check" : "task-index-check")}
-          </div>
+          </button>
         </div>
         <Link to={this.props.match.params.userId ?
           `/team/${task.team_id}/users/${this.props.match.params.userId}/tasks/${task.id}` :
@@ -159,7 +159,7 @@ export class TaskIndex extends React.Component {
         <div className="task-wrapper">
           <div className={this.props.match.params.taskId ? "task-index-condensed" : "task-index"}>
             <div className="task-index-header">
-              <div onClick={this.createNewTask} className="add-task-button">Add Task</div>
+              <button onClick={this.createNewTask} className="add-task-button">Add Task</button>
             </div>
             {taskIndexLinks}
             <div className="task-index-filler"></div>

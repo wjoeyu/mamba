@@ -54,9 +54,11 @@
   letter-spacing: 1px;
 }
 
-.sidebar-close svg{
+.sidebar-close {
   margin-top: 8px;
   margin-right: 24px;
+    
+  & svg{
   height: 24px;
   width: 24px;
   fill: #9ca6af;
@@ -64,6 +66,7 @@
   &:hover {
     fill: white;
   }
+}
 }
 
 .ind-links {
@@ -220,13 +223,16 @@
   margin-top: 24px;
 }
 
+.plus-icon-holder {
+    float: right;
+    cursor: pointer;
+    margin: 8px 16px;
+}
+
 .plus-icon {
     fill: #9ca6af;
-    margin: 8px 16px;
     height: 20px;
     width: 20px;
-    cursor: pointer;
-    float: right;
     transition: fill .24s ease-in-out;
     -moz-transition: fill .24s ease-in-out;
     -webkit-transition: fill .24s ease-in-out;
@@ -237,11 +243,8 @@
 
 .active-plus-icon {
     fill: #14aaf5;
-    margin: 8px 16px;
     height: 20px;
     width: 20px;
-    cursor: pointer;
-    float: right;
     transition: fill .24s ease-in-out;
     -moz-transition: fill .24s ease-in-out;
     -webkit-transition: fill .24s ease-in-out;
@@ -252,6 +255,8 @@
 
 .hamburger {
   position: absolute;
+  background: none;
+  border: none;
   z-index: 24;
   height: 42px;
   width: 42px;
