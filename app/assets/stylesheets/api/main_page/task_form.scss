@@ -339,13 +339,16 @@
 
 .assignee-list {
   position: absolute;
-  height: 170px;
-  overflow-y: scroll;
+  // max-height: 170px;
+  // overflow-y: scroll;
   top: 37px;
   left: -13px;
   visibility: visible;
   border: 1px solid var(--light-grey);
   border-radius: 3px;
+  &:last-of-type {
+    border-bottom: none;
+  }
 }
 
 .assignee-list-hidden {

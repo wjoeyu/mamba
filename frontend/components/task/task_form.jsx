@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from 'react-router-dom';
-import Textarea from "react-textarea-autosize";
+import Textarea from 'react-textarea-autosize';
 import { dueDate, dueDateClass } from './date';
 import { flashCompletion } from "./flash";
 import { closeX, calendar, clear, checkmark, descIcon, assigneeIcon } from '../svgs/svgs';

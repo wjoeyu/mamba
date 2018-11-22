@@ -162,6 +162,7 @@
 
 ::-webkit-scrollbar {
     background: transparent;  /* optional: just make scrollbar invisible */
+    z-index: 99;
 }
 ::-webkit-scrollbar-thumb {
     background: #14aaf5;
