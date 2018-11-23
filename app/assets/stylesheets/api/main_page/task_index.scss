@@ -255,7 +255,8 @@
   border: 1px solid #b2ebe1;
   background: #b2ebe1;
   z-index: 23;
-  &:hover {
+  &:hover, &:focus {
+    outline: none;
     border-color: #00bf9c;
     background: #00bf9c;
   }
